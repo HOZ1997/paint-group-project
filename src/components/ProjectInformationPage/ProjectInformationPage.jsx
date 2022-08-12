@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import LanguageToggleButton from "../LanguageToggleButton/LanguageToggleButton";
 
 // Basic functional component structure for React with default state
 // value setup.
@@ -12,9 +13,10 @@ function ProjectInformationPage(props) {
   );
 
   return (
-    <div>
+    <div className="projectInformationPage">
+      <LanguageToggleButton />
       {store.language === "english" ? (
-        <>
+        <div className="projectInformationInputsEnglish">
           <h2>{heading}</h2>
           <p>
             <strong>Client Name:</strong>
@@ -67,9 +69,9 @@ function ProjectInformationPage(props) {
           <p>
             <strong>Current Date:</strong>
           </p>
-        </>
+        </div>
       ) : (
-        <>
+        <div className="projectInformationInputsSpanish">
           <h2>{heading}</h2>
           <p>
             <strong>Nombre del Cliente:</strong>
@@ -132,7 +134,7 @@ function ProjectInformationPage(props) {
           <p>
             <strong>Fecha Actual:</strong>
           </p>
-        </>
+        </div>
       )}
     </div>
   );
