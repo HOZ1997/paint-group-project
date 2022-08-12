@@ -26,7 +26,7 @@ CREATE TABLE "painter_input" (
   "project_location_id" int, 
   "project_status_id" int,
   "project_size_id" int, 
-  "language_id" int,  
+  "language_preference_id" int,  
   "estimate" int,
   "estimated_startdate" date,
   "notes" varchar, 
