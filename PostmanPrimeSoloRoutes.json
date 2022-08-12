@@ -5,7 +5,7 @@
 	"order": [
 		"d78bc69f-0d9e-4489-ec9d-ac502b78acf8",
 		"e4c0f920-0aae-6f4e-2a74-147760d07f01",
-		"0e861444-5137-f535-f11d-cbeb234ffe0c"		
+		"0e861444-5137-f535-f11d-cbeb234ffe0c"
 	],
 	"folders": [],
 	"timestamp": 1556130018580,
@@ -16,14 +16,14 @@
 		{
 			"id": "0e861444-5137-f535-f11d-cbeb234ffe0c",
 			"headers": "",
-			"url": "http://localhost:5000/api/user/",
+			"url": "http://localhost:5001/api/user/",
 			"pathVariables": {},
 			"preRequestScript": null,
 			"method": "GET",
 			"collectionId": "5e3e8d98-813d-5d2a-a79a-39cd12328d63",
 			"data": null,
 			"dataMode": "params",
-			"name": "http://localhost:5000/api/user/",
+			"name": "http://localhost:5001/api/user/",
 			"description": "User Info",
 			"descriptionFormat": "html",
 			"time": 1556130167959,
@@ -36,7 +36,7 @@
 		{
 			"id": "d78bc69f-0d9e-4489-ec9d-ac502b78acf8",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:5000/api/user/register",
+			"url": "http://localhost:5001/api/user/register",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -47,7 +47,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1556130772256,
-			"name": "http://localhost:5000/api/user/register",
+			"name": "http://localhost:5001/api/user/register",
 			"description": "Registration",
 			"collectionId": "5e3e8d98-813d-5d2a-a79a-39cd12328d63",
 			"responses": [],
@@ -56,7 +56,7 @@
 		{
 			"id": "e4c0f920-0aae-6f4e-2a74-147760d07f01",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:5000/api/user/login",
+			"url": "http://localhost:5001/api/user/login",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -67,7 +67,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1556130776568,
-			"name": "http://localhost:5000/api/user/login",
+			"name": "http://localhost:5001/api/user/login",
 			"description": "Login",
 			"collectionId": "5e3e8d98-813d-5d2a-a79a-39cd12328d63",
 			"responses": [],
