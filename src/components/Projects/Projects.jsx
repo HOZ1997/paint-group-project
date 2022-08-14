@@ -20,9 +20,13 @@ function Projects() {
 
 
 
-  // const onLogin = (event) => {
-  //   history.push('');
-  // };
+  const goToProject = (id) => {
+    history.push(`/information/${id}`);
+  };
+
+  const newProject = () => {
+    history.push(`/addproject`);
+  };
 
   return (
     <div className="container">
@@ -42,7 +46,7 @@ function Projects() {
             {projects.map( (project, index) => {
 
               return (
-              <tr key={project.id}>
+              <tr key={project.id} onClick={()=>{goToProject(project.id)}}>
                 <td>{project.full_name}</td>
                 <td>{project.address_1}</td>
                 <td >{project.project_status_name}</td>
@@ -52,6 +56,7 @@ function Projects() {
           </tbody>
         </table>
       )}
+        <button onClick={newProject}>Add Project</button>
       </div>
     </div>
   );
