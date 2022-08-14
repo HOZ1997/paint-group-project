@@ -24,6 +24,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 import Projects from "../Projects/Projects";
+import AddProject from "../AddProject/AddProject";
 
 import "./App.css";
 
@@ -110,6 +111,9 @@ function App() {
           </Route>
           <Route exact path="/projects">
             <Projects />
+          </Route>
+          <Route exact path="/addproject">
+            <AddProject />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
