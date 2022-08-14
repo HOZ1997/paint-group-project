@@ -25,8 +25,8 @@ CREATE TABLE "painter_input" (
   "paint_id" int,
   "project_location_id" int,
   "project_status_id" int,
-  "project_size_id" int,
-  "language_preference_id" int,
+  "project_size_id" int, 
+  "language_preference_id" int,  
   "estimate" int,
   "estimated_startdate" date,
   "notes" varchar,
@@ -85,7 +85,6 @@ INSERT INTO "project_size" ("project_size_name") VALUES ('large');
 
 
 INSERT INTO "language_preference" ("language_name") VALUES ('spanish');
-
 
 INSERT INTO "painter_input" ("full_name", "address_1", "city", "state", "zip_code", "primary_phone", "email" , "paint_id", "project_location_id", "project_status_id", "project_size_id", "language_preference_id", "estimate", "estimated_startdate",  "notes", "quoted", "contract_sent", "downpayment", "downpayment_amount",  "user_id")VALUES ('Painter Prime', '123 Prime Ave', 'Msp', 'MN', '55331', '555555555', 'prime@prime.com', 1 , 1, 1, 1, 1, 10, '2022-07-26', 'painter notes', true, false, false, 1, 1 );
 
