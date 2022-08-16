@@ -4,16 +4,21 @@ require('dotenv').config();
 
 const app = express();
 
+const cloudinary = require('./utils/cloudinary');
 const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
 const projectsListRouter = require('./routes/projectsList.router');
+const spikeRouter = require('./routes/spikeUploadImage.router');
 
 // Body parser middleware
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
 
 // Passport Session Configuration //
 app.use(sessionMiddleware);
@@ -24,6 +29,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/spikeUploadImage', spikeRouter)
 //app.use('/api/projectsList', projectsListRouter);
 // Serve static files
 app.use(express.static('build'));
