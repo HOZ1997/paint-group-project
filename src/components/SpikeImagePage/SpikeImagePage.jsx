@@ -9,7 +9,7 @@ function SpikeImagePage(props) {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
   const dispatch = useDispatch();
-  const store = useSelector((store) => store);
+  const imageReducer = useSelector((store) => store.spikeImageReducer);
   const [heading, setHeading] = useState('Image Upload Spike');
   const [image, setImage] = useState('');
 
@@ -37,6 +37,7 @@ function SpikeImagePage(props) {
     <div>
       <h2>{heading}</h2>
       <input type="file" name='image1' onChange={handleFileInputChange}/>
+      <img src={imageReducer} alt={'room image'}/>
     </div>
   );
 }
