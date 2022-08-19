@@ -37,7 +37,7 @@ function SpikeImagePage(props) {
     <div>
       <h2>{heading}</h2>
       <input type="file" name='image1' onChange={handleFileInputChange}/>
-      <img src={imageReducer} alt={'room image'}/>
+      <img src={imageReducer} alt={''}/>
     </div>
   );
 }

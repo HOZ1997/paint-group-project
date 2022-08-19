@@ -8,14 +8,15 @@ function* uploadImage(action) {
     const response = yield axios.post('/api/spikeUploadImage', action.payload);
     console.log(' BACK FROM UPLOAD IMAGE POST:', response.data);
     yield put({type: 'SET_IMAGE', payload: response.data}); 
+    yield axios.post('/api/spikeUploadImage/database', action.payload );
   } catch (err) {
-    console.log('Error adding image_Saga to DB:', err);
-    alert('Error adding Image Saga from DB')
+    console.log('Error in upload Image saga:', err);
+    alert('Error in upload Image saga')
   }
 }
 
 function* spikeImageSaga() {
-  yield takeLatest('SEND_IMAGE', uploadImage);
+  yield takeLatest('POST_URL', uploadImage);
 }
 
 export default spikeImageSaga;
