@@ -9,85 +9,338 @@ CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,
-    "role" INT
+    "role" INT DEFAULT 1
     );
 
+SELECT * FROM "user"; 
 
-CREATE TABLE "painter_input" (
-  "id" serial primary key, 
-  "full_name" varchar,
-  "address_1" varchar,
-  "city" varchar,
-  "state" varchar,
-  "zip_code" int,
-  "primary_phone" int,
-  "email" varchar,
-  "paint_id" int,
-  "project_location_id" int, 
-  "project_status_id" int,
-  "project_size_id" int, 
-  "language_preference_id" int,  
-  "estimate" int,
-  "estimated_startdate" date,
-  "notes" varchar, 
-  "quoted" boolean,
-  "contract_sent" boolean,
-  "downpayment" boolean,
-  "downpayment_amount" int,
-  "enterdate" date,
-  "user_id" int
-);
-
-
-
-CREATE TABLE "paint"(
+CREATE TABLE "paintproject_input" (	
 "id" serial primary key,
-"paint_color_name" varchar (255)
-);
+"client_type_id"	INT,	
+"client_firstlast_name"	VARCHAR	(255),
+"decision_firstlast_name"	VARCHAR	(255),
+"decision_emailaddress"	VARCHAR	(255),
+"decision_phonenumber"	VARCHAR (14),	
+"project_address_1"	VARCHAR	(255),
+"project_address_2"	VARCHAR	(255),
+"project_address_city"	VARCHAR	(255),
+"project_address_state"	VARCHAR	(255),
+"project_address_zip"	INT,	
+"project_house_year"	INT,	
+"project_address_notes"	VARCHAR	(255),
+"project_job_number"  SERIAL,	
+"project_propertytype_id"	INT,	
+"project_buildingtype_id"	INT,	
+"isproject_typeinterior"	BOOLEAN,	
+"isproject_typeexterior"	BOOLEAN,	
+"isproject_typecabinetry"	BOOLEAN,
+"isproject_typespecialfeature" BOOLEAN,	
+"project_startdate"	DATE,	
+"project_complete_specificdate"	DATE,	
+"language_preference_id"	INT,	
+"user_id" 	INT,	
+"specialfeatureexterior_type_id"	INT,	
+"specialfeature_paintproduct"	VARCHAR	(255),
+"isspecialfeaturestatus_needprimer"	BOOLEAN,	
+"isspecialfeaturestatus_patchedrepair"	BOOLEAN,	
+"isspecialfeaturestatus_extensivescraping"	BOOLEAN,	
+"specailfeature_notes" 	VARCHAR	(255),
+"exteriorestimate_laborcost"	INT,	
+"exteriorestimate_materialcost" 	INT,	
+"exteriorestimate_totalcost" 	INT,	
+"isexteriorprep_powerwash"	BOOLEAN,	
+"isexteriorprep_scrape"	BOOLEAN,	
+"isexteriorprep_mildew"	BOOLEAN,	
+"isexteriorwarranty_oneyear"	BOOLEAN,	
+"isexteriorwarranty_threeyear"	BOOLEAN,	
+"isexteriorwarranty_fiveyear" 	BOOLEAN);	
+
+SELECT * FROM "paintproject_input";
 
 
-CREATE TABLE "project_location"(
-"id" serial primary key,
-"project_location_name" varchar (255)
-);
+CREATE TABLE "client_type" (
+  "id" serial primary key,
+  "client_type_name" varchar(255) NOT NULL);
+  
+INSERT INTO "client_type" ("client_type_name") VALUES ('Homeowner');
+INSERT INTO "client_type" ("client_type_name") VALUES ('Busines Owner');
+INSERT INTO "client_type" ("client_type_name") VALUES ('Contractor/Developer');
+INSERT INTO "client_type" ("client_type_name") VALUES ('Realtor/Designer');
+INSERT INTO "client_type" ("client_type_name") VALUES ('Landlord/Property Owner');  
+
+SELECT * FROM "client_type";
+
+CREATE TABLE "project_propertytype" (
+  "id" serial primary key,
+  "project_propertytype_name" varchar(255) NOT NULL);
+
+INSERT INTO "project_propertytype" ("project_propertytype_name") VALUES ('Residential');
+INSERT INTO "project_propertytype" ("project_propertytype_name") VALUES ('Commercial');
+INSERT INTO "project_propertytype" ("project_propertytype_name") VALUES ('New construction');
+
+SELECT * FROM "project_propertytype";
+
+
+CREATE TABLE "project_buildingtype" (
+  "id" serial primary key,
+  "project_buildingtype_name" varchar(255) NOT NULL);
+
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Single Family Home');
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Commercial Building'); 
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Apartment');
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Condo');
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Duplex'); 
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Loft');
+INSERT INTO "project_buildingtype" ("project_buildingtype_name") VALUES ('Multi-tenant');
+
+
+SELECT * FROM "project_buildingtype";
+
+
+CREATE TABLE "specialfeatureexterior_type" (
+  "id" serial primary key,
+  "specialfeatureexterior_type_name" varchar(255) NOT NULL);
+  
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Soffits');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Fascia'); 
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Gate');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Gutters');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Columns');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Dormers');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Handrails');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Deck');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Porch');
+INSERT INTO "specialfeatureexterior_type" ("specialfeatureexterior_type_name") VALUES ('Fence');
+
+
+SELECT * FROM "specialfeatureexterior_type"; 
 
 
 
-CREATE TABLE "project_status"(
-"id" serial primary key,
-"project_status_name" varchar (255)
-);
+CREATE TABLE "language_preference" (
+  "id" serial primary key,
+  "language_preference_name" varchar(255) NOT NULL);
+  
+INSERT INTO "language_preference" ("language_preference_name") VALUES ('English');
+INSERT INTO "language_preference" ("language_preference_name") VALUES ('Spanish'); 
+
+SELECT * FROM "language_preference"; 
+
+--Insert query that can be used to add intial information to fields
+
+INSERT INTO "paintproject_input" (
+"client_type_id",
+"client_firstlast_name",
+"decision_firstlast_name",
+"decision_emailaddress",
+"decision_phonenumber",
+"project_address_1",
+"project_address_2",
+"project_address_city",
+"project_address_state",
+"project_address_zip",
+"project_house_year",
+"project_address_notes",
+"project_job_number" ,
+"project_propertytype_id",
+"project_buildingtype_id",
+"isproject_typeinterior",
+"isproject_typeexterior",
+"isproject_typecabinetry",
+"isproject_typespecialfeature",
+"project_startdate",
+"project_complete_specificdate",
+"language_preference_id",
+"user_id" ,
+"specialfeatureexterior_type_id",
+"specialfeature_paintproduct",
+"isspecialfeaturestatus_needprimer",
+"isspecialfeaturestatus_patchedrepair",
+"isspecialfeaturestatus_extensivescraping",
+"specailfeature_notes" ,
+"exteriorestimate_laborcost",
+"exteriorestimate_materialcost" ,
+"exteriorestimate_totalcost" ,
+"isexteriorprep_powerwash",
+"isexteriorprep_scrape",
+"isexteriorprep_mildew",
+"isexteriorwarranty_oneyear",
+"isexteriorwarranty_threeyear",
+"isexteriorwarranty_fiveyear" )
+VALUES
+(1,
+'Heather Osborne',
+'Heather Osborne',
+'theoz308@comcast.net',
+'5555555555',
+'2121 Prime Ave',
+'Suite 210',
+'Chaska',
+'MN', 
+'55318',
+'2006',
+'end unit',
+1,
+1,
+1,
+false,
+false, 
+false,
+true, 
+'2022-07-26',
+'2022-07-26',
+1,
+1,
+8,
+'brown',
+true,
+false, 
+false, 
+'needs help',
+10,
+10,
+20,
+true,
+true,
+true,
+true,
+false, 
+false);
+
+
+-- GET for information for all fields in DB
+
+SELECT
+paintproject_input.id, 										
+client_type_name,					
+client_firstlast_name,					
+decision_firstlast_name,					
+decision_emailaddress,					
+decision_phonenumber,					
+project_address_1,					
+project_address_2,					
+project_address_city,					
+project_address_state,					
+project_address_zip,					
+project_house_year,					
+project_address_notes,					
+project_job_number ,					
+project_propertytype_name,					
+project_buildingtype_name,					
+isproject_typeinterior,					
+isproject_typeexterior,					
+isproject_typecabinetry,
+isproject_typespecialfeature,
+project_startdate,					
+project_complete_specificdate,					
+language_preference_name,					
+user_id ,					
+specialfeatureexterior_type_name,					
+specialfeature_paintproduct,					
+isspecialfeaturestatus_needprimer,					
+isspecialfeaturestatus_patchedrepair,					
+isspecialfeaturestatus_extensivescraping,					
+specailfeature_notes ,					
+exteriorestimate_laborcost,					
+exteriorestimate_materialcost,					
+exteriorestimate_totalcost,					
+isexteriorprep_powerwash,					
+isexteriorprep_scrape,					
+isexteriorprep_mildew,					
+isexteriorwarranty_oneyear,					
+isexteriorwarranty_threeyear,					
+isexteriorwarranty_fiveyear 					
+FROM 					
+paintproject_input 					
+JOIN	client_type	ON	client_type_id	=	client_type.id
+JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
+JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id
+JOIN	language_preference	ON	language_preference_id	=	language_preference.id
+JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
 
 
 
-CREATE TABLE "project_size"(
-"id" serial primary key,
-"project_size_name" varchar (255)
-);
+
+--GET information for Client component Lisette
+SELECT
+paintproject_input.id, 										
+client_type_name,					
+client_firstlast_name,					
+decision_firstlast_name,					
+decision_emailaddress,					
+decision_phonenumber,					
+project_address_1,					
+project_address_2,					
+project_address_city,					
+project_address_state,					
+project_address_zip,					
+project_house_year,					
+project_address_notes										
+FROM 					
+paintproject_input 					
+JOIN	client_type	ON	client_type_id	=	client_type.id;
 
 
-CREATE TABLE "language_preference"(
-"id" serial primary key,
-"language_name" varchar (255)
-);
+
+--GET information for Project component - Harrison
+SELECT
+paintproject_input.id, 															
+project_job_number ,					
+project_propertytype_name,					
+project_buildingtype_name,					
+isproject_typeinterior,					
+isproject_typeexterior,					
+isproject_typecabinetry,
+isproject_typespecialfeature,					
+project_startdate,					
+project_complete_specificdate 															
+FROM 					
+paintproject_input 					
+JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
+JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id;
 
 
-INSERT INTO "paint" ("paint_color_name") VALUES ('eggshell blue');
+--GET information for Special Feature component - Andy
+
+SELECT
+paintproject_input.id, 										
+specialfeatureexterior_type_name,					
+specialfeature_paintproduct,					
+isspecialfeaturestatus_needprimer,					
+isspecialfeaturestatus_patchedrepair,					
+isspecialfeaturestatus_extensivescraping,					
+specailfeature_notes										
+FROM 					
+paintproject_input 					
+JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
 
 
-INSERT INTO "project_location" ("project_location_name") VALUES ('exterior'); 
- 
+--GET information for Estimate - exterior special feature - Jonathan
 
-INSERT INTO "project_status" ("project_status_name") VALUES ('new');
-
-
-INSERT INTO "project_size" ("project_size_name") VALUES ('large');
-
-
-INSERT INTO "language_preference" ("language_name") VALUES ('spanish');
-
-
-INSERT INTO "painter_input" ("full_name", "address_1", "city", "state", "zip_code", "primary_phone", "email" , "paint_id", "project_location_id", "project_status_id", "project_size_id", "language_preference_id", "estimate", "estimated_startdate",  "notes", "quoted", "contract_sent", "downpayment", "downpayment_amount",  "user_id")VALUES ('Painter Prime', '123 Prime Ave', 'Msp', 'MN', '55331', '555555555', 'prime@prime.com', 1 , 1, 1, 1, 1, 10, '2022-07-26', 'painter notes', true, false, false, 1, 1 ); 
+SELECT
+paintproject_input.id, 														
+exteriorestimate_laborcost,					
+exteriorestimate_materialcost,					
+exteriorestimate_totalcost										
+FROM 					
+paintproject_input; 
 
 
-SELECT painter_input.id, full_name, address_1, city, state, zip_code, primary_phone, email, estimate, estimated_startdate, notes, quoted, contract_sent, downpayment, downpayment_amount, enterdate, paint_color_name, project_location_name, project_status_name, project_size_name, language_name FROM painter_input JOIN paint ON paint.id = paint_id JOIN project_location ON project_location.id = project_location_id JOIN project_status  ON project_status.id = project_status_id JOIN project_size ON project_size.id = project_size_id JOIN language_preference ON language_preference_id = language_preference.id ORDER BY painter_input.id ASC;
+
+-- GET information for Exterior special feature scope of checkboxes - Carlos
+
+SELECT
+paintproject_input.id, 															
+isexteriorprep_powerwash,					
+isexteriorprep_scrape,					
+isexteriorprep_mildew,					
+isexteriorwarranty_oneyear,					
+isexteriorwarranty_threeyear,					
+isexteriorwarranty_fiveyear 					
+FROM 					
+paintproject_input 					
+JOIN	client_type	ON	client_type_id	=	client_type.id
+JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
+JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id
+JOIN	language_preference	ON	language_preference_id	=	language_preference.id
+JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;	
