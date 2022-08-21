@@ -1,10 +1,10 @@
 
-const spikeImageReducer = (state = [], action) => {
+const spikeImageReducer = (state = [''], action) => {
     switch (action.type) {
       case 'SET_IMAGE':
-        return action.payload;
-      case 'CLEAR_IMAGE':
-        return state = [];
+        return [...state, action.payload];
+      // case 'CLEAR_IMAGE':
+      //   return state = [];
       default:
         return state;
     }
