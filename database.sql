@@ -53,9 +53,11 @@ CREATE TABLE "paintproject_input" (
 "isexteriorprep_mildew"	BOOLEAN,	
 "isexteriorwarranty_oneyear"	BOOLEAN,	
 "isexteriorwarranty_threeyear"	BOOLEAN,	
-"isexteriorwarranty_fiveyear" 	BOOLEAN);	
+"isexteriorwarranty_fiveyear" 	BOOLEAN,
+"photo_upload_id" INT);
 
-SELECT * FROM "paintproject_input";
+
+SELECT * FROM paintproject_input;
 
 
 CREATE TABLE "client_type" (
@@ -117,6 +119,19 @@ SELECT * FROM "specialfeatureexterior_type";
 
 
 
+CREATE TABLE "photo_upload" (
+	"id" SERIAL PRIMARY KEY,
+	 "photo_upload_path" text NOT NULL,
+	 "photo_upload_description" text NOT NULL);
+	
+	 
+	   
+INSERT INTO "photo_upload" ( "photo_upload_path", "photo_upload_description" ) VALUES ('photopathhere', 'photodescriptionhere');
+ 
+
+SELECT * FROM "photo_upload"; 
+
+
 CREATE TABLE "language_preference" (
   "id" serial primary key,
   "language_preference_name" varchar(255) NOT NULL);
@@ -126,7 +141,6 @@ INSERT INTO "language_preference" ("language_preference_name") VALUES ('Spanish'
 
 SELECT * FROM "language_preference"; 
 
---Insert query that can be used to add intial information to fields
 
 INSERT INTO "paintproject_input" (
 "client_type_id",
@@ -166,11 +180,12 @@ INSERT INTO "paintproject_input" (
 "isexteriorprep_mildew",
 "isexteriorwarranty_oneyear",
 "isexteriorwarranty_threeyear",
-"isexteriorwarranty_fiveyear" )
+"isexteriorwarranty_fiveyear",
+"photo_upload_id" )
 VALUES
 (1,
-'Heather Osborne',
-'Heather Osborne',
+'Heather Osborne2',
+'Heather Osborne2',
 'theoz308@comcast.net',
 '5555555555',
 '2121 Prime Ave',
@@ -191,7 +206,7 @@ true,
 '2022-07-26',
 1,
 1,
-8,
+1,
 'brown',
 true,
 false, 
@@ -205,10 +220,11 @@ true,
 true,
 true,
 false, 
-false);
+false,
+1);
 
 
--- GET for information for all fields in DB
+-- GET for most information in Paint Project DB
 
 SELECT
 paintproject_input.id, 										
@@ -249,19 +265,19 @@ isexteriorprep_scrape,
 isexteriorprep_mildew,					
 isexteriorwarranty_oneyear,					
 isexteriorwarranty_threeyear,					
-isexteriorwarranty_fiveyear 					
+isexteriorwarranty_fiveyear, 
+photo_upload_id					
 FROM 					
 paintproject_input 					
 JOIN	client_type	ON	client_type_id	=	client_type.id
 JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
 JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id
 JOIN	language_preference	ON	language_preference_id	=	language_preference.id
-JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
+JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id
+JOIN    photo_upload	ON	photo_upload_id	=	photo_upload.id;
 
 
-
-
---GET information for Client component Lisette
+-- GET information for Client component Lisette
 SELECT
 paintproject_input.id, 										
 client_type_name,					
@@ -282,7 +298,7 @@ JOIN	client_type	ON	client_type_id	=	client_type.id;
 
 
 
---GET information for Project component - Harrison
+-- GET information for Project component - Harrison
 SELECT
 paintproject_input.id, 															
 project_job_number ,					
@@ -300,7 +316,7 @@ JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
 JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id;
 
 
---GET information for Special Feature component - Andy
+-- GET information for Special Feature component - Andy
 
 SELECT
 paintproject_input.id, 										
@@ -315,7 +331,7 @@ paintproject_input
 JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
 
 
---GET information for Estimate - exterior special feature - Jonathan
+-- GET information for Estimate - exterior special feature - Jonathan
 
 SELECT
 paintproject_input.id, 														
@@ -343,4 +359,15 @@ JOIN	client_type	ON	client_type_id	=	client_type.id
 JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
 JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id
 JOIN	language_preference	ON	language_preference_id	=	language_preference.id
-JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;	
+JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;		
+
+
+-- 	GET  information for photo_upload - Lisette
+
+SELECT 
+paintproject_input.id,
+photo_upload_id, 
+photo_upload_path,
+photo_upload_description
+FROM paintproject_input
+JOIN    photo_upload	ON	photo_upload_id	=	photo_upload.id
