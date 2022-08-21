@@ -21,6 +21,37 @@ class AddClient extends React.Component {
     console.log(event.target.value)
   }
 
+  let clientType = <></>;
+
+  setClientType(event) {
+    switch (event.target.value){
+      case "Homeowner":
+        clientType = <></>;
+        break;
+      case "Business Owner":
+        clientType = <input id="businessName" placeholder="Business Name"></input>
+        <label for="businessName">Business Name</label>;
+        break;
+      case "Contractor/Developer":
+        clientType = <input id="repName" placeholder="Representative Name"></input>
+        <label for="repName">Representative Name</label> <input id="businessName" placeholder="Business Name"></input>
+        <label for="businessName">Business Name</label>;
+        break;
+      case "Realtor/Designer":
+        clientType = <input id="repName" placeholder="Representative Name"></input>
+        <label for="repName">Representative Name</label> <input id="businessName" placeholder="Business Name"></input>
+        <label for="businessName">Business Name</label>;
+        break;
+      case "Landlord/Property Owner":
+        clientType = <input id="repName" placeholder="Representative Name"></input>
+        <label for="repName">Representative Name</label> <input id="businessName" placeholder="Business Name"></input>
+        <label for="businessName">Business Name</label>;
+        break;
+      default:
+        clientType = <></>;
+        break;
+    }
+  }
 
   // const loremPush = () => {
   //   history.push(`/`);
@@ -34,7 +65,7 @@ class AddClient extends React.Component {
           <input type="radio" value="Existing" name="newOrExistingCustomer" /> Existing
         </div>
         <div className="dropdownSelector">
-          <select>
+          <select onChange={event => this.setClientType(event)}>
             <option>Homeowner</option>
             <option>Business Owner</option>
             <option>Contractor/Developer</option>
@@ -43,10 +74,11 @@ class AddClient extends React.Component {
           </select>
         </div>
         <div id="customerTextInputs">
-          <input id="repName" placeholder="Representative Name"></input>
+          {/* <input id="repName" placeholder="Representative Name"></input>
           <label for="repName">Representative Name</label>
           <input id="businessName" placeholder="Business Name"></input>
-          <label for="businessName">Business Name</label>
+          <label for="businessName">Business Name</label> */}
+          {clientType}
           <input id="clientName" placeholder="Client Name"></input>
           <label for="clientName">Client Name</label>
           <input id="decisionMakerName" placeholder="Decision-Maker Name"></input>
@@ -62,11 +94,8 @@ class AddClient extends React.Component {
           <input id="notes" placeholder="Notes"></input>
           <label for="notes">Notes</label>
         </div>
-        <div className="grid">
-
-        </div>
       </div>
   }
 }
 
-export default AddProject;
+export default AddClient;
