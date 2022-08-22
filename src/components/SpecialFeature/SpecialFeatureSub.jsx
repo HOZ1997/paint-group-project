@@ -29,8 +29,8 @@ const Condition = ({ when, is, children }) => (
   </Field>
 )
 
-const AddSpecialFeature = () => {
-  return(
+const SpecialFeatureSub = () => {
+  return (
     {({ handleSubmit, form, submitting, pristine, values }) => (
       <form onSubmit={handleSubmit}>
         <div>
@@ -68,7 +68,6 @@ const AddSpecialFeature = () => {
               Fence
             </option>
           </Field>
-          {/* <Error name="specialFeatureType" /> */}
         </div>
         <div id="specialFeatureStatus">
           <p>Special Feature Status</p>
@@ -95,11 +94,12 @@ const AddSpecialFeature = () => {
           />
         </div>
       </form>
-    )}
-  )
-};
+      );
+    }
+  );
+}
 
-export default AddSpecialFeature;
+export default SpecialFeatureSub;
 
 
 
