@@ -83,6 +83,14 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/addclient"
+          >
+            <AddClient/>
+          </ProtectedRoute>
+
           <Route exact path="/login">
             {user.id ? (
               // If the user is already logged in,
