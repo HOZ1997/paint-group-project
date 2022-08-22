@@ -24,7 +24,9 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 import Projects from "../Projects/Projects";
+import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
+import SpecialFeature from "../SpecialFeature/SpecialFeature";
 
 import "./App.css";
 
@@ -52,6 +54,14 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+
+          <Route
+
+          exact
+          path="/WorkOrder"
+          >
+            <WorkOrder />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -114,6 +124,9 @@ function App() {
           </Route>
           <Route exact path="/addproject">
             <AddProject />
+          </Route>
+          <Route exact path="/specialfeature">
+            <SpecialFeature />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
