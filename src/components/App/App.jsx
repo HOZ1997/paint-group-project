@@ -23,7 +23,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-import SpikeImagePage from "../SpikeImagePage/SpikeImagePage";
+import ImagePage from "../ImagePage/ImagePage";
 
 import "./App.css";
 
@@ -109,8 +109,8 @@ function App() {
             <ProjectInformationPage />
           </Route>
 
-          <Route exact path="/spike-image">
-            <SpikeImagePage />
+          <Route exact path="/image">
+            <ImagePage />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

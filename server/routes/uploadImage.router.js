@@ -8,7 +8,7 @@ const multer = require('multer')
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "spike-image-upload",
+    folder: "image-upload",
   },
 });
 const upload = multer({ storage: storage });

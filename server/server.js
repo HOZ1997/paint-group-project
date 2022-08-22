@@ -11,7 +11,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const projectsListRouter = require('./routes/projectsList.router');
-const spikeRouter = require('./routes/spikeUploadImage.router');
+const imageRouter = require('./routes/uploadImage.router');
 
 // Body parser middleware
 // app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/spikeUploadImage', spikeRouter)
+app.use('/api/uploadImage', imageRouter)
 //app.use('/api/projectsList', projectsListRouter);
 // Serve static files
 app.use(express.static('build'));
