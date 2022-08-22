@@ -4,9 +4,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 // worker Saga: will be fired on "FETCH_CLIENT" actions
 
 
-
-
-
 function* addingClient(action) {
 
   try {

@@ -11,7 +11,7 @@ function AddClient() {
     // a default value of 'Functional Component'
     const dispatch=useDispatch();
     const history = useHistory ();
-    const clienttype=useSelector((store) => store.clienttype);
+    const clienttypes=useSelector((store) => store.clienttype);
     const client=useSelector((store) => store.client );
     const store = useSelector((store )=>store);
      
@@ -87,7 +87,7 @@ function AddClient() {
     const addClient=(event) => {
         // new item object
          const newClientInput ={
-           clienttype_id: selectClientType,
+           client_type_id: selectClientType,
            client_firstlast_name: newClientFirstLastName,
            decision_firstlast_name: newDecisionFirstLastName,
            decision_emailaddress: newDecisionEmailAddress,
@@ -116,16 +116,18 @@ function AddClient() {
         
         <div className="dropdownSelector"> 
     
-            {clienttype.length === 0 ? (
+            {clienttypes.length === 0 ? (
                 <div>Loading...</div>
             ) : (
                 <div>Client Type</div>
             )}
 
-             <h3>{JSON.stringify(clienttype)}</h3>
+            
+             <h3>{JSON.stringify(clienttypes)}</h3>
+            
             <select onChange={changeClientType}>
-                {clienttypes.map(clienttype => (
-                    <option key={clienttype.id} value={clienttype.id}>{clienttype.clienttype_name}</option>
+                {clienttypes.map(client_type => (
+                    <option key={client_type.id} value={client_type.id}>{client_type.client_type_name}</option>
                 ))}
             </select>
 
@@ -147,12 +149,12 @@ function AddClient() {
             <input type="text" placeholder="Project City" onChange={event => setProjectAddressCity(event)}></input>
             <label for="projectState"> Project State</label>
             <input type="text" placeholder="Project State" onChange={event => setProjectAddressState(event)}></input>
-             <label for="projectZip"> Notes</label>
+             <label for="projectZip"> Project Zip</label>
             <input type="text" placeholder="Project Zip" onChange={event => setProjectAddressZip(event)}></input>
-             <label for="projectHouseYear"> Notes</label><br></br>
+             <label for="projectHouseYear"> Project House Year</label><br></br>
             <input type="text" placeholder="Project House Year" onChange={event => setProjectHouseYear(event)}></input>
-            <label for="projectAddressNotes"> Notes</label><br></br>
-            <input type="text" placeholder="notes" onChange={event => setProjectAddressNotes(event)}></input>
+            <label for="projectAddressNotes"> Project Address Notes</label><br></br>
+            <input type="text" placeholder="Project Address Notes" onChange={event => setProjectAddressNotes(event)}></input>
 
             
 

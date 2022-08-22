@@ -26,6 +26,7 @@ import ProjectInformationPage from "../ProjectInformationPage/ProjectInformation
 import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
 
 import "./App.css";
 
