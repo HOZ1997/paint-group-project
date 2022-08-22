@@ -13,12 +13,34 @@ function WorkOrder(props) {
   const [endDate, setEndDate] = useState();
 
   //hooks for checkboxes
-  const [checked, setChecked] = useState(false);
+  const [checkedInterior, setCheckedInterior] = useState(false);
+  const [checkedExterior, setCheckedExterior] = useState(false);
+  const [checkedCabinetry, setCheckedCabinetry] = useState(false);
+  const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
 
 
 
 
   //function for checbox change
+  const handleInteriorCheckboxChange = (event) => {
+    console.log('you selected the interior checkbox');
+    setCheckedInterior(!checkedInterior);
+  };
+
+  const handleExteriorCheckboxChange = (event) => {
+    console.log('you selected the exterior checkbox');
+    setCheckedExterior(!checkedExterior);
+  }
+
+  const handleCabinetryCheckboxChange = (event) => {
+    console.log('you selected the cabinetry checkbox');
+    setCheckedCabinetry(!checkedCabinetry);
+  }
+
+  const handleSpecialFeatureCheckboxChange = (event) => {
+    console.log('you selected the special feature checkbox');
+    setCheckedSpecialFeature(!checkedSpecialFeature);
+  }
 
   return (
     <div>
@@ -47,13 +69,40 @@ function WorkOrder(props) {
           <p>Project Type</p>
 
           <label>
-            <input type='checkbox'></input>
+            <input type='checkbox'
+            checked={checkedInterior}
+            onChange={handleInteriorCheckboxChange}
+            />
             Interior
+          </label>
+
+          <label>
+            <input type='checkbox'
+            checked={checkedExterior}
+            onChange={handleExteriorCheckboxChange}
+            />
+            Exterior
+          </label>
+
+          <label>
+            <input type='checkbox'
+            checked={checkedCabinetry}
+            onChange={handleCabinetryCheckboxChange}
+            />
+            Cabinetry
+          </label>
+
+          <label>
+            <input type='checkbox'
+            checked={checkedSpecialFeature}
+            onChange={handleSpecialFeatureCheckboxChange}
+            />
+            Special Feature
           </label>
 
         </div>
     </div>
   );
-}
+};
 
 export default WorkOrder;
