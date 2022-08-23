@@ -60,7 +60,7 @@ function Projects(props) {
             {projects.map( (project, index) => {
 
               return (
-              <tr key={project.id} onClick={()=>{goToProject(project.id)}}>
+              <tr className="projectsList" key={project.id} onClick={()=>{goToProject(project.id)}}>
                 <td>{project.full_name}</td>
                 <td>{project.address_1}</td>
                 <td >{project.project_status_name}</td>

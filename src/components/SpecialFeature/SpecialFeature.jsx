@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { render } from 'react-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import { Form, Field } from 'react-final-form';
-import SpecialFeatureSub from './SpecialFeatureSub.jsx';
 import './SpecialFeature.css';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-const SpecialFeature = () => {
+let SpecialFeature = () => {
 
-  const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
+
+  const history = useHistory();
 
   return (
     <div>
-      <h2>Special Features?</h2>
-      <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
-      {[...Array(count)].map((_, index) => <SpecialFeatureSub key={index} />)}
+      <h2>Special Features</h2>
     </div>
   )
-};
+
+}
 
 export default SpecialFeature;
