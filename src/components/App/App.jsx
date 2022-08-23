@@ -26,7 +26,7 @@ import ProjectInformationPage from "../ProjectInformationPage/ProjectInformation
 import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
-import SpecialFeature from "../SpecialFeature/SpecialFeature";
+import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 
 import "./App.css";
 
@@ -126,7 +126,7 @@ function App() {
             <AddProject />
           </Route>
           <Route exact path="/specialfeature">
-            <SpecialFeature />
+            <SpecialFeatureBox />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

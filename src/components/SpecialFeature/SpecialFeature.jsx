@@ -42,7 +42,7 @@ let SpecialFeature = () => {
         <h2>Special Features</h2>
         <form>
           <label>
-            Special Feature Type
+            Type
             <select
             name="specialFeatureType"
             value={state.specialFeatureType}
@@ -62,7 +62,7 @@ let SpecialFeature = () => {
           </label>
           <br />
           <label>
-            Special Feature Product
+            Product (Paint, Varnish, etc.)
             <input
               type="text"
               name="specialFeatureProduct"
@@ -161,7 +161,7 @@ let SpecialFeature = () => {
         <h2>Característica Especial</h2>
         <form>
           <label>
-            Tipo de Característica Especial
+            Tipo
             <select
             name="specialFeatureType"
             value={state.specialFeatureType}
@@ -181,7 +181,7 @@ let SpecialFeature = () => {
           </label>
           <br />
           <label>
-            Product de Característica Especial
+            Producto (pintura, barniz, etc.)
             <input
               type="text"
               name="specialFeatureProduct"
