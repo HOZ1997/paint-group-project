@@ -5,7 +5,7 @@ import axios from 'axios';
 function* postURL(action) {
   console.log('IN POST URL SAGA', action.payload);
   try {
-    yield axios.post('/api/spikeUploadImage/database', action.payload );
+    yield axios.post('/api/uploadImage/database', action.payload );
     console.log(' BACK FROM URL POST:', response.data);
   } catch (err) {
     console.log('Error adding image_Saga to DB:', err);
@@ -13,8 +13,8 @@ function* postURL(action) {
   }
 }
 
-function* spikeDBImageSaga() {
-  yield takeLatest('POST_URL', postURL);
+function* databaseImageSaga() {
+  yield takeLatest('SAVE_URLS', postURL);
 }
 
-export default spikeDBImageSaga;
+export default databaseImageSaga;

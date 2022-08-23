@@ -40,6 +40,10 @@ function ImagePage(props) {
     const file = event.target.files[0];
     setImage(file);
   };
+
+  const saveUrls = () => {
+    dispatch({ type: 'SAVE_URLS'})
+  }
   
   const uploadImage = () => {
     console.log( 'TESTING UPLOAD IMAGE', image);
@@ -52,8 +56,7 @@ function ImagePage(props) {
   return (
     <div>
       <h2>Add up to 5 images</h2>
-      <h4>{newUrl}</h4>
-      <input type="file" name='image1' onChange={handleFileInputChange}/>
+      <input type="file" id='imageInput' onChange={handleFileInputChange}/>
       <div id="grid-col">
         <div className="cell"><img src={imageReducer[1]} alt={'Image 1'}/></div> 
         <div className="cell"><img src={imageReducer[2]} alt={'Image 2'}/></div>
@@ -61,7 +64,11 @@ function ImagePage(props) {
         <div className="cell"><img src={imageReducer[4]} alt={'Image 4'}/></div>
         <div className="cell"><img src={imageReducer[5]} alt={'Image 5'}/></div> 
       </div>
+      <div id='buttonDiv'>
+        <button className='button' onClick={saveUrls}>Next</button>
+      </div>
     </div>
+    
   );
 }
 
