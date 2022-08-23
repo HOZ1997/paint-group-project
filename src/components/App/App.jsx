@@ -1,33 +1,26 @@
-import React, { useEffect } from "react";
-import {
-  HashRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
+import {useDispatch, useSelector} from 'react-redux';
 
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from "../AboutPage/AboutPage";
-import UserPage from "../UserPage/UserPage";
-import InfoPage from "../InfoPage/InfoPage";
-import LandingPage from "../LandingPage/LandingPage";
-import LoginPage from "../LoginPage/LoginPage";
-import RegisterPage from "../RegisterPage/RegisterPage";
-import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-import Projects from "../Projects/Projects";
+import AboutPage from '../AboutPage/AboutPage';
+import UserPage from '../UserPage/UserPage';
+import InfoPage from '../InfoPage/InfoPage';
+import LandingPage from '../LandingPage/LandingPage';
+import LoginPage from '../LoginPage/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import ProjectInformationPage from '../ProjectInformationPage/ProjectInformationPage';
+import Projects from '../Projects/Projects';
 import WorkOrder from '../WorkOrder/WorkOrder';
-import AddProject from "../AddProject/AddProject";
+import AddProject from '../AddProject/AddProject';
+import EstimateCost from '../EstimateCost';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +28,7 @@ function App() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({type: 'FETCH_USER'});
   }, [dispatch]);
 
   return (
@@ -50,16 +43,11 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
-          >
+            path="/about">
             <AboutPage />
           </Route>
 
-          <Route
-          
-          exact
-          path="/WorkOrder"
-          >
+          <Route exact path="/WorkOrder">
             <WorkOrder />
           </Route>
 
@@ -70,16 +58,14 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
             <UserPage />
           </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
-          >
+            path="/info">
             <InfoPage />
           </ProtectedRoute>
 
@@ -123,6 +109,9 @@ function App() {
           </Route>
           <Route exact path="/addproject">
             <AddProject />
+          </Route>
+          <Route exact path="/estimateCost">
+            <EstimateCost />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
