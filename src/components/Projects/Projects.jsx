@@ -32,7 +32,7 @@ function Projects(props) {
 
   return (
     <div className="container">
-      <LanguageToggleButton />
+      {/* <LanguageToggleButton />  Commented out for now if Spanish is implemented uncomment */}
 
       {store.language === "english" ?
       (<h2>Projects</h2>) :

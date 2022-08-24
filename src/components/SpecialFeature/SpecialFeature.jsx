@@ -36,10 +36,9 @@ let SpecialFeature = () => {
 
   return (
     <div>
-      <LanguageToggleButton />
+      {/* <LanguageToggleButton /> Removing this functionality for now */}
       {store.language === "english" ? (
       <div>
-        <h2>Special Features</h2>
         <form>
           <label>
             Type
