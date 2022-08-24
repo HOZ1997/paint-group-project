@@ -13,6 +13,9 @@ function EstimateCost() {
 
   const [laborAmount, setLaborAmount] = useState('');
   const [materialAmount, setMaterialAmount] = useState('');
+  const [totalBalance, setTotalBalance] = useState();
+
+  function calculateTotal() {}
 
   return (
     <form>
