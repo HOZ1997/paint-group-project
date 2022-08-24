@@ -18,7 +18,7 @@ import ProjectInformationPage from '../ProjectInformationPage/ProjectInformation
 import Projects from '../Projects/Projects';
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from '../AddProject/AddProject';
-import EstimateCost from '../EstimateCost';
+import EstimateCost from '../EstimateCost/EstimateCost';
 
 import './App.css';
 
@@ -110,7 +110,7 @@ function App() {
           <Route exact path="/addproject">
             <AddProject />
           </Route>
-          <Route exact path="/estimateCost">
+          <Route exact path="/estimatecost">
             <EstimateCost />
           </Route>
 
