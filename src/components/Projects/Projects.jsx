@@ -23,7 +23,7 @@ function Projects(props) {
 
 
   const goToProject = (id) => {
-    history.push(`/information/${id}`);
+    history.push(`/WorkOrder`);
   };
 
   const newProject = () => {
