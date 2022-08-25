@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   console.log('in projects router');
-  const query = `SELECT * FROM painter_input JOIN project_status on painter_input.project_status_id = project_status.id WHERE user_id = $1`;
+  const query = `SELECT * FROM paintproject_input WHERE user_id = $1`;
   const value = [req.user.id]
   pool.query(query, value)
     .then( result => {
