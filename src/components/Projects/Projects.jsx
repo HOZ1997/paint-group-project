@@ -27,7 +27,7 @@ function Projects(props) {
   };
 
   const newProject = () => {
-    history.push(`/addproject`);
+    history.push(`/addclient`);
   };
 
   return (
