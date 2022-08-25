@@ -59,6 +59,11 @@ function WorkOrder(props) {
     setStartDate(event.target.value);
   }
 
+  const handleEndDateChange = () => {
+    console.log('you selected the end date', setEndDate);
+    setEndDate(event.target.value);
+  }
+
 
   //function to capture all inputs
   const handleSubmit = () => {
@@ -143,7 +148,10 @@ function WorkOrder(props) {
           <br/>
           
           <p>Desired Project End Date</p>
-          <input type='date'></input>
+          <input
+          type='date'
+          value={endDate}
+          onChange={handleEndDateChange}></input>
 
         </div>
 
