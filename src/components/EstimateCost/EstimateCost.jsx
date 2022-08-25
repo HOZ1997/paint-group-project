@@ -1,8 +1,8 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
-import {DebounceInput} from 'react-debounce-input';
+// import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
   //   const labor = document.getElementById('laborInput').value;
@@ -10,39 +10,60 @@ function EstimateCost() {
   //   const total = labor + material;
   //   const el = document.getElementById('dne');
   //   el.innerHTML = total;
-  const dispatch = useDispatch;
-  const history = useHistory;
 
-  const [laborAmount, setLaborAmount] = useState('');
-  const [materialAmount, setMaterialAmount] = useState('');
-  const [totalBalance, setTotalBalance] = useState(calculateTotal());
+  // ----- using this.state until connecting to database ----- //
+  const [laborAmount, setLaborAmount] = useState(0);
+  const [materialAmount, setMaterialAmount] = useState(0);
+  const [total, setTotal] = useState(0);
 
-  function calculateTotal() {}
+  const changeLaborAmount = (e) => {
+    setLaborAmount(+e.target.value);
+  };
+
+  const changeMaterialAmount = (e) => {
+    setMaterialAmount(+e.target.value);
+  };
+
+  useEffect(() => {
+    setTotal(laborAmount + materialAmount);
+  }, [laborAmount, materialAmount, total]);
+
+  // --- placeholders until connecting to database --- //
+
+  //   const dispatch = useDispatch;
+  //   const history = useHistory;
+
+  //   const [totalBalance, setTotalBalance] = useState(calculateTotal());
+
+  //   function calculateTotal() {}
 
   return (
     <form>
       <h1>Exterior Estimate Cost</h1>
       <div className="mb-3">
-        <label>Labor Cost: </label>
+        <label>Labor Cost: $</label>
         <input
           type="number"
           id="laborInput"
           value={laborAmount}
-          onChange={(event) => setLaborAmount(event.target.value)}
+          onChange={(e) => changeLaborAmount(e)}
+          step="any"
         />
       </div>
       <div className="mb-3">
-        <label>Material Cost: </label>
+        <label>Material Cost: $</label>
         <input
           type="number"
           id="materialsInput"
           value={materialAmount}
-          onChange={(event) => setMaterialAmount(event.target.value)}
+          onChange={(e) => changeMaterialAmount(e)}
+          step="any"
         />
       </div>
       <br />
       <h4>
-        Total Costs: <span id="totalPrice">0</span>
+        Total Costs: $
+        {total.toLocaleString(undefined, {maximumFractionDigits: 2})}
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
