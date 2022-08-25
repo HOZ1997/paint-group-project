@@ -38,20 +38,16 @@ let SpecialFeatureBox = () => {
   return (
     <div>
       <h2>Special Features</h2>
-      <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
+      <button onClick={addSpecialFeature}>Add Special Feature</button>
       {[...Array(count)].map((_, index) => <div><SpecialFeature key={index} /><br />
-      <button key={(arrayFromCount.length > 0) ? (arrayFromCount[index].buttonID) : 'bean'} onClick={()=>
-          {
-            setCount(count - 1);
-            arrayFromCount.splice(index, 1);
-        }}
-          >Delete</button></div>)}
+      <button key={index + 'b'} onClick={()=> setCount(count - 1)}>Delete</button></div>)}
       {arrayFromCount.length ?
       ( <div>
           <button onClick={addSpecialFeature}>Add Special Feature</button>
           {/* <button key={uuidv4()} onClick={()=>
           {setCount(count - 1)}}
           >Delete</button> */}
+          <br />
         </div>
       ) : (<br />)}
       <button onClick={goToNext} className="nextButton">Continue</button>

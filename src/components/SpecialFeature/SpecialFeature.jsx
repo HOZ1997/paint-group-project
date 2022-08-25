@@ -8,20 +8,22 @@ import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 let SpecialFeature = () => {
+
   const [state, setState] = useState({
     specialFeatureType: '',
     specialFeatureProduct: '',
-    specialFeatureNotes: '',
     primerIsChecked: false,
     patchingIsChecked: false,
-    reshapingIsChecked: false,
-    rotIsChecked: false,
-    caulkingIsChecked: false,
+    //reshapingIsChecked: false,
+    //rotIsChecked: false,
+    //caulkingIsChecked: false,
     scrapingIsChecked: false,
-    otherIsChecked: false,
+    //otherIsChecked: false,
+    specialFeatureNotes: '',
   });
 
   console.log('the current state is:', state);
+
   const dispatch = useDispatch();
 
   const store = useSelector((store) => store);
@@ -31,6 +33,12 @@ let SpecialFeature = () => {
       ...state,
       [event.target.name]: event.target.value,
     });
+  }
+
+  const saveFF = () => {
+    let SFpayload = state;
+    console.log('sending SF data to DB (in SF component now)', payload);
+    dispatch({type: 'SAVE_SF', payload: SFpayload});
   }
 
   return (
@@ -90,7 +98,7 @@ let SpecialFeature = () => {
               onChange={handleChange}
             />
           </label>
-          <br />
+          {/* <br />
           <label>
             Needs Reshaping
             <input
@@ -99,8 +107,8 @@ let SpecialFeature = () => {
               checked={state.reshapingIsChecked}
               onChange={handleChange}
             />
-          </label>
-          <br />
+          </label> */}
+          {/* <br />
           <label>
             Extensive Wood Rot
             <input
@@ -109,8 +117,8 @@ let SpecialFeature = () => {
               checked={state.rotIsChecked}
               onChange={handleChange}
             />
-          </label>
-          <br />
+          </label> */}
+          {/* <br />
           <label>
             Extensive Caulking
             <input
@@ -119,7 +127,7 @@ let SpecialFeature = () => {
               checked={state.caulkingIsChecked}
               onChange={handleChange}
             />
-          </label>
+          </label> */}
           <br />
           <label>
             Extensive Scraping
@@ -130,7 +138,7 @@ let SpecialFeature = () => {
               onChange={handleChange}
             />
           </label>
-          <br />
+          {/* <br />
           <label>
             Other
             <input
@@ -139,7 +147,7 @@ let SpecialFeature = () => {
               checked={state.otherIsChecked}
               onChange={handleChange}
             />
-          </label>
+          </label> */}
           <br />
           <label>
             Notes
@@ -270,6 +278,7 @@ let SpecialFeature = () => {
             />
           </label>
         </form>
+        <button id="saveSF" onClick={saveSF}>Save</button>
       </div>
       )
       }

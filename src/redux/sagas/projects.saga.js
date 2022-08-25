@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-// worker Saga: will be fired on "FETCH_SONGS" actions
 function* fetchProjects() {
   console.log('in fetchProjects');
   try {
@@ -9,7 +8,7 @@ function* fetchProjects() {
     console.log('response in fetchProjects in projectsSaga', response);
     yield put({ type: 'SET_PROJECTS', payload: response.data });
   } catch (error) {
-    console.log('Songs get request failed', error);
+    console.log('Projects get request failed', error);
   }
 }
 
