@@ -37,7 +37,7 @@ function AddClient() {
 
     const changeClientType=(event) => {
         setClientType(event.target.value);
-        console.log('in change clienttype');
+        console.log('in change clienttype', event.target.value);
         }
     const setClientFirstLastName=(event) => {
         setNewClientFirstLastName(event.target.value);
@@ -85,7 +85,11 @@ function AddClient() {
 
 
     const addClient=(event) => {
-        // new item object
+        // if (client_firstlast_name === "" || decision_firstlast_name === "") {
+        //     alert('please fill out all fields.');
+            //break; 
+        // } else {
+            // new item object
          const newClientInput ={
            client_type_id: selectClientType,
            client_firstlast_name: newClientFirstLastName,
@@ -123,9 +127,10 @@ function AddClient() {
             )}
 
             
-             <h3>{JSON.stringify(clienttypes)}</h3>
+             {/* <h3>{JSON.stringify(clienttypes)}</h3> */}
             
             <select onChange={changeClientType}>
+            <option selected="true" disabled="disabled">Select Client Type</option>
                 {clienttypes.map(client_type => (
                     <option key={client_type.id} value={client_type.id}>{client_type.client_type_name}</option>
                 ))}
@@ -139,28 +144,28 @@ function AddClient() {
             <input type="text" placeholder="Decision First and Last Name" onChange={event => setDecisionFirstLastName(event)}></input>
             <label for="decsionMakerEmail"> Decision Maker Email</label>
             <input type="text" placeholder="Decision Maker Email" onChange={event => setDecisionEmailAddress(event)}></input>
-            <label for="decsionMakerPhone"> Decision Make Phone</label>
+            <label for="decsionMakerPhone"> Decision Maker Phone</label>
             <input type="text" placeholder="Decision Maker Phone" onChange={event => setDecisionPhoneNumber(event)}></input>
-            <label for="projectAddress1"> Project Address 1</label>
+            <label for="projectAddress1">Project Address 1</label>
             <input type="text" placeholder="Project Address 1" onChange={event => setProjectAddress1(event)}></input>
-            <label for="projectAddress2"> Project Address 2</label>
+            <label for="projectAddress2">Project Address 2</label>
             <input type="text" placeholder="Project Address 2" onChange={event => setProjectAddress2(event)}></input>
-            <label for="projectCity"> Project City</label>
+            <label for="projectCity">Project City</label>
             <input type="text" placeholder="Project City" onChange={event => setProjectAddressCity(event)}></input>
             <label for="projectState"> Project State</label>
             <input type="text" placeholder="Project State" onChange={event => setProjectAddressState(event)}></input>
-             <label for="projectZip"> Project Zip</label>
-            <input type="text" placeholder="Project Zip" onChange={event => setProjectAddressZip(event)}></input>
-             <label for="projectHouseYear"> Project House Year</label><br></br>
+             <label for="projectZip">Project Zip</label>
+            <input type="text" placeholder=" Project Zip" onChange={event => setProjectAddressZip(event)}></input>
+             <label for="projectHouseYear">House Year</label><br></br>
             <input type="text" placeholder="Project House Year" onChange={event => setProjectHouseYear(event)}></input>
-            <label for="projectAddressNotes"> Project Address Notes</label><br></br>
-            <input type="text" placeholder="Project Address Notes" onChange={event => setProjectAddressNotes(event)}></input>
+            <label for="projectAddressNotes">Address Notes</label><br></br>
+            <input type="text" placeholder=" Project Address Notes" onChange={event => setProjectAddressNotes(event)}></input>
 
             
 
             
       
-            <button button type="button" className="btn" onClick={addClient}>Add Client</button>
+            <button button type="button" className="btn" onClick={addClient}>Next</button>
              
          
             </div>
