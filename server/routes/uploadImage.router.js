@@ -21,8 +21,8 @@ router.post('/', upload.single('file'), (req, res) => {
 
 router.post('/database', (req, res) => {
   console.log('url to database POST:', req.body);
-  const queryString = `INSERT INTO image_spike ( "url", "project_id" ) VALUES ( $1, $2 );`;
-  const values = [req.body, '12']
+  const queryString = `INSERT INTO photo_test ( "photo_upload_path", "user_id" ) VALUES ( $1, $2 );`;
+  const values = [req.body, req.user.id]
   
   pool.query(queryString, values)
     .then(() => res.sendStatus(201))

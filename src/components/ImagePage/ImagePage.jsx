@@ -47,7 +47,7 @@ function ImagePage(props) {
     // let urlArray = [ imageReducer[1], imageReducer[2], imageReducer[3], imageReducer[4], imageReducer[5] ]
     console.log('This is the array of URLs to be sent', imageReducer);
     dispatch({ type: 'SAVE_URLS', payload: imageReducer })
-    history.push( '/estimate' );
+    history.push( '/estimatecost' );
   }
   
   //this function sets up the image format needed to send the user's file path to cloudinary and dispatches it to the image saga
@@ -64,11 +64,11 @@ function ImagePage(props) {
       <h2>Add up to 5 images</h2>
       <input type="file" id='imageInput' onChange={handleFileInputChange}/>
       <div id="grid-col">
-        <div className="cell"><img src={imageReducer[1]} alt={'Image 1'}/></div> 
-        <div className="cell"><img src={imageReducer[2]} alt={'Image 2'}/></div>
-        <div className="cell"><img src={imageReducer[3]} alt={'Image 3'}/></div> 
-        <div className="cell"><img src={imageReducer[4]} alt={'Image 4'}/></div>
-        <div className="cell"><img src={imageReducer[5]} alt={'Image 5'}/></div> 
+        <div className="cell"><img src={imageReducer[0]} alt={'Image 1'}/></div> 
+        <div className="cell"><img src={imageReducer[1]} alt={'Image 2'}/></div>
+        <div className="cell"><img src={imageReducer[2]} alt={'Image 3'}/></div> 
+        <div className="cell"><img src={imageReducer[3]} alt={'Image 4'}/></div>
+        <div className="cell"><img src={imageReducer[4]} alt={'Image 5'}/></div> 
       </div>
       <div id='buttonDiv'>
         <button className='button' onClick={saveUrls}>Next</button>

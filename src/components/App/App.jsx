@@ -139,14 +139,11 @@ function App() {
           <Route exact path="/estimatecost">
             <EstimateCost />
           </Route>
-
           <Route exact path="/image">
             <ImagePage />
           </Route>
-
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
-
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
