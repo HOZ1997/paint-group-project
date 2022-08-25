@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useEffect} from 'react';
 import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 
@@ -19,6 +20,39 @@ import Projects from '../Projects/Projects';
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from '../AddProject/AddProject';
 import EstimateCost from '../EstimateCost/EstimateCost';
+=======
+import React, { useEffect } from "react";
+import {
+  HashRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
+
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+
+import AboutPage from "../AboutPage/AboutPage";
+import UserPage from "../UserPage/UserPage";
+import InfoPage from "../InfoPage/InfoPage";
+import LandingPage from "../LandingPage/LandingPage";
+import LoginPage from "../LoginPage/LoginPage";
+import RegisterPage from "../RegisterPage/RegisterPage";
+import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
+import ImagePage from "../ImagePage/ImagePage";
+import Projects from "../Projects/Projects";
+import WorkOrder from '../WorkOrder/WorkOrder';
+import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
+import ProjectScope from "../projectScope/projectScope";
+>>>>>>> main
 
 import './App.css';
 
@@ -69,6 +103,14 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/addclient"
+          >
+            <AddClient/>
+          </ProtectedRoute>
+
           <Route exact path="/login">
             {user.id ? (
               // If the user is already logged in,
@@ -104,6 +146,9 @@ function App() {
           <Route exact path="/information">
             <ProjectInformationPage />
           </Route>
+          <Route exact path="/scope">
+            <ProjectScope />
+          </Route>
           <Route exact path="/projects">
             <Projects />
           </Route>
@@ -112,6 +157,10 @@ function App() {
           </Route>
           <Route exact path="/estimate">
             <EstimateCost />
+          </Route>
+
+          <Route exact path="/image">
+            <ImagePage />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

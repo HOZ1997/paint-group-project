@@ -28,6 +28,10 @@ function Nav() {
               Home
             </Link>
 
+            <Link className="navLink" to="/addclient">
+              Add Client
+            </Link> 
+
             <Link className="navLink" to="/workOrder">
               Work Order
             </Link>

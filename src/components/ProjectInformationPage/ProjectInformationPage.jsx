@@ -19,7 +19,7 @@ function ProjectInformationPage(props) {
         <div className="projectInformationInputsEnglish">
           <h2>{heading}</h2>
           <p>
-            <strong>Client Name:</strong>
+            {/* ask "Who is this project for?" and create a dropdown  */}
           </p>
           <p>
             <strong>Client Address:</strong>
