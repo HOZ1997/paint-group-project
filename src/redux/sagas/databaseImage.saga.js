@@ -6,7 +6,7 @@ function* postURL(action) {
   console.log('IN POST URL SAGA', action.payload);
   try {
     yield axios.post('/api/uploadImage/database', action.payload );
-    console.log(' BACK FROM URL POST:', response.data);
+    console.log('BACK FROM URL POST');
   } catch (err) {
     console.log('Error adding image_Saga to DB:', err);
     alert('Error adding Image Saga to DB')
