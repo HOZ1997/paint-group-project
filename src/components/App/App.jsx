@@ -26,6 +26,7 @@ import ProjectInformationPage from "../ProjectInformationPage/ProjectInformation
 import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../projectScope/projectScope";
 
 import "./App.css";
@@ -78,6 +79,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/addclient"
+          >
+            <AddClient/>
           </ProtectedRoute>
 
           <Route exact path="/login">
