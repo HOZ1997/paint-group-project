@@ -110,7 +110,7 @@ function App() {
           <Route exact path="/addproject">
             <AddProject />
           </Route>
-          <Route exact path="/estimatecost">
+          <Route exact path="/estimate">
             <EstimateCost />
           </Route>
 

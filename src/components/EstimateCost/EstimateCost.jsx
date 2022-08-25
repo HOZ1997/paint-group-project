@@ -1,6 +1,8 @@
-import {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
+import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
   //   const labor = document.getElementById('laborInput').value;
@@ -13,7 +15,7 @@ function EstimateCost() {
 
   const [laborAmount, setLaborAmount] = useState('');
   const [materialAmount, setMaterialAmount] = useState('');
-  const [totalBalance, setTotalBalance] = useState();
+  const [totalBalance, setTotalBalance] = useState(calculateTotal());
 
   function calculateTotal() {}
 
@@ -43,7 +45,8 @@ function EstimateCost() {
         Total Costs: <span id="totalPrice">0</span>
       </h4>
       <br />
-      <button onClick={() => history.push('/home')}>Next</button>
+      {/* <button onClick={() => history.push('/home')}>Create</button> */}
+      <Button className="btn btn-primary btn-sm">Create</Button>
     </form>
   );
 }
