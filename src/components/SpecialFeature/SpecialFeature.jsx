@@ -29,15 +29,17 @@ let SpecialFeature = () => {
   const store = useSelector((store) => store);
 
   const handleChange = event => {
+    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
     setState({
       ...state,
-      [event.target.name]: event.target.value,
+      [event.target.name]: value,
     });
   }
 
-  const saveFF = () => {
+  const saveSpecialFeature = () => {
     let SFpayload = state;
-    console.log('sending SF data to DB (in SF component now)', payload);
+
+    console.log('sending SF data to DB (in SF component now)', SFpayload);
     dispatch({type: 'SAVE_SF', payload: SFpayload});
   }
 
@@ -159,6 +161,9 @@ let SpecialFeature = () => {
             />
           </label>
         </form>
+        <button id="saveButton" onClick={saveSpecialFeature}>Save</button>
+        <br />
+        <br />
       </div>
       )
       :

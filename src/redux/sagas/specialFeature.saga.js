@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_SONGS" actions
-function* saveSpecialFeature() {
+function* saveSpecialFeature(action) {
   console.log('in fetchProjects');
   try {
     const response = yield axios.post('/api/add_special_feature', action.payload);
