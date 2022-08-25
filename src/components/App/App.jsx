@@ -27,6 +27,7 @@ import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
+import ProjectScope from "../projectScope/projectScope";
 
 import "./App.css";
 
@@ -56,11 +57,7 @@ function App() {
             <AboutPage />
           </Route>
 
-          <Route
-          
-          exact
-          path="/WorkOrder"
-          >
+          <Route exact path="/WorkOrder">
             <WorkOrder />
           </Route>
 
@@ -126,6 +123,9 @@ function App() {
           </Route>
           <Route exact path="/information">
             <ProjectInformationPage />
+          </Route>
+          <Route exact path="/scope">
+            <ProjectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />
