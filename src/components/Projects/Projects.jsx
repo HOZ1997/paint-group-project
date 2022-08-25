@@ -32,7 +32,7 @@ function Projects(props) {
 
   return (
     <div className="container">
-      <LanguageToggleButton />
+      {/* <LanguageToggleButton /> */}
 
       {store.language === "english" ?
       (<h2>Projects</h2>) :
@@ -47,13 +47,13 @@ function Projects(props) {
             <tr>
               <th>Name</th>
               <th>ID</th>
-              <th>Status</th>
+              <th>Phone</th>
             </tr>
             ) : (
             <tr>
               <th>Nombre</th>
               <th>ID</th>
-              <th>Estado</th>
+              <th>Teléfono</th>
             </tr>)}
           </thead>
           <tbody>
@@ -61,9 +61,9 @@ function Projects(props) {
 
               return (
               <tr key={project.id} onClick={()=>{goToProject(project.id)}}>
-                <td>{project.full_name}</td>
-                <td>{project.address_1}</td>
-                <td >{project.project_status_name}</td>
+                <td>{project.client_firstlast_name}</td>
+                <td>100{project.id}</td>
+                <td >{project.decision_phonenumber}</td>
               </tr>
               )
             })}
