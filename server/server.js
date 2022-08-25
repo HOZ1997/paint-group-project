@@ -11,7 +11,6 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 
-const projectsListRouter = require('./routes/projectsList.router');
 const imageRouter = require('./routes/uploadImage.router');
 
 const projectsRouter = require('./routes/projects.router');
