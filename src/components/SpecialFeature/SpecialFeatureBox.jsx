@@ -5,15 +5,16 @@ import './SpecialFeature.css';
 import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import SpecialFeature from './SpecialFeature';
 
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
-
+let count = 0;
 let SpecialFeatureBox = () => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const [specialFeatures, setSpecialFeatures] = useState([]);
+  // const arrayFromCount = [];
 
-  const arrayFromCount = [];
 
   let history = useHistory();
 
@@ -22,26 +23,55 @@ let SpecialFeatureBox = () => {
   }
 
   const addSpecialFeature = () => {
-    setCount(count + 1);
+    // setCount(count + 1);
 
-    const buttonID = count + 'b';
+    // const buttonID = count + 'b';
 
-    let countAndID = {
+    // let countAndID = {
+    //   id: count,
+    //   buttonID: buttonID,
+    // }
+    // arrayFromCount.push(countAndID);
+    count += 1;
+    setSpecialFeatures([...specialFeatures, {
+      specialFeatureType: '',
+      specialFeatureProduct: '',
+      primerIsChecked: true,
+      patchingIsChecked: false,
+      //reshapingIsChecked: false,
+      //rotIsChecked: false,
+      //caulkingIsChecked: false,
+      scrapingIsChecked: false,
+      //otherIsChecked: false,
+      specialFeatureNotes: '',
       id: count,
-      buttonID: buttonID,
-    }
-    arrayFromCount.push(countAndID);
+    }]);
   }
 
+  const handleChange = (index, event) => {
+    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
+    // Copy the array
+    const copyOfFeatures = [...specialFeatures];
+    // Get the item
+    const item = {...copyOfFeatures[index], [event.target.name]: value};
+    copyOfFeatures[index] = item;
+    setSpecialFeatures(copyOfFeatures);
+  }
 
+  const deleteSpecialFeature = (id) => {
+    // Remove feature with id
+    const filteredFeatures = specialFeatures.filter(feature => feature.id !== id);
+    console.log(filteredFeatures);
+    setSpecialFeatures(filteredFeatures);
+  }
 
   return (
     <div>
       <h2>Special Features</h2>
       <button onClick={addSpecialFeature}>Add Special Feature</button>
-      {[...Array(count)].map((_, index) => <div><SpecialFeature key={index} /><br />
-      <button key={index + 'b'} onClick={()=> setCount(count - 1)}>Delete</button></div>)}
-      {arrayFromCount.length ?
+      {specialFeatures.map((feature, index) => <div key={index}><SpecialFeature parentHandleChange={handleChange} state={feature} index={index} /><br />
+      <button key={index + 'b'} onClick={()=> deleteSpecialFeature(feature.id)}>Delete</button></div>)}
+      {specialFeatures.length ?
       ( <div>
           <button onClick={addSpecialFeature}>Add Special Feature</button>
           {/* <button key={uuidv4()} onClick={()=>
