@@ -13,31 +13,48 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 let SpecialFeatureBox = () => {
   const [count, setCount] = useState(0);
 
-  const arrayFromCount = [...Array(count).keys()];
+  const arrayFromCount = [];
 
   let history = useHistory();
 
-  const addSpecialFeature = () => {
-
-  }
-
   const goToNext = () => {
-    //history.push('loremIpsum')    //Figure out next page and put as target
+    history.push('/scope');    //Figure out next page and put as target
   }
+
+  const addSpecialFeature = () => {
+    setCount(count + 1);
+
+    const buttonID = count + 'b';
+
+    let countAndID = {
+      id: count,
+      buttonID: buttonID,
+    }
+    arrayFromCount.push(countAndID);
+  }
+
+
 
   return (
     <div>
       <h2>Special Features</h2>
       <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
-      {[...Array(count)].map((_, index) => <div><SpecialFeature key={index} /><br /></div>)}
+      {[...Array(count)].map((_, index) => <div><SpecialFeature key={index} /><br />
+      <button key={(arrayFromCount.length > 0) ? (arrayFromCount[index].buttonID) : 'bean'} onClick={()=>
+          {
+            setCount(count - 1);
+            arrayFromCount.splice(index, 1);
+        }}
+          >Delete</button></div>)}
       {arrayFromCount.length ?
       ( <div>
-          <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
-          <button key={uuidv4()} onClick={()=>
-          {setCount(count - 1)}}>Delete</button>
+          <button onClick={addSpecialFeature}>Add Special Feature</button>
+          {/* <button key={uuidv4()} onClick={()=>
+          {setCount(count - 1)}}
+          >Delete</button> */}
         </div>
       ) : (<br />)}
-      <button onClick={goToNext()} className="nextButton">Continue</button>
+      <button onClick={goToNext} className="nextButton">Continue</button>
     </div>
   )
 }
