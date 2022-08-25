@@ -16,6 +16,7 @@ const imageRouter = require('./routes/uploadImage.router');
 const projectsRouter = require('./routes/projects.router');
 const clientRouter = require('./routes/client.router');
 const clienttypeRouter = require('./routes/clienttype.router');
+const specialFeatureRouter = require('./routes/specialFeature.router');
 
 // Body parser middleware
 // app.use(bodyParser.json());
@@ -39,6 +40,7 @@ app.use('/api/uploadImage', imageRouter)
 app.use('/api/projects', projectsRouter);
 app.use('/api/client', clientRouter);
 app.use('/api/clienttype', clienttypeRouter);
+app.use('/api/add_special_feature', specialFeatureRouter);
 
 // Serve static files
 app.use(express.static('build'));

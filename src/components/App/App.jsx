@@ -30,6 +30,7 @@ import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../projectScope/projectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
+import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 
 import "./App.css";
 
@@ -141,6 +142,11 @@ function App() {
 
           <Route exact path="/image">
             <ImagePage />
+          </Route>
+
+          <Route exact path="/specialfeature">
+            <SpecialFeatureBox />
+
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

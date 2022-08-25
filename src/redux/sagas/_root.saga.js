@@ -5,8 +5,9 @@ import userSaga from './user.saga';
 import imageSaga from './image.saga';
 import databaseImageSaga from './databaseImage.saga';
 import projectsSaga from './projects.saga';
-import clientSaga from './client.saga'; 
+import clientSaga from './client.saga';
 import clienttypeSaga from './clienttype.saga';
+import specialFeatureSaga from './specialFeature.saga';
 
 
 // rootSaga is the primary saga.
@@ -26,5 +27,6 @@ export default function* rootSaga() {
     projectsSaga(),
     clientSaga(),
     clienttypeSaga(),
+    specialFeatureSaga(),
   ]);
 }
