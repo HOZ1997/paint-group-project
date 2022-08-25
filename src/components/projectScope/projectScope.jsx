@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -11,6 +12,7 @@ function ProjectScope(props) {
   const [heading, setHeading] = useState(
     "Project Scope"
   );
+  const history = useHistory();
 
   return (
     <div className="projectScope">
@@ -27,7 +29,7 @@ function ProjectScope(props) {
               props.dispatch({
                 type: "SET_SCOPE",
                 payload: {
-                    scope: "Preparation",
+                  scope: "Preparation",
                 },
               });
             } else {
@@ -129,6 +131,12 @@ function ProjectScope(props) {
           or accidental damaging occurrences.
         </label>
       </div>
+      {/* create a button that navigates to /images and says "Next" */}
+      <button
+        onClick={() => history.push("/image")}
+      >
+        Next
+      </button>
     </div>
   );
 }
