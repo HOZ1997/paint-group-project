@@ -23,6 +23,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
+import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
@@ -132,6 +133,10 @@ function App() {
           </Route>
           <Route exact path="/addproject">
             <AddProject />
+          </Route>
+
+          <Route exact path="/image">
+            <ImagePage />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
