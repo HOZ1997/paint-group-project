@@ -24,6 +24,11 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 import ImagePage from "../ImagePage/ImagePage";
+import Projects from "../Projects/Projects";
+import WorkOrder from '../WorkOrder/WorkOrder';
+import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
+import ProjectScope from "../projectScope/projectScope";
 
 import "./App.css";
 
@@ -53,6 +58,10 @@ function App() {
             <AboutPage />
           </Route>
 
+          <Route exact path="/WorkOrder">
+            <WorkOrder />
+          </Route>
+
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -71,6 +80,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/addclient"
+          >
+            <AddClient/>
           </ProtectedRoute>
 
           <Route exact path="/login">
@@ -107,6 +124,15 @@ function App() {
           </Route>
           <Route exact path="/information">
             <ProjectInformationPage />
+          </Route>
+          <Route exact path="/scope">
+            <ProjectScope />
+          </Route>
+          <Route exact path="/projects">
+            <Projects />
+          </Route>
+          <Route exact path="/addproject">
+            <AddProject />
           </Route>
 
           <Route exact path="/image">
