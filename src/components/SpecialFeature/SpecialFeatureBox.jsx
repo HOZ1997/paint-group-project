@@ -15,11 +15,21 @@ let SpecialFeatureBox = () => {
 
   const arrayFromCount = [...Array(count).keys()];
 
+  let history = useHistory();
+
+  const addSpecialFeature = () => {
+
+  }
+
+  const goToNext = () => {
+    //history.push('loremIpsum')    //Figure out next page and put as target
+  }
+
   return (
     <div>
       <h2>Special Features</h2>
       <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
-      {arrayFromCount.map((_, index) => <div><SpecialFeature key={index} /><br /></div>)}
+      {[...Array(count)].map((_, index) => <div><SpecialFeature key={index} /><br /></div>)}
       {arrayFromCount.length ?
       ( <div>
           <button onClick={() => setCount(count + 1)}>Add Special Feature</button>
@@ -27,6 +37,7 @@ let SpecialFeatureBox = () => {
           {setCount(count - 1)}}>Delete</button>
         </div>
       ) : (<br />)}
+      <button onClick={goToNext()} className="nextButton">Continue</button>
     </div>
   )
 }

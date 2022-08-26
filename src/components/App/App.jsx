@@ -23,9 +23,13 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
+import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
 import WorkOrder from '../WorkOrder/WorkOrder';
 import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
+import ProjectScope from "../projectScope/projectScope";
+import EstimateCost from "../EstimateCost/EstimateCost";
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 
 import "./App.css";
@@ -56,11 +60,7 @@ function App() {
             <AboutPage />
           </Route>
 
-          <Route
-
-          exact
-          path="/WorkOrder"
-          >
+          <Route exact path="/WorkOrder">
             <WorkOrder />
           </Route>
 
@@ -82,6 +82,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/addclient"
+          >
+            <AddClient/>
           </ProtectedRoute>
 
           <Route exact path="/login">
@@ -119,14 +127,26 @@ function App() {
           <Route exact path="/information">
             <ProjectInformationPage />
           </Route>
+          <Route exact path="/scope">
+            <ProjectScope />
+          </Route>
           <Route exact path="/projects">
             <Projects />
           </Route>
           <Route exact path="/addproject">
             <AddProject />
           </Route>
+          <Route exact path="/estimatecost">
+            <EstimateCost />
+          </Route>
+
+          <Route exact path="/image">
+            <ImagePage />
+          </Route>
+
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
+
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
