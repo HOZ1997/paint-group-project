@@ -57,7 +57,7 @@ CREATE TABLE "paintproject_input" (
 "photo_upload_id" INT);
 
 
-SELECT * FROM paintproject_input;
+SELECT * FROM "paintproject_input";
 
 
 CREATE TABLE "client_type" (
