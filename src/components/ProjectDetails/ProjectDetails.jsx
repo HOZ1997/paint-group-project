@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 function WorkOrder(props) {
 
-  const store = useSelector((store) => store);
+  const projectDetails = useSelector((store) => store.projectDetails);
+  const dispatch = useDispatch();
 
   //hooks for inputs
-  const [property, setProperty] = useState();
-  const [building, setBuilding] = useState();
+  const [property, setProperty] = useState('');
+  const [building, setBuilding] = useState('');
   const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState();
+  const [endDate, setEndDate] = useState('');
 
   //hooks for checkboxes
   const [checkedInterior, setCheckedInterior] = useState(false);
@@ -62,6 +63,23 @@ function WorkOrder(props) {
   const handleEndDateChange = () => {
     console.log('you selected the end date', setEndDate);
     setEndDate(event.target.value);
+    projectDetailsReducer();
+  }
+
+  const projectDetailsReducer = () => {
+    console.log('in projectDetailsReducer function', projectDetails);
+    dispatch ({type: 'SET_PROJECT_DETAILS', payload: projectDetailsInput})
+  }
+
+  const projectDetailsInput = {
+    property_type: property,
+    building_type: building,
+    project_interior: checkedInterior,
+    project_exterior: checkedExterior,
+    project_cabinetry: checkedCabinetry,
+    project_specialFeature: checkedSpecialFeature,
+    project_start_date: startDate,
+    project_end_date: endDate,
   }
 
 
@@ -84,6 +102,7 @@ function WorkOrder(props) {
         <div>
           <p>Property Type</p>
           <select className='property_type' onChange={setPropertyType}>
+            <option selected="true" disabled>Select Property Type</option>
             <option value='residential'>Residential</option>
             <option value='commercial'>Commercial</option>
             <option value='new_construction'>New Construction</option>
@@ -153,10 +172,6 @@ function WorkOrder(props) {
           value={endDate}
           onChange={handleEndDateChange}></input>
 
-        </div>
-
-        <div>
-          <button onClick={handleSubmit}>NEXT PAGE</button>
         </div>
     </div>
   );

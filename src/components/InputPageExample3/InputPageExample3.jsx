@@ -1,6 +1,6 @@
 import React from 'react';
 import AddClient from '../AddClient/AddClient';
-import WorkOrder from '../WorkOrder/WorkOrder';
+import WorkOrder from '../ProjectDetails/ProjectDetails';
 import SpecialFeature from '../SpecialFeature/SpecialFeature';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
