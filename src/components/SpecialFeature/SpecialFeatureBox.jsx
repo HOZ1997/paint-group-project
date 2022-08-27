@@ -15,9 +15,10 @@ let SpecialFeatureBox = () => {
 
 
   let history = useHistory();
+  let dispatch = useDispatch();
 
   const saveSpecialFeature = () => {
-    let SFpayload = state;
+    let SFpayload = specialFeatures;
 
     console.log('sending SF data to DB (in SF component now)', SFpayload);
     dispatch({type: 'SAVE_SF', payload: SFpayload});
@@ -41,7 +42,7 @@ let SpecialFeatureBox = () => {
     setSpecialFeatures([...specialFeatures, {
       specialFeatureType: '',
       specialFeatureProduct: '',
-      primerIsChecked: true,
+      primerIsChecked: false,
       patchingIsChecked: false,
       //reshapingIsChecked: false,
       //rotIsChecked: false,
@@ -83,7 +84,7 @@ let SpecialFeatureBox = () => {
         </div>
       ) : (<br />)}
       {/* <button onClick={goToNext} className="nextButton">Continue</button> */}
-      <button id="saveSF" onClick={saveSF}>Save</button>
+      <button id="saveSF" onClick={saveSpecialFeature}>Save</button>
     </div>
   )
 }
