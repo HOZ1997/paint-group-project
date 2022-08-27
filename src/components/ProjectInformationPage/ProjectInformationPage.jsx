@@ -6,9 +6,6 @@ import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
 import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
 
-import {useSelector} from 'react-redux'
-
-const clientInformation = useSelector((store) => store.client)
 
 
 
