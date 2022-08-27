@@ -32,13 +32,6 @@ let SpecialFeature = ({state, parentHandleChange, index}) => {
     parentHandleChange(index, event);
   }
 
-  const saveSpecialFeature = () => {
-    let SFpayload = state;
-
-    console.log('sending SF data to DB (in SF component now)', SFpayload);
-    dispatch({type: 'SAVE_SF', payload: SFpayload});
-  }
-
   return (
     <div>
       {/* <LanguageToggleButton /> Removing this functionality for now */}
@@ -279,7 +272,6 @@ let SpecialFeature = ({state, parentHandleChange, index}) => {
             />
           </label>
         </form>
-        <button id="saveSF" onClick={saveSF}>Save</button>
       </div>
       )
       }

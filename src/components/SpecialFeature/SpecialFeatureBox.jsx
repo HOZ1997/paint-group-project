@@ -5,8 +5,6 @@ import './SpecialFeature.css';
 import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import SpecialFeature from './SpecialFeature';
 
-// const { v4: uuidv4 } = require('uuid');
-
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 let count = 0;
@@ -17,6 +15,13 @@ let SpecialFeatureBox = () => {
 
 
   let history = useHistory();
+
+  const saveSpecialFeature = () => {
+    let SFpayload = state;
+
+    console.log('sending SF data to DB (in SF component now)', SFpayload);
+    dispatch({type: 'SAVE_SF', payload: SFpayload});
+  }
 
   const goToNext = () => {
     history.push('/scope');    //Figure out next page and put as target
@@ -70,17 +75,15 @@ let SpecialFeatureBox = () => {
       <h2>Special Features</h2>
       <button onClick={addSpecialFeature}>Add Special Feature</button>
       {specialFeatures.map((feature, index) => <div key={index}><SpecialFeature parentHandleChange={handleChange} state={feature} index={index} /><br />
-      <button key={index + 'b'} onClick={()=> deleteSpecialFeature(feature.id)}>Delete</button></div>)}
+      <button onClick={()=> deleteSpecialFeature(feature.id)}>Delete</button></div>)}
       {specialFeatures.length ?
       ( <div>
           <button onClick={addSpecialFeature}>Add Special Feature</button>
-          {/* <button key={uuidv4()} onClick={()=>
-          {setCount(count - 1)}}
-          >Delete</button> */}
           <br />
         </div>
       ) : (<br />)}
-      <button onClick={goToNext} className="nextButton">Continue</button>
+      {/* <button onClick={goToNext} className="nextButton">Continue</button> */}
+      <button id="saveSF" onClick={saveSF}>Save</button>
     </div>
   )
 }
