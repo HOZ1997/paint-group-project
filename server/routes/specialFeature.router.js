@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
   "isspecialfeaturestatus_needprimer",
   "isspecialfeaturestatus_patchedrepair",
   "isspecialfeaturestatus_extensivescraping",
-  "specailfeature_notes")
+  "specialfeature_notes")
   VALUES ($1, $2, $3, $4, $5, $6, $7)`;
   const values = [true, req.body.specialFeatureType, req.body.specialFeatureProduct, req.body.primeIsChecked, req.body.patchingIsChecked, req.body.scrapingIsChecked, req.body.specialFeatureNotes];
   pool.query(addSF, values)
