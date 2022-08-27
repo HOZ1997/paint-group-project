@@ -27,6 +27,7 @@ function Projects(props) {
   };
 
   const newProject = () => {
+    dispatch({type: 'PUSH_NEW_PROJECT'});
     history.push(`/addclient`);
   };
 
@@ -46,14 +47,12 @@ function Projects(props) {
             {store.language === "english" ? (
             <tr>
               <th>Name</th>
-              <th>ID</th>
-              <th>Phone</th>
+              <th>Job Number</th>
             </tr>
             ) : (
             <tr>
               <th>Nombre</th>
-              <th>ID</th>
-              <th>Teléfono</th>
+              <th>Trabajo ID</th>
             </tr>)}
           </thead>
           <tbody>
@@ -63,7 +62,6 @@ function Projects(props) {
               <tr key={project.id} onClick={()=>{goToProject(project.id)}}>
                 <td>{project.client_firstlast_name}</td>
                 <td>100{project.id}</td>
-                <td >{project.decision_phonenumber}</td>
               </tr>
               )
             })}
