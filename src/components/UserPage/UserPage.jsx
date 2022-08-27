@@ -10,9 +10,8 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
-
+      {/* <p>Your ID is: {user.id}</p> */}
+      {/* <LogOutButton className="btn" /> */}
       <Projects />
     </div>
   );

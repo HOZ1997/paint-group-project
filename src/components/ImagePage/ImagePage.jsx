@@ -23,7 +23,7 @@ function ImagePage(props) {
   useEffect(() =>{
     if (image != ''){
       console.log( 'in useEffect');
-      uploadImage();
+      uploadImage();//dispatch your object here
     }
   }, [image]);
 

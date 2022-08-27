@@ -109,7 +109,7 @@ function AddClient() {
         // dispatch with new item as payload
         console.log('in addClient', newClientInput);
         dispatch ({type: 'ADD_CLIENT', payload: newClientInput});
-        history.push ('/addproject');
+        history.push ('/WorkOrder');
         //  <p>{JSON.stringify(newItem)}</p>
     }
     return (

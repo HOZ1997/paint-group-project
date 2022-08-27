@@ -27,7 +27,7 @@ router.post('/database', async (req, res) => {
     await client.query('BEGIN');
     await Promise.all( // Allows for concurrent requests
       photos.map(async (photo) => {
-        const queryString = `INSERT INTO photo_test ( "photo_upload_path", "user_id" ) VALUES ( $1, $2 );`;
+        const queryString = `INSERT INTO photo_upload ( "photo_upload_path", "user_id" ) VALUES ( $1, $2 );`;
         const values = [photo, req.user.id];
         await client.query(queryString, values);
       })
