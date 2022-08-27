@@ -8,14 +8,14 @@ function* addingClient(action) {
 
   try {
     const response = yield axios.post('/api/client/', action.payload);
-    //yield put({ type: 'FETCH_CLIENT', payload: response.data });
+    yield put({ type: 'FETCH_CLIENT', payload: response.data });
     //fetchClient();
   } catch (error) {
     console.log('Add Client post request failed', error);
   }
 }
 
-//This will need to be reworked with reducer using something else 
+
 function* fetchClient() {
   try {
     const response = yield axios.get('/api/client');

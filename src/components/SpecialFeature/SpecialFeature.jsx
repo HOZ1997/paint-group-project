@@ -24,8 +24,6 @@ let SpecialFeature = ({state, parentHandleChange, index}) => {
 
   console.log('the current state is:', state);
 
-  const dispatch = useDispatch();
-
   const store = useSelector((store) => store);
 
   const handleChange = event => {
@@ -150,7 +148,6 @@ let SpecialFeature = ({state, parentHandleChange, index}) => {
             />
           </label>
         </form>
-        <button id="saveButton" onClick={saveSpecialFeature}>Save</button>
         <br />
         <br />
       </div>

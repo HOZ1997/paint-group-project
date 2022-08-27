@@ -56,6 +56,7 @@ CREATE TABLE "paintproject_input" (
 "isexteriorwarranty_fiveyear" 	BOOLEAN,
 "photo_upload_id" INT);
 
+alter sequence paintproject_input_project_job_number_seq restart with 00475;
 
 SELECT * FROM "paintproject_input";
 

@@ -48,6 +48,10 @@ function Nav() {
               Special Features
             </Link>
 
+            <Link className="navLink" to="/proposal">
+              Proposal
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

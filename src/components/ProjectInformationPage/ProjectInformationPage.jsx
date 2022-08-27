@@ -8,7 +8,6 @@ import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
 
 
 
-
 function ProjectInformationPage() {
   return (
     <div className="container">

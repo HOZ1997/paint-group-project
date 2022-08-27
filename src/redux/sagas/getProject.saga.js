@@ -9,7 +9,7 @@ function* getProject() {
     console.log('response in fetchProjects in projectsSaga', response);
     yield put({ type: 'SET_PROJECT', payload: response.data });
   } catch (error) {
-    console.log('Songs get request failed', error);
+    console.log('Project get request failed', error);
   }
 }
 
