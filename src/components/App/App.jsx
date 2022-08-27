@@ -25,7 +25,8 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../xProjectInfoPage/ProjectInfo";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
-import WorkOrder from '../ProjectDetails/ProjectDetails';
+import ProjectDetails from '../ProjectDetails/ProjectDetails';
+import WorkOrder from "../WorkOrder/FalseWorkOrderBackup";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
@@ -69,6 +70,10 @@ function App() {
 
           <Route exact path="/WorkOrder">
             <WorkOrder />
+          </Route>
+
+          <Route exact path="/ProjectDetails">
+            <ProjectDetails />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
