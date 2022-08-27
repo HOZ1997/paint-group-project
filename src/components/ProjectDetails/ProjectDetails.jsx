@@ -18,17 +18,6 @@ function ProjectDetails() {
   // const [checkedCabinetry, setCheckedCabinetry] = useState(false);
   // const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
 
-  //dropdown functions
-
-  // const onPropertyChange = (event) => {
-  //   setProperty(event.target.value);
-  //   const updatedProperty = {
-  //     ...projectDetails,
-  //     property_type: event.target.value
-  //   }
-  //   projectDetailsReducer(updatedProperty);
-  // }
-
   const onInputChange = (key) => (event) => {
     const updatedInput = {
       ...projectDetails,
