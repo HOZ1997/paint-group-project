@@ -17,6 +17,8 @@ const projectsRouter = require('./routes/projects.router');
 const clientRouter = require('./routes/client.router');
 const clienttypeRouter = require('./routes/clienttype.router');
 const specialFeatureRouter = require('./routes/specialFeature.router');
+const newProjectRouter = require('./routes/newProject.router');
+cont getProjectRouter = require('./routes/getProject.router');
 
 // Body parser middleware
 // app.use(bodyParser.json());
@@ -41,6 +43,8 @@ app.use('/api/projects', projectsRouter);
 app.use('/api/client', clientRouter);
 app.use('/api/clienttype', clienttypeRouter);
 app.use('/api/add_special_feature', specialFeatureRouter);
+app.use('/api/new_project', newProjectRouter);
+app.use('/api/get_project', getProjectRouter);
 
 // Serve static files
 app.use(express.static('build'));
