@@ -36,10 +36,6 @@ function Nav() {
               Work Order
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
             <Link className="navLink" to="/projects">
               Projects
             </Link>
