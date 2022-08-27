@@ -7,20 +7,20 @@ import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-let SpecialFeature = () => {
+let SpecialFeature = ({state, parentHandleChange, index}) => {
 
-  const [state, setState] = useState({
-    specialFeatureType: '',
-    specialFeatureProduct: '',
-    primerIsChecked: false,
-    patchingIsChecked: false,
-    //reshapingIsChecked: false,
-    //rotIsChecked: false,
-    //caulkingIsChecked: false,
-    scrapingIsChecked: false,
-    //otherIsChecked: false,
-    specialFeatureNotes: '',
-  });
+  // const [state, setState] = useState({
+  //   specialFeatureType: '',
+  //   specialFeatureProduct: '',
+  //   primerIsChecked: false,
+  //   patchingIsChecked: false,
+  //   //reshapingIsChecked: false,
+  //   //rotIsChecked: false,
+  //   //caulkingIsChecked: false,
+  //   scrapingIsChecked: false,
+  //   //otherIsChecked: false,
+  //   specialFeatureNotes: '',
+  // });
 
   console.log('the current state is:', state);
 
@@ -29,11 +29,7 @@ let SpecialFeature = () => {
   const store = useSelector((store) => store);
 
   const handleChange = event => {
-    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
-    setState({
-      ...state,
-      [event.target.name]: value,
-    });
+    parentHandleChange(index, event);
   }
 
   const saveSpecialFeature = () => {
