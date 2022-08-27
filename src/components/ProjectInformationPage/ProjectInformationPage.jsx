@@ -4,7 +4,7 @@ import WorkOrder from '../ProjectDetails/ProjectDetails';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
-import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
+import SpecialFeature from '../SpecialFeature/SpecialFeature';
 
 
 
@@ -14,7 +14,7 @@ function ProjectInformationPage() {
       <p>Job #:</p>
       <AddClient />
       <WorkOrder />
-      <SpecialFeatureBox />
+      <SpecialFeature />
       <ProjectScope />
       <ImagePage />
       <EstimateCost />

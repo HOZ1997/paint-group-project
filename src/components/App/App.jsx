@@ -18,11 +18,9 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
-// import InfoPage from "../ProjectInformationPage/ProjectInformationPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
-import ProjectInformationPage from "../xProjectInfoPage/ProjectInfo";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
 import ProjectDetails from '../ProjectDetails/ProjectDetails';
@@ -31,14 +29,12 @@ import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
+import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 import Proposal from "../Proposal/Proposal";
 
 // testing displays
-import InputPageExample1 from "../ProjectInformationPage/ProjectInformationPage";
-import InputPageExample2 from "../InputPageExample2/InputPageExample2";
-import InputPageExample3 from "../InputPageExample3/InputPageExample3";
 
 import "./App.css";
 
@@ -88,16 +84,8 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          {/* <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-            <InfoPage />
-          </ProtectedRoute> */}
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
             exact
             path="/addclient"
           >
@@ -136,9 +124,6 @@ function App() {
               <LandingPage />
             )}
           </Route>
-          <Route exact path="/information">
-            <ProjectInformationPage />
-          </Route>
           <Route exact path="/projectScope">
             <projectScope />
           </Route>
@@ -157,21 +142,13 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
-
           <Route exact path="/proposal">
             <Proposal />
           </Route>
-
-      {/* Testing display options */}
-          <Route exact path="/InputPageExample1">
-            <InputPageExample1 />
+          <Route exact path="/ProjectInformationPage">
+            <ProjectInformationPage />
           </Route>
-          <Route exact path="/InputPageExample2">
-            <InputPageExample2 />
-          </Route>
-          <Route exact path="/InputPageExample3">
-            <InputPageExample3 />
-          </Route>
+          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
