@@ -84,7 +84,6 @@ let SpecialFeatureBox = () => {
         </div>
       ) : (<br />)}
       {/* <button onClick={goToNext} className="nextButton">Continue</button> */}
-      <button id="saveSF" onClick={saveSpecialFeature}>Save</button>
     </div>
   )
 }
