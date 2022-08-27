@@ -13,6 +13,11 @@ function ProjectDetails() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
+  const [checkedInterior, setCheckedInterior] = useState(false);
+  const [checkedExterior, setCheckedExterior] = useState(false);
+  const [checkedCabinetry, setCheckedCabinetry] = useState(false);
+  const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
+
   //dropdown functions
   const setPropertyType = (event) => {
     console.log('you selected: ', event.target.value, ' for property type');
@@ -88,7 +93,7 @@ function ProjectDetails() {
 
   return (
     <div>
-      <h2>Project Component</h2>
+      <h2>Project Details</h2>
         <div>
           <p>Property Type</p>
           <select className='property_type' onChange={setPropertyType}>
