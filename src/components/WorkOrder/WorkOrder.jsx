@@ -68,10 +68,9 @@ function WorkOrder(props) {
           <h3>Scope of Work</h3>
           <h4>Prep</h4>
           <ul>
-            <li>Power Wash? {proposal.isexteriorprep_powerwash}</li>
-            <li>Scrape? {proposal.isexteriorprep_scrape}</li>
-            <li>Remove mildew? {proposal.isexteriorprep_mildew}</li>
-            <li>Power Wash? {proposal.isexteriorprep_powerwash}</li>
+            <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
+            <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
+            <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
           </ul>
           <br></br>
         </section>
@@ -81,9 +80,9 @@ function WorkOrder(props) {
           <p>Notes? {proposal.specialfeature_notes}</p>
           <p>Paint Product: {proposal.specialfeature_paintproduct}</p>
           <ul>
-            <li>Primer? {proposal.isspecialfeaturestatus_needprimer}</li>
-            <li>Patch or Repair? {proposal.isspecialfeaturestatus_patchedrepair}</li>
-            <li>Extensive Scraping? {proposal.isspecialfeaturestatus_extensivescraping}</li>
+            <li>Primer? {(proposal.isspecialfeaturestatus_needprimer).toString()}</li>
+            <li>Patch or Repair? {(proposal.isspecialfeaturestatus_patchedrepair).toString()}</li>
+            <li>Extensive Scraping? {(proposal.isspecialfeaturestatus_extensivescraping).toString()}</li>
 
           </ul>
         </section>
