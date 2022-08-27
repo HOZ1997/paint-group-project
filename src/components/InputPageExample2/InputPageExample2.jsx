@@ -1,25 +1,23 @@
 import React from 'react';
 import AddClient from '../AddClient/AddClient';
 import WorkOrder from '../WorkOrder/WorkOrder';
+import SpecialFeature from '../SpecialFeature/SpecialFeature';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
-import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
 
-
-function ProjectInformationPage() {
+function InputPageExample2() {
   return (
     <div className="container">
-      <p>Job #:</p>
+      <p>InputPageExample2</p>
+
       <AddClient />
       <WorkOrder />
-      <SpecialFeatureBox />
+      <SpecialFeature />
       <ProjectScope />
-      <ImagePage />
-      <EstimateCost />
-
+      
     </div>
   );
 }
 
-export default ProjectInformationPage;
+export default InputPageExample2;
