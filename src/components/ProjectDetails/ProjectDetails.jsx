@@ -34,9 +34,9 @@ function ProjectDetails() {
     projectDetailsReducer(updatedCheckbox);
   }
 
-  const projectDetailsReducer = (updatedProperty) => {
+  const projectDetailsReducer = (updatedInput) => {
     console.log('in projectDetailsReducer function', projectDetails);
-    dispatch ({type: 'SET_PROJECT_DETAILS', payload: updatedProperty})
+    dispatch ({type: 'SET_PROJECT_DETAILS', payload: updatedInput})
   }
 
   return (
@@ -46,21 +46,21 @@ function ProjectDetails() {
           <p>Property Type</p>
           <select className='property_type' onChange={onInputChange('property_type')}>
             <option selected="true" disabled>Select Property Type</option>
-            <option value='residential'>Residential</option>
-            <option value='commercial'>Commercial</option>
-            <option value='new_construction'>New Construction</option>
+            <option value='1'>Residential</option>
+            <option value='2'>Commercial</option>
+            <option value='3'>New Construction</option>
           </select>
 
           <p>Bulding Type</p>
 
           <select className='building_type' onChange={onInputChange('building_type')}>
-            <option value='single_family_home'>Single Family Home</option>
-            <option value='commercial_building'>Commercial Building</option>
-            <option value='apartment'>Apartment</option>
-            <option value='condo'>Condo</option>
-            <option value='duplex'>Duplex</option>
-            <option value='loft'>Loft</option>
-            <option value='multi_tenant'>Multi-tenant</option>
+            <option value='1'>Single Family Home</option>
+            <option value='2'>Commercial Building</option>
+            <option value='3'>Apartment</option>
+            <option value='4'>Condo</option>
+            <option value='5'>Duplex</option>
+            <option value='6'>Loft</option>
+            <option value='7'>Multi-tenant</option>
           </select>
 
           <p>Project Type</p>
