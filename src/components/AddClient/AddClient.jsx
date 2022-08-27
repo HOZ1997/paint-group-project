@@ -38,28 +38,35 @@ function AddClient() {
     const changeClientType=(event) => {
         setClientType(event.target.value);
         console.log('in change clienttype', event.target.value);
+        addClient();
         }
     const setClientFirstLastName=(event) => {
         setNewClientFirstLastName(event.target.value);
         console.log('in change client first last name');
+        addClient();
         }
     const setDecisionFirstLastName=(event) => {
          setNewDecisionFirstLastName(event.target.value);
+         addClient();
          }
      const setDecisionEmailAddress=(event) => {
          setNewDecisionEmailAddress(event.target.value);
+         addClient();
          }
 
       const setDecisionPhoneNumber=(event) => {
          setNewDecisionPhoneNumber(event.target.value);
+         addClient();
          }
 
         const setProjectAddress1=(event) => {
         setNewProjectAddress1(event.target.value);
+        addClient();
           }
 
           const setProjectAddress2=(event) => {
             setNewProjectAddress2(event.target.value);
+            addClient();
           }
 
           const setProjectAddressCity=(event) => {
@@ -68,17 +75,21 @@ function AddClient() {
 
             const setProjectAddressState=(event) => {
             setNewProjectAddressState(event.target.value);
+            addClient();
              }
 
          const setProjectAddressZip=(event) => {
           setNewProjectAddressZip(event.target.value);
+          addClient();
              }
         const setProjectHouseYear=(event) => {
          setNewProjectHouseYear(event.target.value);
+         addClient();
          }
 
         const setProjectAddressNotes=(event) => {
          setNewProjectAddressNotes(event.target.value);
+         addClient();
          }
 
 
@@ -108,8 +119,8 @@ function AddClient() {
         }
         // dispatch with new item as payload
         console.log('in addClient', newClientInput);
-        dispatch ({type: 'ADD_CLIENT', payload: newClientInput});
-        history.push ('/WorkOrder');
+         dispatch ({type: 'SET_CLIENT', payload: newClientInput});
+          // history.push ('/project');
         //  <p>{JSON.stringify(newItem)}</p>
     }
     return (
@@ -165,7 +176,7 @@ function AddClient() {
 
             
       
-            <button button type="button" className="btn" onClick={addClient}>Next</button>
+            {/* <button button type="button" className="btn" onClick={addClient}>Next</button> */}
              
          
             </div>
