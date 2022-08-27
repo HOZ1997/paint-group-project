@@ -5,11 +5,11 @@ const router = express.Router();
 router.post('/', (req, res) => {
   console.log('req.body:', req.body);
   const newProject = `
-  INSERT INTO "paintproject_input" ("primary_key") VALUES (NULL)`;
+  INSERT INTO paintproject_input DEFAULT VALUES`;
   const values = [];
   pool.query(newProject)
   .then(result => {
-    console.log('added to paintproject_input');
+    console.log('added new row (project) to paintproject_input');
   }).catch(err => {
     console.log('problem adding new project', err);
     res.sendStatus(500);
@@ -25,7 +25,7 @@ router.put('/', (req, res) => {
   .then(result => {
     console.log('added to paintproject_input');
   }).catch(err => {
-    console.log('problem adding new project', err);
+    console.log('problem updating project', err);
     res.sendStatus(500);
   });
 });
