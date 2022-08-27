@@ -26,7 +26,7 @@ import ProjectInformationPage from "../xProjectInfoPage/ProjectInfo";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
 import ProjectDetails from '../ProjectDetails/ProjectDetails';
-import WorkOrder from "../WorkOrder/FalseWorkOrderBackup";
+import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
