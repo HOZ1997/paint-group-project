@@ -7,7 +7,7 @@ import './WorkOrder.css';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-function Proposal(props) {
+function WorkOrder(props) {
  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
 
@@ -95,4 +95,4 @@ function Proposal(props) {
   );
 }
 
-export default Proposal;
+export default WorkOrder;
