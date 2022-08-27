@@ -59,6 +59,7 @@ CREATE TABLE "paintproject_input" (
 
 SELECT * FROM "paintproject_input";
 
+alter sequence paintproject_input_project_job_number_seq restart with 00475;
 
 CREATE TABLE "client_type" (
   "id" serial primary key,
