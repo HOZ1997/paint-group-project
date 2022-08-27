@@ -24,6 +24,8 @@ function Proposal(props) {
   };
 
   return (
+
+    // <div>{(JSON.stringify(proposal))}</div>
     <div>
     {(proposal.length === 0) ? <p>...loading...</p> : (
     <div className="container">
@@ -55,7 +57,7 @@ function Proposal(props) {
       </section>
       <section id="proposalPhotos">
         <h3>Pictures</h3>
-        {/* {proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet */}
+
         <img src="/images/FellaPainting.png"></img>
         <img src="/images/CartoonPainting.png"></img><br></br>
         <img src="/images/MoreFriends.png"></img>
@@ -65,16 +67,16 @@ function Proposal(props) {
         <h3>Scope of Work</h3>
         <h4>Prep</h4>
         <ul>
-          <li>Power Wash? {proposal.isexteriorprep_powerwash}</li>
-          <li>Scrape? {proposal.isexteriorprep_scrape}</li>
-          <li>Remove mildew? {proposal.isexteriorprep_mildew}</li>
-          <li>Power Wash? {proposal.isexteriorprep_powerwash}</li>
+          <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
+          <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
+          <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
+          <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
         </ul>
         <h4>Warranty</h4>
         <ul>
-        <li>One Year?{proposal.isexteriorwarranty_oneyear}</li>
-        <li>Three Year? {proposal.isexteriorwarranty_threeyear}</li>
-        <li>Five Year? {proposal.isexteriorwarranty_fiveyear}</li>
+        <li>One Year?{(proposal.isexteriorwarranty_oneyear).toString()}</li>
+        <li>Three Year? {(proposal.isexteriorwarranty_threeyear).toString()}</li>
+        <li>Five Year? {(proposal.isexteriorwarranty_fiveyear).toString()}</li>
         </ul>
         <hr></hr>
         <br></br>
@@ -85,9 +87,9 @@ function Proposal(props) {
         <p>Notes? {proposal.specialfeature_notes}</p>
         <p>Paint Product: {proposal.specialfeature_paintproduct}</p>
         <ul>
-          <li>Primer? {proposal.isspecialfeaturestatus_needprimer}</li>
-          <li>Patch or Repair? {proposal.isspecialfeaturestatus_patchedrepair}</li>
-          <li>Extensive Scraping? {proposal.isspecialfeaturestatus_extensivescraping}</li>
+          <li>Primer? {(proposal.isspecialfeaturestatus_needprimer).toString()}</li>
+          <li>Patch or Repair? {(proposal.isspecialfeaturestatus_patchedrepair).toString()}</li>
+          <li>Extensive Scraping? {(proposal.isspecialfeaturestatus_extensivescraping).toString()}</li>
 
         </ul>
       </section>
@@ -111,3 +113,6 @@ function Proposal(props) {
 }
 
 export default Proposal;
+
+
+//Photo Map --->{proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet
