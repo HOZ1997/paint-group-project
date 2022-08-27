@@ -18,7 +18,7 @@ const clientRouter = require('./routes/client.router');
 const clienttypeRouter = require('./routes/clienttype.router');
 const specialFeatureRouter = require('./routes/specialFeature.router');
 const newProjectRouter = require('./routes/newProject.router');
-cont getProjectRouter = require('./routes/getProject.router');
+const getProjectRouter = require('./routes/getProject.router');
 
 // Body parser middleware
 // app.use(bodyParser.json());

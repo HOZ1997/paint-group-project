@@ -31,6 +31,7 @@ import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
+import Proposal from "../Proposal/Proposal";
 
 // testing displays
 import InputPageExample1 from "../ProjectInformationPage/ProjectInformationPage";
@@ -150,6 +151,9 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
+          <Route exact path="/proposal">
+            <Proposal />
+          </Route>
 
       {/* Testing display options */}
           <Route exact path="/InputPageExample1">
@@ -161,7 +165,7 @@ function App() {
           <Route exact path="/InputPageExample3">
             <InputPageExample3 />
           </Route>
-          
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>

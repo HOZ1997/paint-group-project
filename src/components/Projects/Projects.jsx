@@ -61,7 +61,7 @@ function Projects(props) {
               return (
               <tr key={project.id} onClick={()=>{goToProject(project.id)}}>
                 <td>{project.client_firstlast_name}</td>
-                <td>100{project.id}</td>
+                <td>00{project.project_job_number}</td>
               </tr>
               )
             })}
