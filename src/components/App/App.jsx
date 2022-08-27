@@ -18,18 +18,19 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
-import InfoPage from "../ProjectInformationPage/ProjectInformationPage";
+// import InfoPage from "../ProjectInformationPage/ProjectInformationPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ProjectInformationPage from "../xProjectInfoPage/ProjectInfo";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
-import WorkOrder from '../WorkOrder/WorkOrder';
+import WorkOrder from '../ProjectDetails/ProjectDetails';
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
+
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 import Proposal from "../Proposal/Proposal";
 
@@ -82,13 +83,13 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
+          {/* <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
           >
             <InfoPage />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
@@ -133,8 +134,8 @@ function App() {
           <Route exact path="/information">
             <ProjectInformationPage />
           </Route>
-          <Route exact path="/scope">
-            <ProjectScope />
+          <Route exact path="/projectScope">
+            <projectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />
@@ -151,6 +152,7 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
+
           <Route exact path="/proposal">
             <Proposal />
           </Route>
