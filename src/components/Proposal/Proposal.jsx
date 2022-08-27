@@ -17,8 +17,7 @@ function Proposal(props) {
 
   const history = useHistory();
 
-  const store = useSelector((store) => store);
-
+  const store = useSelector((store) => store.getProject);
 
   const newProject = () => {
     history.push(``);
@@ -26,8 +25,19 @@ function Proposal(props) {
 
   return (
     <div className="container">
-      {JSON.stringify(store)}
+      <section id="frontPage">
+        {JSON.stringify(store)}
+      </section>
+      <section id="jobIntro">
 
+      </section>
+      <section id="clientDetails">
+
+      </section>
+      <section id="proposalPhotos">
+
+      </section>
+      <section id="scopeOfWork"></section>
     </div>
   );
 }

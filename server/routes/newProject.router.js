@@ -5,7 +5,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
   console.log('req.body:', req.body);
   const newProject = `
-  INSERT INTO paintproject_input DEFAULT VALUES`;
+  INSERT INTO paintproject_input ("project_job_number") VALUES (DEFAULT)`;
   const values = [];
   pool.query(newProject)
   .then(result => {
