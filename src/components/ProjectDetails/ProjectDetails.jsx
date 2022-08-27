@@ -8,87 +8,35 @@ function ProjectDetails() {
   const dispatch = useDispatch();
 
   //hooks for inputs
-  const [property, setProperty] = useState('');
-  const [building, setBuilding] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  // const [property, setProperty] = useState('');
+  // const [building, setBuilding] = useState('');
+  // const [startDate, setStartDate] = useState('');
+  // const [endDate, setEndDate] = useState('');
 
-  const [checkedInterior, setCheckedInterior] = useState(false);
-  const [checkedExterior, setCheckedExterior] = useState(false);
-  const [checkedCabinetry, setCheckedCabinetry] = useState(false);
-  const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
+  // const [checkedInterior, setCheckedInterior] = useState(false);
+  // const [checkedExterior, setCheckedExterior] = useState(false);
+  // const [checkedCabinetry, setCheckedCabinetry] = useState(false);
+  // const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
 
-  //dropdown functions
-  const setPropertyType = (event) => {
-    console.log('you selected: ', event.target.value, ' for property type');
-    setProperty(event.target.value);
+  const onInputChange = (key) => (event) => {
+    const updatedInput = {
+      ...projectDetails,
+      [key]: event.target.value
+    }
+    projectDetailsReducer(updatedInput);
   }
 
-  const setBuildingType = (event) => {
-    console.log('you selected: ', event.target.value, ' for building type');
-    setBuilding(event.target.value);
+  const onCheckboxChange = (key) => (event) => {
+    const updatedCheckbox = {
+      ...projectDetails,
+      [key]: event.target.checked
+    }
+    projectDetailsReducer(updatedCheckbox);
   }
 
-  const handleInteriorCheckboxChange = (event) => {
-    console.log('you selected the interior checkbox');
-    setCheckedInterior(!checkedInterior);
-  }
-
-  const handleExteriorCheckboxChange = (event) => {
-    console.log('you selected the exterior checkbox');
-    setCheckedExterior(!checkedExterior);
-  }
-
-  const handleCabinetryCheckboxChange = (event) => {
-    console.log('you selected the cabinetry checkbox');
-    setCheckedCabinetry(!checkedCabinetry);
-  }
-
-  const handleSpecialFeatureCheckboxChange = (event) => {
-    console.log('you selected the special feature checkbox');
-    setCheckedSpecialFeature(!checkedSpecialFeature);
-  }
-
-  //function for date change
-  const handleStartDateChange = () => {
-    console.log('you selected the start date', setStartDate);
-    setStartDate(event.target.value);
-  }
-
-  const handleEndDateChange = () => {
-    console.log('you selected the end date', setEndDate);
-    setEndDate(event.target.value);
-    projectDetailsReducer();
-  }
-
-  const projectDetailsReducer = () => {
+  const projectDetailsReducer = (updatedProperty) => {
     console.log('in projectDetailsReducer function', projectDetails);
-    dispatch ({type: 'SET_PROJECT_DETAILS', payload: projectDetailsInput})
-  }
-
-  const projectDetailsInput = {
-    property_type: property,
-    building_type: building,
-    project_interior: checkedInterior,
-    project_exterior: checkedExterior,
-    project_cabinetry: checkedCabinetry,
-    project_specialFeature: checkedSpecialFeature,
-    project_start_date: startDate,
-    project_end_date: endDate,
-  }
-
-
-  //function to capture all inputs
-  const handleSubmit = () => {
-    console.log('you submitted the form');
-    console.log('property: ', property);
-    console.log('building: ', building);
-    console.log('start date: ', startDate);
-    console.log('end date: ', endDate);
-    console.log('interior: ', checkedInterior);
-    console.log('exterior: ', checkedExterior);
-    console.log('cabinetry: ', checkedCabinetry);
-    console.log('special feature: ', checkedSpecialFeature);
+    dispatch ({type: 'SET_PROJECT_DETAILS', payload: updatedProperty})
   }
 
   return (
@@ -96,7 +44,7 @@ function ProjectDetails() {
       <h2>Project Details</h2>
         <div>
           <p>Property Type</p>
-          <select className='property_type' onChange={setPropertyType}>
+          <select className='property_type' onChange={onInputChange('property_type')}>
             <option selected="true" disabled>Select Property Type</option>
             <option value='residential'>Residential</option>
             <option value='commercial'>Commercial</option>
@@ -105,7 +53,7 @@ function ProjectDetails() {
 
           <p>Bulding Type</p>
 
-          <select className='building_type' onChange={setBuildingType}>
+          <select className='building_type' onChange={onInputChange('building_type')}>
             <option value='single_family_home'>Single Family Home</option>
             <option value='commercial_building'>Commercial Building</option>
             <option value='apartment'>Apartment</option>
@@ -119,32 +67,32 @@ function ProjectDetails() {
 
           <label>
             <input type='checkbox'
-            checked={checkedInterior}
-            onChange={handleInteriorCheckboxChange}
+            checked={projectDetails.project_interior}
+            onChange={onCheckboxChange('project_interior')}
             />
             Interior
           </label>
 
           <label>
             <input type='checkbox'
-            checked={checkedExterior}
-            onChange={handleExteriorCheckboxChange}
+            checked={projectDetails.project_exterior}
+            onChange={onCheckboxChange('project_exterior')}
             />
             Exterior
           </label>
 
           <label>
             <input type='checkbox'
-            checked={checkedCabinetry}
-            onChange={handleCabinetryCheckboxChange}
+            checked={projectDetails.project_cabinetry}
+            onChange={onCheckboxChange('project_cabinetry')}
             />
             Cabinetry
           </label>
 
           <label>
             <input type='checkbox'
-            checked={checkedSpecialFeature}
-            onChange={handleSpecialFeatureCheckboxChange}
+            checked={projectDetails.project_specialFeature}
+            onChange={onCheckboxChange('project_specialFeature')}
             />
             Special Feature
           </label>
@@ -155,8 +103,8 @@ function ProjectDetails() {
           <p>Desired Project Start Date</p>
           <input
           type='date'
-          value={startDate}
-          onChange={handleStartDateChange}
+          value={projectDetails.project_start_date}
+          onChange={onInputChange('project_start_date')}
           ></input>
 
           <br/>
@@ -164,8 +112,9 @@ function ProjectDetails() {
           <p>Desired Project End Date</p>
           <input
           type='date'
-          value={endDate}
-          onChange={handleEndDateChange}></input>
+          value={projectDetails.project_end_date}
+          onChange={onInputChange('project_end_date')}
+          ></input>
         </div>
     </div>
   );
