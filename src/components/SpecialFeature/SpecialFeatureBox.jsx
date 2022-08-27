@@ -7,14 +7,16 @@ import SpecialFeature from './SpecialFeature';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
-let count = 0;
+// let count = 0;
 let SpecialFeatureBox = () => {
   // const [count, setCount] = useState(0);
   const [specialFeatures, setSpecialFeatures] = useState([]);
   // const arrayFromCount = [];
 
 
-  let history = useHistory();
+
+
+  // let history = useHistory();
   let dispatch = useDispatch();
 
   const saveSpecialFeature = () => {
@@ -24,9 +26,9 @@ let SpecialFeatureBox = () => {
     dispatch({type: 'SAVE_SF', payload: SFpayload});
   }
 
-  const goToNext = () => {
-    history.push('/scope');    //Figure out next page and put as target
-  }
+  // const goToNext = () => {
+  //   history.push('/scope');    //Figure out next page and put as target
+  // }
 
   const addSpecialFeature = () => {
     // setCount(count + 1);
@@ -38,19 +40,15 @@ let SpecialFeatureBox = () => {
     //   buttonID: buttonID,
     // }
     // arrayFromCount.push(countAndID);
-    count += 1;
+    // count += 1;
     setSpecialFeatures([...specialFeatures, {
       specialFeatureType: '',
       specialFeatureProduct: '',
       primerIsChecked: false,
       patchingIsChecked: false,
-      //reshapingIsChecked: false,
-      //rotIsChecked: false,
-      //caulkingIsChecked: false,
       scrapingIsChecked: false,
-      //otherIsChecked: false,
       specialFeatureNotes: '',
-      id: count,
+      // id: count,
     }]);
   }
 
@@ -64,12 +62,12 @@ let SpecialFeatureBox = () => {
     setSpecialFeatures(copyOfFeatures);
   }
 
-  const deleteSpecialFeature = (id) => {
-    // Remove feature with id
-    const filteredFeatures = specialFeatures.filter(feature => feature.id !== id);
-    console.log(filteredFeatures);
-    setSpecialFeatures(filteredFeatures);
-  }
+  // const deleteSpecialFeature = (id) => {
+  //   // Remove feature with id
+  //   const filteredFeatures = specialFeatures.filter(feature => feature.id !== id);
+  //   console.log(filteredFeatures);
+  //   setSpecialFeatures(filteredFeatures);
+  // }
 
   return (
     <div>
