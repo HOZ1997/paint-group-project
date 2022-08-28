@@ -13,11 +13,7 @@ function ImagePage(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const imageReducer = useSelector((store) => store.imageReducer);
-  // const [ url, setUrl] = useState('');
   const [image, setImage] = useState('');
-
-  
-  // let urlArray = ['test'];
   
   //this runs uploadImage every time the hook 'image' is changed
   useEffect(() =>{
@@ -61,17 +57,16 @@ function ImagePage(props) {
 
   return (
     <div>
-      <h2>Add up to 5 images</h2>
+      <h2>Add up to 4 images</h2>
       <input type="file" id='imageInput' onChange={handleFileInputChange}/>
       <div id="grid-col">
-        <div className="cell"><img src={imageReducer[0]} alt={'Image 1'}/></div> 
-        <div className="cell"><img src={imageReducer[1]} alt={'Image 2'}/></div>
-        <div className="cell"><img src={imageReducer[2]} alt={'Image 3'}/></div> 
-        <div className="cell"><img src={imageReducer[3]} alt={'Image 4'}/></div>
-        <div className="cell"><img src={imageReducer[4]} alt={'Image 5'}/></div> 
-      </div>
-      <div id='buttonDiv'>
-        <button className='button' onClick={saveUrls}>Next</button>
+        {imageReducer.map((img) => {
+          return(
+              <div className="cell">
+              <img src={img} key={img.id} alt={'Image'}/>
+              </div>  
+              );
+            })}
       </div>
     </div>
     
