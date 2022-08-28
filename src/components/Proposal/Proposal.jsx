@@ -74,11 +74,10 @@ function Proposal(props) {
                 <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
                 <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
                 <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
-                <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
               </ul>
               <h4>Warranty</h4>
               <ul>
-              <li>One Year?{(proposal.isexteriorwarranty_oneyear).toString()}</li>
+              <li>One Year? {(proposal.isexteriorwarranty_oneyear).toString()}</li>
               <li>Three Year? {(proposal.isexteriorwarranty_threeyear).toString()}</li>
               <li>Five Year? {(proposal.isexteriorwarranty_fiveyear).toString()}</li>
               </ul>
