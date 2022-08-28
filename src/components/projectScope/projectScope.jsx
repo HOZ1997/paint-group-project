@@ -1,81 +1,96 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import './ProjectScope.css';
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
-function ProjectScope(props) {
+function ProjectScope() {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
+  const projectScope = useSelector((store) => store.projectScope);
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [heading, setHeading] = useState(
     "Project Scope"
   );
-  const history = useHistory();
+  
+
+  const onCheckboxChange = (key) => (event) => {
+    const updatedCheckbox = {
+      ...projectScope,
+      [key]: event.target.checked
+    }
+    projectScopeReducer(updatedCheckbox);
+  }
+
+  const onRadioboxChange = (key) => (event) => {
+    const updatedRadiobox = {
+      ...projectScope,
+      [key]: event.target.checked
+    }
+    projectScopeReducer(updatedRadiobox);
+  }
+
+
+  const projectScopeReducer = (updatedInput) => {
+    console.log('in projectScopeReducer function', projectScope);
+    dispatch ({type: 'SET_PROJECT_SCOPE', payload: updatedInput})
+  }
 
   return (
     <div className="projectScope">
-      <h3>Preparation</h3>
+      <h2>Preparation</h2>
 
       <div className="checkboxClass">
-        <input
-          type="checkbox"
-          name="Preparation"
-          value="powerWash"
-          //if checked, set the state to true and send a dispatch to saga to update the database
-          onChange={(e) => {
-            if (e.target.checked) {
-              props.dispatch({
-                type: "SET_SCOPE",
-                payload: {
-                  scope: "Preparation",
-                },
-              });
-            } else {
-              props.dispatch({
-                type: "UNSET_SCOPE",
-                payload: {
-                  scope: "powerWash",
-                },
-              });
-            }
-          }}
-        />
-        <label>
-          Power wash all paintable surfaces.
-        </label>
+    
+
+            <label>
+            <input type='checkbox'
+            checked={projectScope.isexteriorprep_powerwash}
+            onChange={onCheckboxChange('isexteriorprep_powerwash')}
+            />
+            Power wash all paintable surfaces.
+          </label>
+          <br></br>
         <br></br>
-        <input
-          type="checkbox"
-          name="Preparation"
-          value="Chip"
-        />
-        <label>
-          Scrape all loose and chipping surfaces.
-        </label>
+  
+
+            <label>
+            <input type='checkbox'
+            checked={projectScope.isexteriorprep_scrape}
+            onChange={onCheckboxChange('isexteriorprep_scrape')}
+            />
+            Scrape all loose and chipping surfaces.
+          </label>
+          <br></br>
         <br></br>
-        <input
-          type="checkbox"
-          name="Preparation"
-          value="Mildew"
-        />
-        <label>
-          Treat mildewed areas (if present) with
+
+
+
+         <label>
+            <input type='checkbox'
+            checked={projectScope.isexteriorprep_mildew}
+            onChange={onCheckboxChange('isexteriorprep_mildew')}
+            />
+            Treat mildewed areas (if present) with
           mildicide.
-        </label>
+          </label>
         <br></br>
         <br></br>
       </div>
-      <div className="checkboxClass">
-        <h3>Warranty</h3>
-        <input
-          type="checkbox"
-          name="Warranty"
-          value="oneyear"
-        />
+      
+      
+      <div className="radioboxClass">
+        <h2>Warranty</h2>
+      
         <label>
-          1-YEAR WARRANTY - Company warrants the
+            <input type='radio'
+            checked={projectScope.isexteriorwarranty_oneyear}
+            onChange={onCheckboxChange('isexteriorwarranty_oneyear')}
+            />
+                1-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces
           for a period of one (1) years, per the
           specific contracted scope of work, and
@@ -87,16 +102,16 @@ function ProjectScope(props) {
           cover areas of fading and/or damage due
           to normal wear and tear, abuse, weather,
           or accidental damaging occurrences.
-        </label>
-        <br></br>
-        <br></br>
-        <input
-          type="checkbox"
-          name="Warranty"
-          value="threeYear"
-        />
-        <label>
-          3-YEAR WARRANTY - Company warrants the
+          </label>
+          <br></br>
+          <br></br>
+       
+            <label>
+            <input type='radio'
+            checked={projectScope.isexteriorwarranty_threeyear}
+            onChange={onRadioboxChange('isexteriorwarranty_threeyear')}
+            />
+               3-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces
           for a period of one (3) years, per the
           specific contracted scope of work, and
@@ -108,16 +123,16 @@ function ProjectScope(props) {
           cover areas of fading and/or damage due
           to normal wear and tear, abuse, weather,
           or accidental damaging occurrences.
-        </label>
+          <span class="checkmark"></span>
+          </label>
         <br></br>
         <br></br>
-        <input
-          type="checkbox"
-          name="Warranty"
-          value="fiveYear"
-        />
-        <label>
-          5-YEAR WARRANTY - Company warrants the
+            <label>
+            <input type='radio'
+            checked={projectScope.isexteriorwarranty_fiveyear}
+            onChange={onRadioboxChange('isexteriorwarranty_fiveyear')}
+            />
+              5-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces
           for a period of one (5) years, per the
           specific contracted scope of work, and
@@ -129,14 +144,11 @@ function ProjectScope(props) {
           cover areas of fading and/or damage due
           to normal wear and tear, abuse, weather,
           or accidental damaging occurrences.
-        </label>
+          </label>
+
+
       </div>
-      {/* create a button that navigates to /images and says "Next" */}
-      <button
-        onClick={() => history.push("/image")}
-      >
-        Next
-      </button>
+     
     </div>
   );
 }
