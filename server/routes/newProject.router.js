@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
   .then(result => {
     console.log('added new row (project) to paintproject_input');
     console.log('new project ID is', result.rows[0].id);
-    res.sendStatus(200).send(result.rows[0]);
+    res.send(result.rows[0].id.toString());
   }).catch(err => {
     console.log('problem adding new project', err);
     res.sendStatus(500);

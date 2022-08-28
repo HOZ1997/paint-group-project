@@ -6,6 +6,8 @@ function* newProject(action) {
   try {
     const response = yield axios.post('/api/new_project', action.payload);
     console.log('in SF Saga posting', response);
+    yield put({ type: 'GIVE_ID', payload: response.data });
+    console.log('in the new project saga hoping for a returned id to send to reducer', response.data);
   } catch (error) {
     console.log(' New project post request failed', error);
   }

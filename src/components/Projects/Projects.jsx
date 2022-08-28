@@ -18,9 +18,8 @@ function Projects(props) {
   const history = useHistory();
   const store = useSelector((store) => store);
   const projects = useSelector(store => store.projects);
-  console.log('projects const values', projects);
-
-
+  const idStore = useSelector((store) => store.newProject);
+  console.log('no really is it?', typeof(idStore)), idStore;
 
   const goToProject = (id) => {
     history.push(`/WorkOrder`);
@@ -28,8 +27,10 @@ function Projects(props) {
 
   const newProject = () => {
     dispatch({type: 'PUSH_NEW_PROJECT'});
-    history.push(`/addclient`);
-  };
+    setTimeout(() => { console.log('in newProject function from button push', idStore.toString()) }, 3000);
+  }
+
+//history.push(`/addclient/:${idStore}`);
 
   return (
     <div className="container">
