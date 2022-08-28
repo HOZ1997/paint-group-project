@@ -10,6 +10,7 @@ import clienttypeSaga from './clienttype.saga';
 // import specialFeatureSaga from './specialFeature.saga';
 import newProjectSaga from './newProject.saga';
 import getProjectSaga from './getProject.saga';
+import projectscopeSaga from './projectscope.saga';
 
 
 // rootSaga is the primary saga.
@@ -32,5 +33,6 @@ export default function* rootSaga() {
     // specialFeatureSaga(),
     newProjectSaga(),
     getProjectSaga(),
+    projectscopeSaga(),
   ]);
 }
