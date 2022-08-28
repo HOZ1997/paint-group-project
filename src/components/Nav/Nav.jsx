@@ -30,14 +30,22 @@ function Nav() {
 
             <Link className="navLink" to="/addclient">
               Add Client
-            </Link> 
+            </Link>
 
             <Link className="navLink" to="/workOrder">
               Work Order
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
+            <Link className="navLink" to="/projects">
+              Projects
+            </Link>
+
+            <Link className="navLink" to="/specialfeature">
+              Special Features
+            </Link>
+
+            <Link className="navLink" to="/proposal">
+              Proposal
             </Link>
 
             <LogOutButton className="navLink" />
