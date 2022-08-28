@@ -39,7 +39,7 @@ function EstimateCost() {
 
   return (
     <form>
-      <h1>Exterior Estimate Cost</h1>
+      <h1>Project Estimate</h1>
       <div className="mb-3">
         <label>Labor Cost: $</label>
         <input
@@ -67,7 +67,7 @@ function EstimateCost() {
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
-      <Button className="btn btn-primary btn-sm">Create</Button>
+      {/* <Button className="btn btn-primary btn-sm">Create</Button> */}
     </form>
   );
 }
