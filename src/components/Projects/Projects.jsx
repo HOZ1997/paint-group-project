@@ -22,17 +22,17 @@ function Projects(props) {
   console.log('no really is it?', typeof(idStore), idStore);
 
   const goToProject = (id) => {
-    history.push(`/WorkOrder`);
+    history.push(`/WorkOrder/id:${}`);
   };
 
-  const newProject = () => {
+  function newProject () {
     dispatch({type: 'PUSH_NEW_PROJECT'});
-    setTimeout(() => { console.log('in newProject function from button push') }, 3000);
+    setTimeout(() => { console.log('in newProject function from button push', idStore) }, 1000);
   }
 
 
 
-//history.push(`/addclient/:${idStore}`);
+//history.push(`/ProjectInformationPage/${idStore}`);
 
   return (
     <div className="container">

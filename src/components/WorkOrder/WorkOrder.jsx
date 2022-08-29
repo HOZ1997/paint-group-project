@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import './WorkOrder.css';
@@ -11,13 +11,14 @@ function WorkOrder(props) {
  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({type: 'FETCH_PROJECT'});
-  }, []);
 
+  const {id} = useParams();
   const history = useHistory();
-
   const proposal = useSelector((store) => store.getProject[0]);
+
+  useEffect(() => {
+    dispatch({type: 'FETCH_PROJECT', payload: id});
+  }, []);
 
   const newProject = () => {
     history.push(``);
