@@ -10,6 +10,8 @@ import getProject from './getProject.reducer';
 import projectDetails from './projectDetails.reducer';
 import specialFeature from './specialFeatureBox.reducer';
 import newProject from './newProject.reducer';
+import projectScope from './projectScope.reducer'
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -29,6 +31,7 @@ const rootReducer = combineReducers({
   projectDetails,
   specialFeature,
   newProject,
+  projectScope,
 });
 
 export default rootReducer;
