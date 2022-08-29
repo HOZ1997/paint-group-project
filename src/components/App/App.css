@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
 
 html,
 body,
@@ -11,7 +11,8 @@ body {
   background-image: url("/Users/carloskelley/Documents/dorian/tier3/paint/paint-group-project/public/images/background_tile.jpg");
   /* tile it across the page */
   background-repeat: repeat;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
   margin: 0px;
 }
 
@@ -48,8 +49,7 @@ Button
   transition-duration: 0.4s;
   border-radius: 10px;
   font-weight: bold;
-  font-family: 'Lexend Deca', sans-serif;
-  
+  font-family: "Lexend Deca", sans-serif;
 }
 .btn {
   display: inline-block;

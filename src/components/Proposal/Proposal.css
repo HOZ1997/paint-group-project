@@ -1,31 +1,29 @@
 /* import Lexand */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
 
 img {
   width: 10em;
 }
 
 hr {
-  width:15em;
-  float:left;
+  width: 15em;
+  float: left;
 }
 
 /* in client-details class, style the h3 as size 25 */
 .clientDetails h3 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
 .clientDetails p {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 15px;
   font-weight: regular;
 }
 
-.clientDetails
-{
+.clientDetails {
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -35,29 +33,26 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin: -5px; 
+  margin: -5px;
   /* give the card rounded corners */
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
-
-
 }
 
 .jobIntro h3 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
 .JobIntro p {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 15px;
   font-weight: regular;
 }
 
-.jobIntro
-{
+.jobIntro {
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -67,7 +62,7 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin-left: -5px; 
+  margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -75,24 +70,16 @@ hr {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
-
-
 }
 
-
-
-.proposalPhotos
-{
+.proposalPhotos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  
+
   /* create space between each image on all four sides */
 
-
-
-   
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -102,7 +89,7 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin-left: -5px; 
+  margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -113,28 +100,26 @@ hr {
 }
 
 .proposalPhotos img {
-  width:44%;
+  width: 44%;
   /* add space between all the images */
   margin: 10px;
-
 }
 
 .scopeOfWork h3 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: bold;
   display: inline;
 }
 
 .scopeOfWork p {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: regular;
   display: inline;
 }
 
-.scopeOfWork
-{
+.scopeOfWork {
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -144,7 +129,7 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin-left: -5px; 
+  margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -152,26 +137,21 @@ hr {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
-
-
 }
 
 .specialFeatures h3 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: bold;
-
 }
 
 .specialFeatures p {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: regular;
-
 }
 
-.specialFeatures
-{
+.specialFeatures {
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -181,7 +161,7 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin-left: -5px; 
+  margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -189,26 +169,21 @@ hr {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
-
-
 }
 
 .estimate h3 {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: bold;
-
 }
 
 .estimate p {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   font-weight: regular;
-
 }
 
-.estimate
-{
+.estimate {
   /*make a card with a white background  */
   background-color: #fff;
   /* make the card have a border */
@@ -218,7 +193,7 @@ hr {
   /* make the card have a padding */
   padding: 20px;
   /* make the card have a margin */
-  margin-left: -5px; 
+  margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -226,6 +201,4 @@ hr {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
-
-
 }
