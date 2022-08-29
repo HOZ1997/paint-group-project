@@ -19,20 +19,21 @@ function Projects(props) {
   const store = useSelector((store) => store);
   const projects = useSelector(store => store.projects);
   const idStore = useSelector((store) => store.newProject);
+  const async = require("async");
   console.log('no really is it?', typeof(idStore), idStore);
 
   const goToProject = (id) => {
     history.push(`/WorkOrder/${id}`);
   };
 
-  function newProject () {
-    dispatch({type: 'PUSH_NEW_PROJECT'});
-    setTimeout(() => { console.log('in newProject function from button push', idStore) }, 1000);
+  const newProjectDispatch = (callback) => dispatch({type: 'PUSH_NEW_PROJECT'});
+  const newProjectPush = (id, callback) => history.push(`/ProjectInformationPage/$id`);
+
+  function newProject (dispatchCallback, pushCallback) {
+    async.waterfall([
+      function dispatchCallback() {}
+    ])
   }
-
-
-
-//history.push(`/ProjectInformationPage/${idStore}`);
 
   return (
     <div className="container">
@@ -74,7 +75,7 @@ function Projects(props) {
 
       </div>
       {store.language === "english" ? (
-        <button onClick={newProject}>Add Project</button>
+        <button onClick={()=>{newProject(newProjectDispatch, newProjectPush)}}>Add Project</button>
         ) : (
           <button onClick={newProject}>Nuevo Proyecto</button>
         )}
