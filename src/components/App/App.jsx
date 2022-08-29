@@ -27,7 +27,7 @@ import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
-import ProjectScope from "../ProjectScope/ProjectScope";
+import ProjectScope from "../projectScope/projectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 
@@ -50,7 +50,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
