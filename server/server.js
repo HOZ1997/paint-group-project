@@ -20,7 +20,7 @@ const specialFeatureRouter = require('./routes/specialFeature.router');
 const newProjectRouter = require('./routes/newProject.router');
 const getProjectRouter = require('./routes/getProject.router');
 const projectscopeRouter = require ('./routes/projectscope.router');
-
+const fullformRouter = require ('./routes/fullform.router');
 // Body parser middleware
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,6 +47,7 @@ app.use('/api/add_special_feature', specialFeatureRouter);
 app.use('/api/new_project', newProjectRouter);
 app.use('/api/get_project', getProjectRouter);
 app.use('/api/projectscope', projectscopeRouter);
+app.use('/api/fullform', fullformRouter);
 
 // Serve static files
 app.use(express.static('build'));

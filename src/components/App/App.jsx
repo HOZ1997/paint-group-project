@@ -124,8 +124,8 @@ function App() {
               <LandingPage />
             )}
           </Route>
-          <Route exact path="/projectScope">
-            <projectScope />
+          <Route exact path="/projectscope">
+            <projectscope />
           </Route>
           <Route exact path="/projects">
             <Projects />
