@@ -1,7 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+import React, {
+  useState,
+  useEffect,
+} from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
 // import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
@@ -12,8 +18,10 @@ function EstimateCost() {
   //   el.innerHTML = total;
 
   // ----- using this.state until connecting to database ----- //
-  const [laborAmount, setLaborAmount] = useState(0);
-  const [materialAmount, setMaterialAmount] = useState(0);
+  const [laborAmount, setLaborAmount] =
+    useState(0);
+  const [materialAmount, setMaterialAmount] =
+    useState(0);
   const [total, setTotal] = useState(0);
 
   const changeLaborAmount = (e) => {
@@ -56,18 +64,22 @@ function EstimateCost() {
           type="number"
           id="materialsInput"
           value={materialAmount}
-          onChange={(e) => changeMaterialAmount(e)}
+          onChange={(e) =>
+            changeMaterialAmount(e)
+          }
           step="any"
         />
       </div>
       <br />
       <h4>
         Total Costs: $
-        {total.toLocaleString(undefined, {maximumFractionDigits: 2})}
+        {total.toLocaleString(undefined, {
+          maximumFractionDigits: 2,
+        })}
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
-      <Button className="btn btn-primary btn-sm">Create</Button>
+      <Button className="myButton">Create</Button>
     </form>
   );
 }
