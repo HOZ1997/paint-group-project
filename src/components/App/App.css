@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+
 html,
 body,
 #react-root {
@@ -30,6 +32,25 @@ Container
 Button
 -------------------------------------------------------------------------------- */
 
+.myButton {
+  /* a dark gray button with rounded edges and white text in the font i've been using */
+  background-color: rgb(89, 99, 107);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Lexend Deca', sans-serif;
+  
+}
 .btn {
   display: inline-block;
   padding: 10px 20px;

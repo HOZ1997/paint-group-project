@@ -163,35 +163,52 @@ function Proposal(props) {
               </section>
                 <section id="specialFeatures">
                   <div className="specialFeatures">
-                <h3>Special Feature(s)</h3>
-                <p>
-                  Feature Type:{" "}
-                  {
+                <h2>Special Feature(s)</h2>
+                <h3>
+                      Feature Type:{" "}
+                      </h3>
+                  <p>{
                     proposal.specialfeatureexterior_type_name
-                  }
-                </p>
-                <p>
-                  Notes?{" "}
+                  }</p>
+                
+                <h3>
+                      Notes?{" "}
+                      </h3>
+                  <p>
                   {proposal.specialfeature_notes}
                 </p>
-                <p>
-                  Paint Product:{" "}
+                <h3>
+                      Paint Product:{" "}
+                      </h3>
+                  <p>
                   {
                     proposal.specialfeature_paintproduct
                   }
                 </p>
                 <ul>
-                  <li>
-                    Primer?{" "}
-                    {proposal.isspecialfeaturestatus_needprimer.toString()}
+                      <li>
+                        <h3>
+                          Primer?{" "}
+                        </h3>
+                        <p>
+                          {proposal.isspecialfeaturestatus_needprimer === true ? "Yes" : "No"}
+                        </p>
                   </li>
-                  <li>
-                    Patch or Repair?{" "}
-                    {proposal.isspecialfeaturestatus_patchedrepair.toString()}
+                      <li>
+                        <h3>
+                          Patch or Repair?{" "}
+                        </h3>
+                        <p>
+                          {proposal.isspecialfeaturestatus_patchedrepair === true ? "Yes" : "No"}
+                        </p>
                   </li>
-                  <li>
-                    Extensive Scraping?{" "}
-                    {proposal.isspecialfeaturestatus_extensivescraping.toString()}
+                      <li>
+                        <h3>
+                          Extensive Scraping?{" "}
+                        </h3>
+                        <p>
+                          {proposal.isspecialfeaturestatus_extensivescraping === true ? "Yes" : "No"}
+                        </p>
                   </li>
                     </ul>
                     </div>
@@ -206,19 +223,29 @@ function Proposal(props) {
                   00
                 </h3>
                 <ul>
-                  <li>
-                    Labor: $
+                      <li>
+                        <h4>
+                          Labor: 
+                        </h4>
+                        <p>
+                          $
                     {
                       proposal.exteriorestimate_laborcost
                     }
-                    00
+                          00
+                        </p>
                   </li>
-                  <li>
-                    Material: $
+                      <li>
+                        <h4>
+                          Material: 
+                        </h4>
+                        <p>
+                          $
                     {
                       proposal.exteriorestimate_materialcost
                     }
-                    00
+                          00
+                        </p>
                   </li>
                 </ul>
 
@@ -228,7 +255,7 @@ function Proposal(props) {
                 <section id="proposalConclusion">
                   <div className="proposalConclusion">
                 <h3>Accept and Continue?</h3>
-                    <button>Accept Proposal</button>
+                    <button className="myButton">ACCEPT PROPOSAL</button>
                     </div>
               </section>
             </div>
