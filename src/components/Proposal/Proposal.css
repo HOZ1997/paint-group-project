@@ -3,7 +3,7 @@
 
 
 img {
-  width: 15em;
+  width: 10em;
 }
 
 hr {
@@ -27,4 +27,131 @@ hr {
 .clientDetails
 {
   /*make a card with a white background  */
+  background-color: #fff;
+  /* make the card have a border */
+  border: 1px solid #e5e5e5;
+  /* make the card have a border radius */
+  border-radius: 5px;
+  /* make the card have a padding */
+  padding: 20px;
+  /* make the card have a margin */
+  margin: -5px; 
+  /* give the card rounded corners */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 10px;
+
+
+}
+
+.jobIntro h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.JobIntro p {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
+  font-weight: regular;
+}
+
+.jobIntro
+{
+  /*make a card with a white background  */
+  background-color: #fff;
+  /* make the card have a border */
+  border: 1px solid #e5e5e5;
+  /* make the card have a border radius */
+  border-radius: 5px;
+  /* make the card have a padding */
+  padding: 20px;
+  /* make the card have a margin */
+  margin-left: -5px; 
+  margin-right: -5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* give the card rounded corners */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 10px;
+
+
+}
+
+
+
+.proposalPhotos
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  
+  /* create space between each image on all four sides */
+
+
+
+   
+  /*make a card with a white background  */
+  background-color: #fff;
+  /* make the card have a border */
+  border: 1px solid #e5e5e5;
+  /* make the card have a border radius */
+  border-radius: 5px;
+  /* make the card have a padding */
+  padding: 20px;
+  /* make the card have a margin */
+  margin-left: -5px; 
+  margin-right: -5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* give the card rounded corners */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 10px;
+}
+
+.proposalPhotos img {
+  width:44%;
+  /* add space between all the images */
+  margin: 10px;
+
+}
+
+.scopeOfWork h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline;
+}
+
+.scopeOfWork p {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 20px;
+  font-weight: regular;
+  display: inline;
+}
+
+.scopeOfWork
+{
+  /*make a card with a white background  */
+  background-color: #fff;
+  /* make the card have a border */
+  border: 1px solid #e5e5e5;
+  /* make the card have a border radius */
+  border-radius: 5px;
+  /* make the card have a padding */
+  padding: 20px;
+  /* make the card have a margin */
+  margin-left: -5px; 
+  margin-right: -5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* give the card rounded corners */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 10px;
+
+
 }
