@@ -68,11 +68,13 @@ function Proposal(props) {
                 <hr></hr>
                 <br></br>
               </section>
-              <section id="clientDetails">
+                <section id="clientDetails">
+                  <div className="clientDetails">
                 <h3>
-                  Prepared for:{" "}
-                  {proposal.client_firstlast_name}
-                </h3>
+                      PREPARED FOR:{" "}
+                      </h3>
+                 <p>{proposal.client_firstlast_name}</p>
+                
                 <p>
                   {proposal.decision_emailaddress}
                 </p>
@@ -88,7 +90,8 @@ function Proposal(props) {
                   {proposal.project_address_state}{" "}
                   {proposal.project_address_zip}
                 </p>
-                <br></br>
+                    <br></br>
+                    </div>
               </section>
               <section id="proposalPhotos">
                 <h3>Pictures</h3>

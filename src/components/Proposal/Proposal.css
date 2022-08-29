@@ -1,3 +1,7 @@
+/* import Lexand */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+
+
 img {
   width: 15em;
 }
@@ -5,4 +9,22 @@ img {
 hr {
   width:15em;
   float:left;
+}
+
+/* in client-details class, style the h3 as size 25 */
+.clientDetails h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.clientDetails p {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
+  font-weight: regular;
+}
+
+.clientDetails
+{
+  /*make a card with a white background  */
 }
