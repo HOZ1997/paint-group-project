@@ -7,6 +7,8 @@ function LoginPage() {
 
   return (
     <div>
+      <div className="loginPageContainer">
+      <img src="/images/Superstuct_logo.png" className="logo" />
       <LoginForm />
 
       <center>
@@ -19,8 +21,10 @@ function LoginPage() {
         >
           Register
         </button>
-      </center>
+        </center>
+        </div>
     </div>
+    
   );
 }
 
