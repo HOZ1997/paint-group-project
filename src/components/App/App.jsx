@@ -64,7 +64,7 @@ function App() {
             <AboutPage />
           </Route>
 
-          <Route exact path="/WorkOrder">
+          <Route exact path="/workorder/:id">
             <WorkOrder />
           </Route>
 
@@ -142,13 +142,13 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
-          <Route exact path="/proposal">
+          <Route exact path="/proposal/:id">
             <Proposal />
           </Route>
           <Route exact path="/ProjectInformationPage">
             <ProjectInformationPage />
           </Route>
-          
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

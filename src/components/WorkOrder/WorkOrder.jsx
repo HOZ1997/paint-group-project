@@ -17,6 +17,7 @@ function WorkOrder(props) {
   const proposal = useSelector((store) => store.getProject[0]);
 
   useEffect(() => {
+    console.log('id in work order: ', id);
     dispatch({type: 'FETCH_PROJECT', payload: id});
   }, []);
 

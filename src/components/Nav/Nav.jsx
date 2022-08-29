@@ -32,7 +32,7 @@ function Nav() {
               Add Client
             </Link>
 
-            <Link className="navLink" to="/workOrder">
+            <Link className="navLink" to="/workorder/:id">
               Work Order
             </Link>
 
@@ -44,7 +44,7 @@ function Nav() {
               Special Features
             </Link>
 
-            <Link className="navLink" to="/proposal">
+            <Link className="navLink" to="/proposal/:id">
               Proposal
             </Link>
 

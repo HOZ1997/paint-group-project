@@ -22,7 +22,7 @@ function Projects(props) {
   console.log('no really is it?', typeof(idStore), idStore);
 
   const goToProject = (id) => {
-    history.push(`/WorkOrder/id:${}`);
+    history.push(`/WorkOrder/${id}`);
   };
 
   function newProject () {

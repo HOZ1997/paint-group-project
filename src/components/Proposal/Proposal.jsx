@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import './Proposal.css';
@@ -10,9 +10,10 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 function Proposal(props) {
  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
+  const {id} = useParams();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_PROJECT'});
+    dispatch({type: 'FETCH_PROJECT', payload: id});
   }, []);
 
   const history = useHistory();
