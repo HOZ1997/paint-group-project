@@ -5,6 +5,7 @@ import ProjectScope from '../projectScope/projectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
 import SpecialFeature from '../SpecialFeature/SpecialFeature';
+import "./ProjectInformationPage.css"
 
 
 

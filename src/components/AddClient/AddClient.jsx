@@ -41,33 +41,35 @@ function AddClient() {
   return (
     <div className="container">
       <h2>ADD CLIENT</h2>
-      <div className="dropdownSelector">
-        {clienttypes.length === 0 ? (
-          <div>Loading...</div>
-        ) : (
-          <div>CLIENT TYPE</div>
-        )}
-
-        <select
-          onChange={onInputChange(
-            "client_type_id"
+      <div className="addClientFirst">
+        <div className="dropdownSelector">
+          {clienttypes.length === 0 ? (
+            <div>Loading...</div>
+          ) : (
+            <div>CLIENT TYPE</div>
           )}
-        >
-          <option
-            selected="true"
-            disabled="disabled"
+
+          <select
+            onChange={onInputChange(
+              "client_type_id"
+            )}
           >
-            SELECT CLIENT TYPE
-          </option>
-          {clienttypes.map((client_type) => (
             <option
-              key={client_type.id}
-              value={client_type.id}
+              selected="true"
+              disabled="disabled"
             >
-              {client_type.client_type_name}
+              SELECT CLIENT TYPE
             </option>
-          ))}
-        </select>
+            {clienttypes.map((client_type) => (
+              <option
+                key={client_type.id}
+                value={client_type.id}
+              >
+                {client_type.client_type_name}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <div id="customerTextInputs"></div>
         <label for="clientName">
@@ -76,7 +78,7 @@ function AddClient() {
         </label>
         <input
           type="text"
-          placeholder="Client First and Last Name"
+          // placeholder="Client First and Last Name"
           onChange={onInputChange(
             "client_firstlast_name"
           )}
@@ -88,7 +90,7 @@ function AddClient() {
         </label>
         <input
           type="text"
-          placeholder="Decision First and Last Name"
+          // placeholder="Decision First and Last Name"
           onChange={onInputChange(
             "decision_firstlast_name"
           )}
@@ -100,11 +102,11 @@ function AddClient() {
         </label>
         <input
           type="text"
-          placeholder="Decision Maker Email"
+          // placeholder="Decision Maker Email"
           onChange={onInputChange(
             "decision_emailaddress"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="decsionMakerPhone">
           {" "}
@@ -112,44 +114,44 @@ function AddClient() {
         </label>
         <input
           type="text"
-          placeholder="Decision Maker Phone"
+          // placeholder="Decision Maker Phone"
           onChange={onInputChange(
             "decision_phonenumber"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectAddress1">
           PROJECT ADDRESS 1
         </label>
         <input
           type="text"
-          placeholder="Project Address 1"
+          // placeholder="Project Address 1"
           onChange={onInputChange(
             "project_address_1"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectAddress2">
           PROJECT ADDRESS 2
         </label>
         <input
           type="text"
-          placeholder="Project Address 2"
+          // placeholder="Project Address 2"
           onChange={onInputChange(
             "project_address_2"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectCity">
-          Project City
+          PROJECT CITY
         </label>
         <input
           type="text"
-          placeholder="Project City"
+          // placeholder="Project City"
           onChange={onInputChange(
             "project_address_city"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectState">
           {" "}
@@ -157,22 +159,22 @@ function AddClient() {
         </label>
         <input
           type="text"
-          placeholder="Project State"
+          // placeholder="Project State"
           onChange={onInputChange(
             "project_address_state"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectZip">
           PROJECT ZIP
         </label>
         <input
           type="text"
-          placeholder=" Project Zip"
+          // placeholder=" Project Zip"
           onChange={onInputChange(
             "project_address_zip"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectHouseYear">
           HOUSE YEAR
@@ -180,11 +182,11 @@ function AddClient() {
         <br></br>
         <input
           type="text"
-          placeholder="Project House Year"
+          // placeholder="Project House Year"
           onChange={onInputChange(
             "project_house_year"
           )}
-              ></input>
+        ></input>
         <br />
         <label for="projectAddressNotes">
           ADDRESS NOTES
@@ -192,7 +194,7 @@ function AddClient() {
         <br></br>
         <input
           type="text"
-          placeholder=" Project Address Notes"
+          // placeholder=" Project Address Notes"
           onChange={onInputChange(
             "project_address_notes"
           )}

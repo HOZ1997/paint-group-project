@@ -45,7 +45,8 @@ function Proposal(props) {
             <div className="container">
 
               <section id="jobIntro">
-                <div className="jobIntro">
+                  <div className="jobIntro">
+                    <img src="/images/Superstruct_logo_dark.png" className="logo" />
                   <h3>
                     Job # 00
                     {proposal.project_job_number}

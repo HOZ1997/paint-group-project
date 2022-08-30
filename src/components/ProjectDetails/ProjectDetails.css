@@ -3,6 +3,8 @@
 
 .dropdownSelector {
   font-family: "Lexend Deca", sans-serif;
+  
+
 }
 
 h2{
@@ -12,8 +14,10 @@ h2{
 select{
     font-family: "Lexend Deca", sans-serif;
     border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    width: 106%
+    border-radius: 12px;
+    padding: 9px;
+    width: 96%;
+    margin-left: 5px;
 }
 
 input {
@@ -21,16 +25,11 @@ input {
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     padding: 9px;
-    width: 103%;
-    
+    width: 90%;
 }
 
 label{
-    margin-left:  15px;
-}
-
-select.addClientFirst{
-   font-family: "Lexend Deca", sans-serif;
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
+    /* bold */
+    font-weight: bold;
+    font-size: 12px;
 }
