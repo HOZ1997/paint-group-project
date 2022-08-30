@@ -32,7 +32,7 @@ function Nav() {
               Add Client
             </Link>
 
-            <Link className="navLink" to="/workorder/:id">
+            <Link className="navLink" to="/workorder/">   //This link may be broken now as workorder expects an id to go to the specific work order
               Work Order
             </Link>
 
@@ -44,7 +44,7 @@ function Nav() {
               Special Features
             </Link>
 
-            <Link className="navLink" to="/proposal/:id">
+            <Link className="navLink" to="/proposal/">  //This link may also be broken see above
               Proposal
             </Link>
 
