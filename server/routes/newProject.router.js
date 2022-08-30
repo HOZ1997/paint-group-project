@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   console.log('req.body in newProject.router:', req.body);
   const newProject = `
   INSERT INTO paintproject_input ("project_job_number") VALUES (DEFAULT) RETURNING id`;
