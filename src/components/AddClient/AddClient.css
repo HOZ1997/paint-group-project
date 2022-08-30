@@ -22,8 +22,14 @@ input {
     border-radius: 10px;
     padding: 9px;
     width: 103%;
-    
 }
+    /* when you click in, outline the input field in cyan */
+    input:focus {
+        outline: none;
+        border: 1px solid rgb(94, 191, 221);
+    }
+    
+
 
 label{
     margin-left:  15px;
