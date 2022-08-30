@@ -29,14 +29,14 @@ const upload = multer({ storage: storage });
 
 router.get('/', (req, res) => {
   console.log('in upload image router');
-  const query = `SELECT * FROM p WHERE user_id = $1`;
-  const value = [req.user.id]
+  const query = `SELECT * FROM photo_upload WHERE project_id = $1`;
+  const value = [req.body.project_id]
   pool.query(query, value)
     .then( result => {
       res.send(result.rows);
     })
     .catch(err => {
-      console.log('ERROR spawning projects', err);
+      console.log('ERROR getting photos', err);
       res.sendStatus(500)
     })
 });
