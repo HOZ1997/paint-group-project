@@ -21,7 +21,7 @@ function ProposalHeader() {
         {/* else if /ProjectInformationPage, say Project Information */}
         {location.pathname ===
           "/ProjectInformationPage" && (
-          <h1 className="nav-title">
+          <h1 className="nav-title" >
             Project Information
           </h1>
         )}

@@ -20,3 +20,9 @@
   margin-left: -20px;
   margin-top: -20px;
 }
+
+.nav-title {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}

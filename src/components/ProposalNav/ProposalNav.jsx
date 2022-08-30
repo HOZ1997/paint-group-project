@@ -97,7 +97,7 @@ function ProposalNav() {
           </Link>
         </li>
       </ul>
-      <ul className="proposalNavLogour">
+      <ul className="proposalNavLogout">
         <li>
           <img
             src="/images/account_dark.jpg"

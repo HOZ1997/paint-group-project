@@ -19,7 +19,7 @@
   margin: 0;
 } */
 
-.proposalNavLink {
+/* .proposalNavLink { */
   /* display: inline-block;
   color: #f2f2f2;
   background-color: #00acb0;
@@ -33,7 +33,7 @@
   /* border: none;
   cursor: pointer;
   outline: 0; */
-}
+/* } */
 
 /* .proposal.NavLink:hover {
   background-color: #008183;
@@ -70,3 +70,8 @@ img.proposalNavFav {
 /* .proposalNavLogoContainer {
   width: 66%;
 } */
+
+ul.proposalNavProjectList, ul.proposalNavInfo, ul.proposalNavProposal, ul.proposalNavWorkOrder, ul.proposalNavLogout {
+    margin-left: -40px;
+    margin-bottom: 30px;
+}
