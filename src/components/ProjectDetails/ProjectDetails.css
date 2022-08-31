@@ -18,6 +18,8 @@ select{
     padding: 9px;
     width: 96%;
     margin-left: 5px;
+    font-weight: bold;
+    font-size:12px;
 }
 
 input {

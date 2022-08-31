@@ -3,6 +3,12 @@
 
 .dropdownSelector {
   font-family: "Lexend Deca", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+label.dropdownSelector{
+    font-weight:bold;
 }
 
 h2{
@@ -12,8 +18,8 @@ h2{
 select{
     font-family: "Lexend Deca", sans-serif;
     border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    width: 106%
+    border-radius: 10px;
+    width: 96%
 }
 
 input {
@@ -21,7 +27,8 @@ input {
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     padding: 9px;
-    width: 103%;
+    width: 90%;
+    margin-left: ;
 }
     /* when you click in, outline the input field in cyan */
     input:focus {

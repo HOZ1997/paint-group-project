@@ -4,7 +4,7 @@ html,
 body,
 #react-root {
   height: 100%;
-  
+  overflow-x: hidden;
 }
 
 body {

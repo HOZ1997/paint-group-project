@@ -30,7 +30,6 @@ import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 import Proposal from "../Proposal/Proposal";
 import ProposalNav from "../ProposalNav/ProposalNav";
