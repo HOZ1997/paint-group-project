@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import language from './language.reducer';
@@ -9,6 +9,7 @@ import clienttype from './clienttype.reducer';
 import getProject from './getProject.reducer';
 import projectDetails from './projectDetails.reducer';
 import specialFeatureReducer from './specialFeatureBox.reducer';
+import costReducer from './estimateCost.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   getProject,
   projectDetails,
   specialFeatureReducer,
+  costReducer,
 });
 
 export default rootReducer;

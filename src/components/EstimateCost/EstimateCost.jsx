@@ -2,26 +2,31 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
-// import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
-  //   const labor = document.getElementById('laborInput').value;
-  //   const material = document.getElementById('materialsInput').value;
-  //   const total = labor + material;
-  //   const el = document.getElementById('dne');
-  //   el.innerHTML = total;
-
   // ----- using this.state until connecting to database ----- //
   const [laborAmount, setLaborAmount] = useState(0);
   const [materialAmount, setMaterialAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
+  const costDetails = useSelector((store) => store.costReducer);
 
-  const changeLaborAmount = (e) => {
-    setLaborAmount(+e.target.value);
+  const changeLaborAmount = (event) => {
+    setLaborAmount(+event.target.value);
+    addCost();
   };
 
-  const changeMaterialAmount = (e) => {
-    setMaterialAmount(+e.target.value);
+  const changeMaterialAmount = (event) => {
+    setMaterialAmount(+event.target.value);
+    addCost();
+  };
+
+  const onInputChange = (key) => (event) => {
+    const updatedCost = {
+      ...costDetails,
+      [key]: event.target.value,
+    };
+    costReducer(updatedCost);
   };
 
   useEffect(() => {
@@ -30,12 +35,25 @@ function EstimateCost() {
 
   // --- placeholders until connecting to database --- //
 
-  //   const dispatch = useDispatch;
-  //   const history = useHistory;
+  const addCost = (event) => {
+    const newCostInput = {
+      exteriorestimate_laborcost: laborAmount,
+      exteriorestimate_materialcost: materialAmount,
+      exteriorestimate_totalcost: total,
+    };
+    console.log(costReducer);
+    dispatch({type: 'SET_COST', payload: newCostInput.total});
+    // setLaborAmount('');
+    // setMaterialAmount('');
+    // setTotal('');
+  };
 
-  //   const [totalBalance, setTotalBalance] = useState(calculateTotal());
+  // exteriorestimate_laborcost
+  // exteriorestimate_materialcost
+  // exteriorestimate_totalcost
 
-  //   function calculateTotal() {}
+  // bring total cost to the ID above //
+  // need reducer to store //
 
   return (
     <form>
