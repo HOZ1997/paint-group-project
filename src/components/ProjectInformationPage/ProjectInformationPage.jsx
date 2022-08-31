@@ -30,7 +30,7 @@ function ProjectInformationPage() {
       <ProjectScope />
       <ImagePage />
       <EstimateCost />
-
+      <button button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
     </div>
   );
 }
