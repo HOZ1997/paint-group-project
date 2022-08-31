@@ -18,18 +18,34 @@ function Projects(props) {
   const history = useHistory();
   const store = useSelector((store) => store);
   const projects = useSelector(store => store.projects);
-  console.log('projects const values', projects);
-
-
+  // const idStore = useSelector((store) => store.newProject);
+  // const async = require("async");
+  // console.log('no really is it?', typeof(idStore), idStore);
 
   const goToProject = (id) => {
-    history.push(`/WorkOrder`);
+    history.push(`/WorkOrder/${id}`);
   };
 
-  const newProject = () => {
-    dispatch({type: 'PUSH_NEW_PROJECT'});
-    history.push(`/addclient`);
-  };
+  // const newProjectDispatch = () => dispatch({type: 'PUSH_NEW_PROJECT'});
+  // const newProjectPush = () => {
+  //   history.push(`/ProjectInformationPage/${idStore}`)
+  //   console.log('i am working?', idStore);
+  // }
+
+  // const newProject = () => {
+  //   async.series([
+  //     newProjectDispatch(),
+  //     newProjectPush()
+  // ], function (err, results) {
+  //     // Here, results is an array of the value from each function
+  //     console.log(results); // outputs: ['two', 'five']
+  // });
+  // }
+
+    const newProject = () => {
+      history.push(`/ProjectInformationPage`);
+    }
+
 
   return (
     <div className="container">

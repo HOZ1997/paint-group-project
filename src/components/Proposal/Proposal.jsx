@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import './Proposal.css';
@@ -10,9 +10,10 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 function Proposal(props) {
  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
+  const {id} = useParams();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_PROJECT'});
+    dispatch({type: 'FETCH_PROJECT', payload: id});
   }, []);
 
   const history = useHistory();
@@ -74,11 +75,10 @@ function Proposal(props) {
                 <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
                 <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
                 <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
-                <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
               </ul>
               <h4>Warranty</h4>
               <ul>
-              <li>One Year?{(proposal.isexteriorwarranty_oneyear).toString()}</li>
+              <li>One Year? {(proposal.isexteriorwarranty_oneyear).toString()}</li>
               <li>Three Year? {(proposal.isexteriorwarranty_threeyear).toString()}</li>
               <li>Five Year? {(proposal.isexteriorwarranty_fiveyear).toString()}</li>
               </ul>
