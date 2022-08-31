@@ -11,8 +11,8 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 let SpecialFeature = () => {
     let dispatch = useDispatch();
     const store = useSelector((store) => store);
-    const specialFeatureInputs = useSelector((store) => store.specialFeatureReducer);
-    
+    const specialFeatureInputs = useSelector((store) => store.specialFeature);
+
     const onInputChange = (key) => (event) => {
       const updatedInput = {
         ...specialFeatureInputs,
@@ -20,10 +20,10 @@ let SpecialFeature = () => {
       }
       saveSpecialFeature(updatedInput);
     }
-    
+
     const saveSpecialFeature = (updatedInput) => {
       // let SFpayload = specialFeatures;
-      
+
       // console.log('sending SF data to DB (in SF component now)', SFpayload);
       dispatch({type: 'SAVE_SF', payload: updatedInput});
     }

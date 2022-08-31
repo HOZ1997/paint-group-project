@@ -27,7 +27,7 @@ import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
-import ProjectScope from "../projectScope/projectScope";
+import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 
@@ -66,7 +66,7 @@ function App() {
             <AboutPage />
           </Route>
 
-          <Route exact path="/WorkOrder">
+          <Route exact path="/workorder/:id">
             <WorkOrder />
           </Route>
 
@@ -140,7 +140,7 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
-          <Route exact path="/proposal">
+          <Route exact path="/proposal/:id">
             <Proposal />
           </Route>
           <Route

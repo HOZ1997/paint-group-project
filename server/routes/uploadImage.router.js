@@ -13,16 +13,30 @@ const storage = new CloudinaryStorage({
 });
 const upload = multer({ storage: storage });
 
+// router.get('/', (req, res) => {
+//   console.log('in upload image router');
+//   const query = `SELECT * FROM photo_test WHERE user_id = $1`;
+//   const value = [req.user.id]
+//   pool.query(query, value)
+//     .then( result => {
+//       res.send(result.rows);
+//     })
+//     .catch(err => {
+//       console.log('ERROR spawning projects', err);
+//       res.sendStatus(500)
+//     })
+// });
+
 router.get('/', (req, res) => {
   console.log('in upload image router');
-  const query = `SELECT * FROM photo_test WHERE user_id = $1`;
-  const value = [req.user.id]
+  const query = `SELECT * FROM photo_upload WHERE project_id = $1`;
+  const value = [req.body.project_id]
   pool.query(query, value)
     .then( result => {
       res.send(result.rows);
     })
     .catch(err => {
-      console.log('ERROR spawning projects', err);
+      console.log('ERROR getting photos', err);
       res.sendStatus(500)
     })
 });
@@ -75,7 +89,7 @@ router.post('/database2', (req, res) => {
   console.log('url to database POST:', req.body);
   const queryString = `INSERT INTO photo_test ( "photo_upload_path", "user_id" ) VALUES ( $1, $2 );`;
   const values = [req.body, req.user.id]
-  
+
   pool.query(queryString, values)
     .then(() => res.sendStatus(201))
     .catch((err) => {

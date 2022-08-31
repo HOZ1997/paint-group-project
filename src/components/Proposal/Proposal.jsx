@@ -17,9 +17,10 @@ import ProposalHeader from "../ProposalHeader/ProposalHeader";
 function Proposal(props) {
   // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
+  const {id} = useParams();
 
   useEffect(() => {
-    dispatch({ type: "FETCH_PROJECT" });
+    dispatch({type: 'FETCH_PROJECT', payload: id});
   }, []);
 
   const history = useHistory();
