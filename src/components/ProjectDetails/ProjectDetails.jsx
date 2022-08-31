@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import "./ProjectDetails.css"
+import React, { useState } from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import "./ProjectDetails.css";
 
 function ProjectDetails() {
-
-  const projectDetails = useSelector((store) => store.projectDetails);
+  const projectDetails = useSelector(
+    (store) => store.projectDetails
+  );
 
   const dispatch = useDispatch();
 
@@ -22,101 +26,156 @@ function ProjectDetails() {
   const onInputChange = (key) => (event) => {
     const updatedInput = {
       ...projectDetails,
-      [key]: event.target.value
-    }
+      [key]: event.target.value,
+    };
     projectDetailsReducer(updatedInput);
-  }
+  };
 
   const onCheckboxChange = (key) => (event) => {
     const updatedCheckbox = {
       ...projectDetails,
-      [key]: event.target.checked
-    }
+      [key]: event.target.checked,
+    };
     projectDetailsReducer(updatedCheckbox);
-  }
+  };
 
-  const projectDetailsReducer = (updatedInput) => {
-    console.log('in projectDetailsReducer function', projectDetails);
-    dispatch ({type: 'SET_PROJECT_DETAILS', payload: updatedInput})
-  }
+  const projectDetailsReducer = (
+    updatedInput
+  ) => {
+    console.log(
+      "in projectDetailsReducer function",
+      projectDetails
+    );
+    dispatch({
+      type: "SET_PROJECT_DETAILS",
+      payload: updatedInput,
+    });
+  };
 
   return (
     <div>
-      <h2>Project Details</h2>
-        <div className = "projectDetails">
-          <p>Property Type</p>
-          <select className='property_type' onChange={onInputChange('property_type')}>
-            <option selected="true" disabled>Select Property Type</option>
-            <option value='1'>Residential</option>
-            <option value='2'>Commercial</option>
-            <option value='3'>New Construction</option>
-          </select>
+      <h2>PROJECT DETAILS</h2>
+      <div className="projectDetails">
+        <p>PROPERTY TYPE</p>
+        <select
+          className="property_type"
+          onChange={onInputChange(
+            "property_type"
+          )}
+        >
+          <option selected="true" disabled>
+            SELECT PROPERTY TYPE
+          </option>
+          <option value="1">Residential</option>
+          <option value="2">Commercial</option>
+          <option value="3">
+            New Construction
+          </option>
+        </select>
 
-          <p>Bulding Type</p>
+        <p>BUILDING TYPE</p>
 
-          <select className='building_type' onChange={onInputChange('building_type')}>
-            <option value='1'>Single Family Home</option>
-            <option value='2'>Commercial Building</option>
-            <option value='3'>Apartment</option>
-            <option value='4'>Condo</option>
-            <option value='5'>Duplex</option>
-            <option value='6'>Loft</option>
-            <option value='7'>Multi-tenant</option>
-          </select>
+        <select
+          className="building_type"
+          onChange={onInputChange(
+            "building_type"
+          )}
+        >
+          <option selected="true" disabled>
+            SELECT BUILDING TYPE
+          </option>
+          <option value="1">
+            Single Family Home
+          </option>
+          <option value="2">
+            Commercial Building
+          </option>
+          <option value="3">Apartment</option>
+          <option value="4">Condo</option>
+          <option value="5">Duplex</option>
+          <option value="6">Loft</option>
+          <option value="7">Multi-tenant</option>
+        </select>
 
-          <p>Project Type</p>
+        <p>PROJECT TYPE</p>
 
-          <label>
-            <input type='checkbox'
-            checked={projectDetails.project_interior}
-            onChange={onCheckboxChange('project_interior')}
-            />
-            Interior
-          </label>
-
-          <label>
-            <input type='checkbox'
-            checked={projectDetails.project_exterior}
-            onChange={onCheckboxChange('project_exterior')}
-            />
-            Exterior
-          </label>
-
-          <label>
-            <input type='checkbox'
-            checked={projectDetails.project_cabinetry}
-            onChange={onCheckboxChange('project_cabinetry')}
-            />
-            Cabinetry
-          </label>
-
-          <label>
-            <input type='checkbox'
-            checked={projectDetails.project_specialFeature}
-            onChange={onCheckboxChange('project_specialFeature')}
-            />
-            Special Feature
-          </label>
-
-          <br/>
-          <br/>
-
-          <p>Desired Project Start Date</p>
+        <label>
           <input
-          type='date'
-          value={projectDetails.project_start_date}
-          onChange={onInputChange('project_start_date')}
-          ></input>
+            type="checkbox"
+            checked={
+              projectDetails.project_interior
+            }
+            onChange={onCheckboxChange(
+              "project_interior"
+            )}
+          />
+          Interior
+        </label>
 
-          <br/>
-          
-          <p>Desired Project End Date</p>
+        <label>
           <input
-          type='date'
+            type="checkbox"
+            checked={
+              projectDetails.project_exterior
+            }
+            onChange={onCheckboxChange(
+              "project_exterior"
+            )}
+          />
+          Exterior
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={
+              projectDetails.project_cabinetry
+            }
+            onChange={onCheckboxChange(
+              "project_cabinetry"
+            )}
+          />
+          Cabinetry
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={
+              projectDetails.project_specialFeature
+            }
+            onChange={onCheckboxChange(
+              "project_specialFeature"
+            )}
+          />
+          Special Feature
+        </label>
+
+        <br />
+        <br />
+
+        <p>DESIRED PROJECT START DATE</p>
+        <input
+          type="date"
+          value={
+            projectDetails.project_start_date
+          }
+          onChange={onInputChange(
+            "project_start_date"
+          )}
+        ></input>
+
+        <br />
+
+        <p>DESIRED PROJECT END DATE</p>
+        <input
+          type="date"
           value={projectDetails.project_end_date}
-          onChange={onInputChange('project_end_date')}
-          ></input>
-        </div>
+          onChange={onInputChange(
+            "project_end_date"
+          )}
+        ></input>
+      </div>
     </div>
   );
 }
