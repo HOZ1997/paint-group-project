@@ -123,7 +123,7 @@ function App() {
             )}
           </Route>
           <Route exact path="/projectScope">
-            <projectScope />
+            <ProjectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />

@@ -23,7 +23,7 @@ function ProposalNav() {
               "/projects" && (
               <img
                 src="/images/list_light.jpg"
-                classname="navProjectList"
+                className="navProjectList"
               />
             )}
             {/* else render  */}
@@ -41,7 +41,7 @@ function ProposalNav() {
               "/ProjectInformationPage" && (
               <img
                 src="/images/info_light.jpg"
-                classname="proposalNavInfo"
+                className="proposalNavInfo"
               />
             )}
             {/* else render  */}
@@ -49,7 +49,7 @@ function ProposalNav() {
               "/ProjectInformationPage" && (
               <img
                 src="/images/info_dark.jpg"
-                classname="navInfo"
+                className="navInfo"
               />
             )}
           </Link>
@@ -62,7 +62,7 @@ function ProposalNav() {
               "/proposal" && (
               <img
                 src="/images/proposal_light.jpg"
-                classname="navProposal"
+                className="navProposal"
               />
             )}
             {/* else render  */}
@@ -70,7 +70,7 @@ function ProposalNav() {
               "/proposal" && (
               <img
                 src="/images/proposal_dark.jpg"
-                classname="navProposal"
+                className="navProposal"
               />
             )}
           </Link>
@@ -83,7 +83,7 @@ function ProposalNav() {
               "/WorkOrder" && (
               <img
                 src="/images/work_light.jpg"
-                classname="navWorkOrder"
+                className="navWorkOrder"
               />
             )}
             {/* else render  */}
@@ -91,7 +91,7 @@ function ProposalNav() {
               "/WorkOrder" && (
               <img
                 src="/images/work_dark.jpg"
-                classname="navWorkOrder"
+                className="navWorkOrder"
               />
             )}
           </Link>
@@ -101,7 +101,7 @@ function ProposalNav() {
         <li>
           <img
             src="/images/account_dark.jpg"
-            classname="navLogout"
+            className="navLogout"
             //   onclick send logout action
             onClick={() => {
               // send logout dispatch

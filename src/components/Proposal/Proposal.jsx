@@ -9,6 +9,8 @@ import {
 } from "react-redux";
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import "./Proposal.css";
+// import useparams
+import { useParams } from "react-router-dom";
 
 // CUSTOM COMPONENTS
 import RegisterForm from "../RegisterForm/RegisterForm";
