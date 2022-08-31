@@ -23,7 +23,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
-import ProjectDetails from '../ProjectDetails/ProjectDetails';
+import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
@@ -33,6 +33,8 @@ import ProjectInformationPage from "../ProjectInformationPage/ProjectInformation
 
 import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
 import Proposal from "../Proposal/Proposal";
+import ProposalNav from "../ProposalNav/ProposalNav";
+import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 // testing displays
 
@@ -50,7 +52,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <ProposalHeader />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
@@ -84,12 +86,8 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-
-          <ProtectedRoute
-            exact
-            path="/addclient"
-          >
-            <AddClient/>
+          <ProtectedRoute exact path="/addclient">
+            <AddClient />
           </ProtectedRoute>
 
           <Route exact path="/login">
@@ -125,7 +123,7 @@ function App() {
             )}
           </Route>
           <Route exact path="/projectScope">
-            <projectScope />
+            <ProjectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />
@@ -145,17 +143,19 @@ function App() {
           <Route exact path="/proposal/:id">
             <Proposal />
           </Route>
-          <Route exact path="/ProjectInformationPage">
+          <Route
+            exact
+            path="/ProjectInformationPage"
+          >
             <ProjectInformationPage />
           </Route>
-
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        <ProposalNav />
       </div>
     </Router>
   );

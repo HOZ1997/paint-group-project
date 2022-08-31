@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {
+  useState,
+  useEffect,
+} from "react";
+import { useHistory } from "react-router-dom";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
-import './Proposal.css';
+import "./Proposal.css";
+// import useparams
+import { useParams } from "react-router-dom";
 
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+import RegisterForm from "../RegisterForm/RegisterForm";
+import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 function Proposal(props) {
- // const [lorem, ipsum] = useState('');
+  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
   const {id} = useParams();
 
@@ -18,7 +27,9 @@ function Proposal(props) {
 
   const history = useHistory();
 
-  const proposal = useSelector((store) => store.getProject[0]);
+  const proposal = useSelector(
+    (store) => store.getProject[0]
+  );
 
   // const store = useSelector((store => store));
 
@@ -27,99 +38,269 @@ function Proposal(props) {
   };
 
   return (
-
-//  <div>{(JSON.stringify(proposal))}</div>
+    //  <div>{(JSON.stringify(proposal))}</div>
     <div>
       {proposal && ( // only continue if proposal is defined
         <>
-        {(proposal.length === 0) ? <p>...loading...</p> : (
-          <div className="container">
-            <section id="frontPage">
-              <img src="/images/PaintLogo.png" id="placeholderLogo"></img>
-              <h2>Proposal for {proposal.client_firstlast_name}</h2>
-              <hr></hr>
-              <br></br>
-            </section>
-            <section id="jobIntro">
+          {proposal.length === 0 ? (
+            <p>...loading...</p>
+          ) : (
+            <div className="container">
 
-            <h3>Job # 00{proposal.project_job_number}</h3>
-            <ul>
-              <li>{proposal.project_propertytype_name}</li>
-              <li>{proposal.project_buildingtype_name}</li>
-            </ul>
-            <p>Start Date: {proposal.project_startdate}</p>
-            <p>Start Date: {proposal.project_complete_specificdate}</p>
-            <hr></hr>
-            <br></br>
-            </section>
-            <section id="clientDetails">
-              <h3>Prepared for: {proposal.client_firstlast_name}</h3>
-              <p>{proposal.decision_emailaddress}</p>
-              <p>{proposal.decision_phonenumber}</p>
-              <p>{proposal.project_address_1} {proposal.project_address_2}</p>
-              <p>{proposal.project_address_city}, {proposal.project_address_state} {proposal.project_address_zip}</p>
-              <br></br>
-            </section>
-            <section id="proposalPhotos">
-              <h3>Pictures</h3>
+              <section id="jobIntro">
+                  <div className="jobIntro">
+                    <img src="/images/Superstruct_logo_dark.png" className="logo" />
+                  <h3>
+                    Job # 00
+                    {proposal.project_job_number}
+                  </h3>
+                  <ul>
+                    <li>
+                      {
+                        proposal.project_propertytype_name
+                      }
+                    </li>
+                    <li>
+                      {
+                        proposal.project_buildingtype_name
+                      }
+                    </li>
+                  </ul>
+                  <h3>START DATE: </h3>
+                  <p>
+                    {proposal.project_startdate}
+                  </p>
+                  <h3>COMPLETION DATE: </h3>
+                  <p>
+                    {
+                      proposal.project_complete_specificdate
+                    }
+                  </p>
 
-              <img src="/images/FellaPainting.png"></img>
-              <img src="/images/CartoonPainting.png"></img><br></br>
-              <img src="/images/MoreFriends.png"></img>
-              <img src="/images/paintRoller.png"></img><br></br>
-            </section>
-            <section id="scopeOfWork">
-              <h3>Scope of Work</h3>
-              <h4>Prep</h4>
-              <ul>
-                <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
-                <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
-                <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
-              </ul>
-              <h4>Warranty</h4>
-              <ul>
-              <li>One Year? {(proposal.isexteriorwarranty_oneyear).toString()}</li>
-              <li>Three Year? {(proposal.isexteriorwarranty_threeyear).toString()}</li>
-              <li>Five Year? {(proposal.isexteriorwarranty_fiveyear).toString()}</li>
-              </ul>
-              <hr></hr>
-              <br></br>
-            </section>
-            <section id="specialFeatures">
-              <h3>Special Feature(s)</h3>
-              <p>Feature Type: {proposal.specialfeatureexterior_type_name}</p>
-              <p>Notes? {proposal.specialfeature_notes}</p>
-              <p>Paint Product: {proposal.specialfeature_paintproduct}</p>
-              <ul>
-                <li>Primer? {(proposal.isspecialfeaturestatus_needprimer).toString()}</li>
-                <li>Patch or Repair? {(proposal.isspecialfeaturestatus_patchedrepair).toString()}</li>
-                <li>Extensive Scraping? {(proposal.isspecialfeaturestatus_extensivescraping).toString()}</li>
+                  <br></br>
+                </div>
+              </section>
+              <section id="clientDetails">
+                <div className="clientDetails">
+                  <h3>PREPARED FOR: </h3>
+                  <p>
+                    {
+                      proposal.client_firstlast_name
+                    }
+                  </p>
 
-              </ul>
-            </section>
-            <section id="estimate">
-              <h3>Project Total: ${proposal.exteriorestimate_totalcost}00</h3>
-              <ul>
-                <li>Labor: ${proposal.exteriorestimate_laborcost}00</li>
-                <li>Material: ${proposal.exteriorestimate_materialcost}00</li>
-              </ul>
-              <hr></hr>
-              <br></br>
-            </section>
-            <section id="proposalConclusion">
-              <h3>Accept and Continue?</h3>
-              <button>Accept Proposal</button>
-            </section>
-          </div>
+                  <p>
+                    {
+                      proposal.decision_emailaddress
+                    }
+                  </p>
+                  <p>
+                    {
+                      proposal.decision_phonenumber
+                    }
+                  </p>
+                  <p>
+                    {proposal.project_address_1}{" "}
+                    {proposal.project_address_2}
+                  </p>
+                  <p>
+                    {
+                      proposal.project_address_city
+                    }
+                    ,{" "}
+                    {
+                      proposal.project_address_state
+                    }{" "}
+                    {proposal.project_address_zip}
+                  </p>
+                  <br></br>
+                </div>
+              </section>
+              <section id="proposalPhotos">
+                <div className="proposalPhotos">
+                  <img src="/images/FellaPainting.png"></img>
+                  <img src="/images/CartoonPainting.png"></img>
+                  <br></br>
+                  <img src="/images/MoreFriends.png"></img>
+                  <img src="/images/paintRoller.png"></img>
+                  <br></br>
+                </div>
+              </section>
+              <section id="scopeOfWork">
+                <div className="scopeOfWork">
+                  <h2>Scope of Work</h2>
+                  <ul>
+                    <li>
+                      <h3>Power Wash? </h3>
+                      {/* if this is true, render "Yes", else render "No" */}
+                      <p>
+                        {proposal.isexteriorprep_powerwash ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                    <li>
+                      <h3>Scrape? </h3>
+                      <p>
+                        {proposal.isexteriorprep_scrape ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                    <li>
+                      <h3>Remove mildew? </h3>
+                      <p>
+                        {proposal.isexteriorprep_mildew ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                    <li>
+                      <h3>Power Wash? </h3>
+                      <p>
+                        {proposal.isexteriorprep_powerwash ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <h3>Warranty: </h3>
+                      <p>
+                        {proposal.isexteriorwarranty_oneyear ===
+                        true
+                          ? "One Year"
+                          : ""}
+                      </p>
+                      <p>
+                        {proposal.isexteriorwarranty_threeyear ===
+                        true
+                          ? "Three Year"
+                          : ""}
+                      </p>
+                      <p>
+                        {proposal.isexteriorwarranty_fivwyear ===
+                        true
+                          ? "Five Year"
+                          : ""}
+                      </p>
+                    </li>
+                  </ul>
+
+                  <br></br>
+                </div>
+              </section>
+              <section id="specialFeatures">
+                <div className="specialFeatures">
+                  <h2>Special Feature(s)</h2>
+                  <h3>Feature Type: </h3>
+                  <p>
+                    {
+                      proposal.specialfeatureexterior_type_name
+                    }
+                  </p>
+
+                  <h3>Notes? </h3>
+                  <p>
+                    {
+                      proposal.specialfeature_notes
+                    }
+                  </p>
+                  <h3>Paint Product: </h3>
+                  <p>
+                    {
+                      proposal.specialfeature_paintproduct
+                    }
+                  </p>
+                  <ul>
+                    <li>
+                      <h3>Primer? </h3>
+                      <p>
+                        {proposal.isspecialfeaturestatus_needprimer ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                    <li>
+                      <h3>Patch or Repair? </h3>
+                      <p>
+                        {proposal.isspecialfeaturestatus_patchedrepair ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                    <li>
+                      <h3>
+                        Extensive Scraping?{" "}
+                      </h3>
+                      <p>
+                        {proposal.isspecialfeaturestatus_extensivescraping ===
+                        true
+                          ? "Yes"
+                          : "No"}
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section id="estimate">
+                <div className="estimate">
+                  <h3>
+                    Project Total: $
+                    {
+                      proposal.exteriorestimate_totalcost
+                    }
+                    00
+                  </h3>
+                  <ul>
+                    <li>
+                      <h4>Labor:</h4>
+                      <p>
+                        $
+                        {
+                          proposal.exteriorestimate_laborcost
+                        }
+                        00
+                      </p>
+                    </li>
+                    <li>
+                      <h4>Material:</h4>
+                      <p>
+                        $
+                        {
+                          proposal.exteriorestimate_materialcost
+                        }
+                        00
+                      </p>
+                    </li>
+                  </ul>
+
+                  <br></br>
+                </div>
+              </section>
+              <section id="proposalConclusion">
+                <div className="proposalConclusion">
+                  <h3>Accept and Continue?</h3>
+                  <button className="myButton">
+                    ACCEPT PROPOSAL
+                  </button>
+                </div>
+              </section>
+            </div>
           )}
         </>
       )}
-
     </div>
   );
 }
 
 export default Proposal;
-
 
 //Photo Map --->{proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet

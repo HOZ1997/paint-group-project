@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import './ProjectScope.css';
+
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.

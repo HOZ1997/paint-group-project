@@ -1,0 +1,42 @@
+/* import Lexand */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
+
+.dropdownSelector {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+h2{
+    font-family: "Lexend Deca", sans-serif;
+}
+
+select{
+    font-family: "Lexend Deca", sans-serif;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    width: 106%
+}
+
+input {
+    font-family: "Lexend Deca", sans-serif;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 9px;
+    width: 103%;
+}
+    /* when you click in, outline the input field in cyan */
+    input:focus {
+        outline: none;
+        border: 1px solid rgb(94, 191, 221);
+    }
+    
+
+
+label{
+    margin-left:  15px;
+}
+
+select.addClientFirst{
+   font-family: "Lexend Deca", sans-serif;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+}
