@@ -41,7 +41,7 @@ function EstimateCost() {
       exteriorestimate_materialcost: materialAmount,
       exteriorestimate_totalcost: total,
     };
-    console.log(costReducer);
+    console.log(costDetails);
     dispatch({type: 'SET_COST', payload: newCostInput.total});
     // setLaborAmount('');
     // setMaterialAmount('');

@@ -8,7 +8,7 @@ const costReducer = (state = newCostInput, action) => {
   console.log('in estimateCost Reducer', action.payload);
   switch (action.type) {
     case 'SET_COST':
-      return action.payload.newCostInput;
+      return action.payload;
     default:
       return state;
   }
