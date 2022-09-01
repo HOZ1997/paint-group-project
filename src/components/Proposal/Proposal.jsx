@@ -31,6 +31,10 @@ function Proposal(props) {
     (store) => store.getProject[0]
   );
 
+  const imageMappable = useSelector(
+    (store) => store.getProject
+  );
+
   // const store = useSelector((store => store));
 
   const newProject = () => {
@@ -118,6 +122,7 @@ function Proposal(props) {
               </section>
               <section id="proposalPhotos">
                 <div className="proposalPhotos">
+                  {imageMappable.map( item =>(<img src={item.photo_upload_path} />))}
                   <img src="/images/FellaPainting.png"></img>
                   <img src="/images/CartoonPainting.png"></img>
                   <br></br>
@@ -303,4 +308,4 @@ function Proposal(props) {
 
 export default Proposal;
 
-//Photo Map --->{proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet
+//Photo Map --->{imageMappable.map( item =>(<img src={item.photo_upload_path} />))} I don't think this is set up yet
