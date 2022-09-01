@@ -31,11 +31,20 @@ function Proposal(props) {
     (store) => store.getProject[0]
   );
 
+  const imageMappable = useSelector(
+    (store) => store.getProject
+  );
+
+  const acceptProposal = () => {
+    alert('Proposal Accepted!');
+    history.push(`/workorder/${id}`)
+  }
+
   // const store = useSelector((store => store));
 
-  const newProject = () => {
-    history.push(``);
-  };
+  // const newProject = () => {
+  //   history.push(``);
+  // };
 
   return (
     //  <div>{(JSON.stringify(proposal))}</div>
@@ -68,12 +77,12 @@ function Proposal(props) {
                   </ul>
                   <h3>START DATE: </h3>
                   <p>
-                    {proposal.project_startdate}
+                    {proposal.project_startdate.slice(0,10)}
                   </p>
                   <h3>COMPLETION DATE: </h3>
                   <p>
                     {
-                      proposal.project_complete_specificdate
+                      proposal.project_complete_specificdate.slice(0,10)
                     }
                   </p>
 
@@ -118,6 +127,7 @@ function Proposal(props) {
               </section>
               <section id="proposalPhotos">
                 <div className="proposalPhotos">
+                  {imageMappable.map( item =>(<img src={item.photo_upload_path} />))}
                   <img src="/images/FellaPainting.png"></img>
                   <img src="/images/CartoonPainting.png"></img>
                   <br></br>
@@ -288,7 +298,7 @@ function Proposal(props) {
               <section id="proposalConclusion">
                 <div className="proposalConclusion">
                   <h3>Accept and Continue?</h3>
-                  <button className="myButton">
+                  <button className="myButton" onClick={acceptProposal}>
                     ACCEPT PROPOSAL
                   </button>
                 </div>
@@ -303,4 +313,4 @@ function Proposal(props) {
 
 export default Proposal;
 
-//Photo Map --->{proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet
+//Photo Map --->{imageMappable.map( item =>(<img src={item.photo_upload_path} />))} I don't think this is set up yet

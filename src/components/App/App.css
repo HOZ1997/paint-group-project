@@ -4,12 +4,13 @@ html,
 body,
 #react-root {
   height: 100%;
-  
+
 }
 
 body {
   /* import background image from my public/images folder */
-  background-image: url("/Users/stetsons/Desktop/paint-group-project/public/images/background_tile.jpg");
+  background-image: url("./cssImages/background_tile.jpg");
+
   /* tile it across the page */
   background-repeat: repeat;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana,
@@ -161,7 +162,8 @@ input {
 }
 
 .loginPageContainer {
-  background-image: url("/Users/stetsons/Desktop/paint-group-project/public/images/solid-color-image.jpeg");
+  background-image: url("./cssImages/solid-color-image.jpeg");
+
   /* make fill the whole screen */
   background-size: cover;
 
