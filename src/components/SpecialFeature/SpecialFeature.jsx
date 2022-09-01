@@ -44,7 +44,7 @@ let SpecialFeature = () => {
   return (
     <div>
       {/* <LanguageToggleButton /> Removing this functionality for now */}
-      <div>
+      <div className = "specialFeatureClass">
         <form>
           <h2>Special Feature</h2>
           <label>
@@ -74,7 +74,7 @@ let SpecialFeature = () => {
               name="specialFeatureProduct"
               // value={state.specialFeatureProduct}
               onChange={onInputChange('specialFeatureProduct')}
-              placeholder="Special Feature Product"
+
             />
           </label>
           <br />
@@ -114,7 +114,7 @@ let SpecialFeature = () => {
               name="specialFeatureNotes"
               // value={state.specialFeatureNotes}
               onChange={onInputChange('specialFeatureNotes')}
-              placeholder="Notes"
+
             />
           </label>
         </form>

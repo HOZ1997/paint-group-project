@@ -166,3 +166,7 @@ input {
   background-size: cover;
 
 }
+
+h1.totalCostClass{
+    font-size:24px;
+}

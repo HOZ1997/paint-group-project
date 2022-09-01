@@ -47,9 +47,9 @@ function EstimateCost() {
 
   return (
     <form>
-      <h1>Exterior Estimate Cost</h1>
+      <h2>EXTERIOR ESTIMATE COST</h2>
       <div className="mb-3">
-        <label>Labor Cost: $</label>
+        <label>LABOR COST: $</label>
         <input
           type="number"
           id="laborInput"
@@ -59,7 +59,7 @@ function EstimateCost() {
         />
       </div>
       <div className="mb-3">
-        <label>Material Cost: $</label>
+        <label>MATERIAL COST: $</label>
         <input
           type="number"
           id="materialsInput"
@@ -71,15 +71,18 @@ function EstimateCost() {
         />
       </div>
       <br />
-      <h4>
-        Total Costs: $
-        {total.toLocaleString(undefined, {
-          maximumFractionDigits: 2,
-        })}
-      </h4>
-      <br />
+      <div className="totalCostClass">
+        <h2>
+          TOTAL COST: $
+          {total.toLocaleString(undefined, {
+            maximumFractionDigits: 2,
+          })}
+        </h2>
+        <Button className="myButton">
+          Create
+        </Button>
+      </div>
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
-      <Button className="myButton">Create</Button>
     </form>
   );
 }

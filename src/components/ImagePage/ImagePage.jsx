@@ -57,7 +57,7 @@ function ImagePage(props) {
 
   return (
     <div>
-      <h2>Add up to 4 images</h2>
+      <h2>ADD UP TO 4 IMAGES</h2>
       <input type="file" id='imageInput' onChange={handleFileInputChange}/>
       <div id="grid-col">
         {imageReducer.map((img) => {
