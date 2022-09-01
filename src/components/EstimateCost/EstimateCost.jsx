@@ -1,6 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import React, {
+  useState,
+  useEffect,
+} from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
+// import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
   // ----- using this.state until connecting to database ----- //
@@ -14,6 +22,7 @@ function EstimateCost() {
   // const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
   const costEstimate = useSelector((store) => store.costReducer);
+
 
   const onChangeLaborAmount = (key) => (event) => {
     const updateLaborAmount = {

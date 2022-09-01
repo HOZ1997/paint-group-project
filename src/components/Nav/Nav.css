@@ -11,6 +11,11 @@
 
 .nav a {
   text-decoration: none;
+  
+}
+
+ul {
+  list-style-type: none;
 }
 
 .nav-title {
@@ -40,3 +45,4 @@
 .navLink:hover {
   background-color: #00bebb;
 }
+

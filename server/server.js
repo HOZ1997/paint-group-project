@@ -19,7 +19,11 @@ const clienttypeRouter = require('./routes/clienttype.router');
 const specialFeatureRouter = require('./routes/specialFeature.router');
 const newProjectRouter = require('./routes/newProject.router');
 const getProjectRouter = require('./routes/getProject.router');
+
 const estimateCostRouter = require('./routes/estimateCost.router');
+
+const projectscopeRouter = require ('./routes/projectscope.router');
+
 
 // Body parser middleware
 // app.use(bodyParser.json());
@@ -45,7 +49,11 @@ app.use('/api/clienttype', clienttypeRouter);
 app.use('/api/add_special_feature', specialFeatureRouter);
 app.use('/api/new_project', newProjectRouter);
 app.use('/api/get_project', getProjectRouter);
+
 app.use('/api/estimatecost', estimateCostRouter);
+
+app.use('/api/projectscope', projectscopeRouter);
+
 
 // Serve static files
 app.use(express.static('build'));

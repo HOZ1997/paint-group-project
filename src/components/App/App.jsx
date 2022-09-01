@@ -1,30 +1,40 @@
-import React, {useEffect} from 'react';
-import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import React, { useEffect } from "react";
+import {
+  HashRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 
-import {useDispatch, useSelector} from 'react-redux';
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
 
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
 
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import LandingPage from '../LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
-import ImagePage from '../ImagePage/ImagePage';
-import Projects from '../Projects/Projects';
-import ProjectDetails from '../ProjectDetails/ProjectDetails';
-import WorkOrder from '../WorkOrder/WorkOrder';
-import AddProject from '../AddProject/AddProject';
-import AddClient from '../AddClient/AddClient';
-import ProjectScope from '../projectScope/projectScope';
-import EstimateCost from '../EstimateCost/EstimateCost';
-import ProjectInformationPage from '../ProjectInformationPage/ProjectInformationPage';
+import AboutPage from "../AboutPage/AboutPage";
+import UserPage from "../UserPage/UserPage";
+import LandingPage from "../LandingPage/LandingPage";
+import LoginPage from "../LoginPage/LoginPage";
+import RegisterPage from "../RegisterPage/RegisterPage";
+import ImagePage from "../ImagePage/ImagePage";
+import Projects from "../Projects/Projects";
+import ProjectDetails from "../ProjectDetails/ProjectDetails";
+import WorkOrder from "../WorkOrder/WorkOrder";
+import AddProject from "../AddProject/AddProject";
+import AddClient from "../AddClient/AddClient";
+import ProjectScope from "../ProjectScope/ProjectScope";
+import EstimateCost from "../EstimateCost/EstimateCost";
+import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 
-import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
-import Proposal from '../Proposal/Proposal';
+import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
+import Proposal from "../Proposal/Proposal";
+import ProposalNav from "../ProposalNav/ProposalNav";
+import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 // testing displays
 
@@ -42,7 +52,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <ProposalHeader />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
@@ -55,7 +65,7 @@ function App() {
             <AboutPage />
           </Route>
 
-          <Route exact path="/WorkOrder">
+          <Route exact path="/workorder/:id">
             <WorkOrder />
           </Route>
 
@@ -111,7 +121,7 @@ function App() {
             )}
           </Route>
           <Route exact path="/projectScope">
-            <projectScope />
+            <ProjectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />
@@ -128,10 +138,13 @@ function App() {
           <Route exact path="/specialfeature">
             <SpecialFeatureBox />
           </Route>
-          <Route exact path="/proposal">
+          <Route exact path="/proposal/:id">
             <Proposal />
           </Route>
-          <Route exact path="/ProjectInformationPage">
+          <Route
+            exact
+            path="/ProjectInformationPage"
+          >
             <ProjectInformationPage />
           </Route>
 
@@ -140,7 +153,7 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        <ProposalNav />
       </div>
     </Router>
   );

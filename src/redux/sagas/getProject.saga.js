@@ -2,10 +2,11 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_SONGS" actions
-function* getProject() {
+function* getProject(action) {
   console.log('in fetchProjects');
   try {
-    const response = yield axios.get('/api/get_project');
+    console.log('this should be id (in getProject saga', action.payload);
+    const response = yield axios.get(`/api/get_project/${action.payload}`);
     console.log('response in fetchProjects in projectsSaga', response);
     yield put({ type: 'SET_PROJECT', payload: response.data });
   } catch (error) {

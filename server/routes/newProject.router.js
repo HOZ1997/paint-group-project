@@ -2,14 +2,15 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.post('/', (req, res) => {
-  console.log('req.body:', req.body);
+router.post('/', async (req, res) => {
+  console.log('req.body in newProject.router:', req.body);
   const newProject = `
-  INSERT INTO paintproject_input ("project_job_number") VALUES (DEFAULT)`;
-  const values = [];
+  INSERT INTO paintproject_input ("project_job_number") VALUES (DEFAULT) RETURNING id`;
   pool.query(newProject)
   .then(result => {
     console.log('added new row (project) to paintproject_input');
+    console.log('new project ID is', result.rows[0].id);
+    res.send(result.rows[0].id.toString());
   }).catch(err => {
     console.log('problem adding new project', err);
     res.sendStatus(500);

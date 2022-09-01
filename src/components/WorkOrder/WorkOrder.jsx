@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 // import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import './WorkOrder.css';
@@ -11,13 +11,15 @@ function WorkOrder(props) {
  // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({type: 'FETCH_PROJECT'});
-  }, []);
 
+  const {id} = useParams();
   const history = useHistory();
-
   const proposal = useSelector((store) => store.getProject[0]);
+
+  useEffect(() => {
+    console.log('id in work order: ', id);
+    dispatch({type: 'FETCH_PROJECT', payload: id});
+  }, []);
 
   const newProject = () => {
     history.push(``);
@@ -28,10 +30,10 @@ function WorkOrder(props) {
       {proposal && ( // only continue if proposal is defined
         <>
       {(proposal.length === 0 ) ? <p>...loading...</p> : (
-      <div className="container">
+            <div className="container">
+              <div className="workOrderCardBox">
         <section id="frontPage">
-          <img src="/images/PaintLogo.png" id="placeholderLogo"></img>
-          <h2>Work Order</h2>
+          <img src="/images/Superstruct_logo_dark.png" id="superStructLogo"></img>
           <h3>Client: {proposal.client_firstlast_name}</h3>
           <hr></hr>
           <br></br>
@@ -56,21 +58,27 @@ function WorkOrder(props) {
           <p>{proposal.project_address_city}, {proposal.project_address_state} {proposal.project_address_zip}</p>
           <br></br>
         </section>
-        <section id="proposalPhotos">
-          <h3>Pictures</h3>
+        {/* <section id="proposalPhotos">
+          <h3>Pictures</h3> */}
           {/* {proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet */}
-          <img src="/images/BicycleThief.png"></img>
+          {/* <img src="/images/BicycleThief.png"></img>
           <img src="/images/KafkaBook.png"></img><br></br>
           <img src="/images/Father.png"></img>
           <img src="/images/WomanPainting.png"></img><br></br>
-        </section>
+        </section> */}
         <section id="scopeOfWork">
           <h3>Scope of Work</h3>
           <h4>Prep</h4>
-          <ul>
-            <li>Power Wash? {(proposal.isexteriorprep_powerwash).toString()}</li>
-            <li>Scrape? {(proposal.isexteriorprep_scrape).toString()}</li>
-            <li>Remove mildew? {(proposal.isexteriorprep_mildew).toString()}</li>
+                <ul>
+                  {proposal.isexteriorprep_powerwash === true ?
+            <li>Power wash? Yes</li>
+                    : <li>Power wash? No</li>}
+                  {proposal.isexteriorprep_scrape === true ?
+            <li>Scrape? Yes</li>
+                    : <li>Scrape? No</li>}
+                  {proposal.isexteriorprep_mildew === true ?
+                    <li>Remove mildew? Yes</li>
+                    : <li>Remove mildew? No</li>}
           </ul>
           <br></br>
         </section>
@@ -80,15 +88,21 @@ function WorkOrder(props) {
           <p>Notes? {proposal.specialfeature_notes}</p>
           <p>Paint Product: {proposal.specialfeature_paintproduct}</p>
           <ul>
-            <li>Primer? {(proposal.isspecialfeaturestatus_needprimer).toString()}</li>
-            <li>Patch or Repair? {(proposal.isspecialfeaturestatus_patchedrepair).toString()}</li>
-            <li>Extensive Scraping? {(proposal.isspecialfeaturestatus_extensivescraping).toString()}</li>
-
+            {proposal.isspecialfeaturestatus_needprimer === 'True' ?
+            <li>Primer? Yes</li>
+                    : <li>Primer? No</li>}
+            {proposal.isspecialfeaturestatus_patchedrepair === 'True' ?
+            <li>Patch or repair? Yes</li>
+                    : <li>Patch or repair? No</li>}
+            {proposal.isspecialfeaturestatus_extensivescraping === 'True' ?
+                    <li>Extensive scraping? Yes</li>
+                    : <li>Extensive scraping? No</li>}
           </ul>
         </section>
-        <section id="conclusion">
+        {/* <section id="conclusion">
           <h3>Work Hard!</h3>
-        </section>
+        </section> */}
+                </div>
       </div>
       )}
     </>

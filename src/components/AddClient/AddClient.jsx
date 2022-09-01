@@ -1,187 +1,207 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import './AddClient.css';
+import React, { useEffect } from "react";
+import {
+  useSelector,
+  useDispatch,
+} from "react-redux";
+import "./AddClient.css";
 
-// Basic functional component structure for React with default state
-// value setup. When making a new component be sure to replace the
-// component name TemplateFunction with the name for the new component.
 function AddClient() {
-    // Using hooks we're creating local state for a "heading" variable with
-    // a default value of 'Functional Component'
-    const dispatch=useDispatch();
-    const history = useHistory ();
-    const clienttypes=useSelector((store) => store.clienttype);
-    const client=useSelector((store) => store.client );
-    const store = useSelector((store )=>store);
-     
+  // consts for imports
+  const dispatch = useDispatch();
+  const clienttypes = useSelector(
+    (store) => store.clienttype
+  );
+  const client = useSelector(
+    (store) => store.client
+  );
 
-    useEffect(() => {
-        dispatch({type: 'FETCH_CLIENTTYPE'});
-    }, []);
+  // useEffect for fetching clients
+  useEffect(() => {
+    dispatch({ type: "FETCH_CLIENTTYPE" });
+  }, []);
 
+  // function to push input changes to reducer
+  const onInputChange = (key) => (event) => {
+    const updatedInput = {
+      ...client,
+      [key]: event.target.value,
+    };
+    addClient(updatedInput);
+  };
 
-    const [heading, setHeading]=useState('Add Client');
-    const [selectClientType, setClientType]=useState('');
-    const [newClientFirstLastName, setNewClientFirstLastName]=useState('');
-    const [newDecisionFirstLastName, setNewDecisionFirstLastName]=useState('');
-    const [newDecisionEmailAddress, setNewDecisionEmailAddress]=useState('');
-    const [newDecisionPhoneNumber, setNewDecisionPhoneNumber]=useState('');
-    const [newProjectAddress1, setNewProjectAddress1]=useState('');
-    const [newProjectAddress2, setNewProjectAddress2]=useState('');
-    const [newProjectAddressCity, setNewProjectAddressCity]=useState('');
-    const [newProjectAddressState, setNewProjectAddressState]=useState('');
-    const [newProjectAddressZip, setNewProjectAddressZip]=useState('');
-    const [newProjectHouseYear, setNewProjectHouseYear]=useState('');
-    const [newProjectAddressNotes, setNewProjectAddressNotes]=useState('');
+  // function to call reducer
+  const addClient = (updatedInput) => {
+    // dispatch with new item as payload
+    dispatch({
+      type: "SET_CLIENT",
+      payload: updatedInput,
+    });
+  };
 
-    const changeClientType=(event) => {
-        setClientType(event.target.value);
-        console.log('in change clienttype', event.target.value);
-        addClient();
-        }
-    const setClientFirstLastName=(event) => {
-        setNewClientFirstLastName(event.target.value);
-        console.log('in change client first last name');
-        addClient();
-        }
-    const setDecisionFirstLastName=(event) => {
-         setNewDecisionFirstLastName(event.target.value);
-         addClient();
-         }
-     const setDecisionEmailAddress=(event) => {
-         setNewDecisionEmailAddress(event.target.value);
-         addClient();
-         }
+  return (
+    <div className="container">
+      <h2>ADD CLIENT</h2>
+      <div className="addClientFirst">
+        <div className="dropdownSelector">
+          {clienttypes.length === 0 ? (
+            <div>Loading...</div>
+          ) : (
+            <div>CLIENT TYPE</div>
+          )}
 
-      const setDecisionPhoneNumber=(event) => {
-         setNewDecisionPhoneNumber(event.target.value);
-         addClient();
-         }
-
-        const setProjectAddress1=(event) => {
-        setNewProjectAddress1(event.target.value);
-        addClient();
-          }
-
-          const setProjectAddress2=(event) => {
-            setNewProjectAddress2(event.target.value);
-            addClient();
-          }
-
-          const setProjectAddressCity=(event) => {
-            setNewProjectAddressCity(event.target.value);
-          }
-
-            const setProjectAddressState=(event) => {
-            setNewProjectAddressState(event.target.value);
-            addClient();
-             }
-
-         const setProjectAddressZip=(event) => {
-          setNewProjectAddressZip(event.target.value);
-          addClient();
-             }
-        const setProjectHouseYear=(event) => {
-         setNewProjectHouseYear(event.target.value);
-         addClient();
-         }
-
-        const setProjectAddressNotes=(event) => {
-         setNewProjectAddressNotes(event.target.value);
-         addClient();
-         }
-
-
-
-
-    const addClient=(event) => {
-        // if (client_firstlast_name === "" || decision_firstlast_name === "") {
-        //     alert('please fill out all fields.');
-            //break; 
-        // } else {
-            // new item object
-         const newClientInput ={
-           client_type_id: selectClientType,
-           client_firstlast_name: newClientFirstLastName,
-           decision_firstlast_name: newDecisionFirstLastName,
-           decision_emailaddress: newDecisionEmailAddress,
-           decision_phonenumber: newDecisionPhoneNumber,
-           project_address_1: newProjectAddress1,
-           project_address_2: newProjectAddress2,
-           project_address_city: newProjectAddressCity, 
-           project_address_state: newProjectAddressState,
-           project_address_zip: newProjectAddressZip,
-           project_house_year: newProjectHouseYear,
-           project_address_notes: newProjectAddressNotes,
-          user_id: store.user.id
-         
-        }
-        // dispatch with new item as payload
-        console.log('in addClient', newClientInput);
-         dispatch ({type: 'SET_CLIENT', payload: newClientInput});
-          // history.push ('/project');
-        //  <p>{JSON.stringify(newItem)}</p>
-    }
-    return (
-
-        <div className="container">
-          <h2>{heading}</h2>
-        
-        
-        <div className="dropdownSelector"> 
-    
-            {clienttypes.length === 0 ? (
-                <div>Loading...</div>
-            ) : (
-                <div>Client Type</div>
+          <select
+            onChange={onInputChange(
+              "client_type_id"
             )}
-
-            
-             {/* <h3>{JSON.stringify(clienttypes)}</h3> */}
-            
-            <select onChange={changeClientType}>
-            <option selected="true" disabled="disabled">Select Client Type</option>
-                {clienttypes.map(client_type => (
-                    <option key={client_type.id} value={client_type.id}>{client_type.client_type_name}</option>
-                ))}
-            </select>
-
-
-            <div id="customerTextInputs"></div>
-            <label for="clientName"> Client First and Last Name</label>
-            <input type="text" placeholder="Client First and Last Name" onChange={event => setClientFirstLastName(event)}></input>
-            <label for="decisionMakerName"> Decision Maker First and Last Name</label>
-            <input type="text" placeholder="Decision First and Last Name" onChange={event => setDecisionFirstLastName(event)}></input>
-            <label for="decsionMakerEmail"> Decision Maker Email</label>
-            <input type="text" placeholder="Decision Maker Email" onChange={event => setDecisionEmailAddress(event)}></input>
-            <label for="decsionMakerPhone"> Decision Maker Phone</label>
-            <input type="text" placeholder="Decision Maker Phone" onChange={event => setDecisionPhoneNumber(event)}></input>
-            <label for="projectAddress1">Project Address 1</label>
-            <input type="text" placeholder="Project Address 1" onChange={event => setProjectAddress1(event)}></input>
-            <label for="projectAddress2">Project Address 2</label>
-            <input type="text" placeholder="Project Address 2" onChange={event => setProjectAddress2(event)}></input>
-            <label for="projectCity">Project City</label>
-            <input type="text" placeholder="Project City" onChange={event => setProjectAddressCity(event)}></input>
-            <label for="projectState"> Project State</label>
-            <input type="text" placeholder="Project State" onChange={event => setProjectAddressState(event)}></input>
-             <label for="projectZip">Project Zip</label>
-            <input type="text" placeholder=" Project Zip" onChange={event => setProjectAddressZip(event)}></input>
-             <label for="projectHouseYear">House Year</label><br></br>
-            <input type="text" placeholder="Project House Year" onChange={event => setProjectHouseYear(event)}></input>
-            <label for="projectAddressNotes">Address Notes</label><br></br>
-            <input type="text" placeholder=" Project Address Notes" onChange={event => setProjectAddressNotes(event)}></input>
-
-            
-
-            
-      
-            {/* <button button type="button" className="btn" onClick={addClient}>Next</button> */}
-             
-         
-            </div>
+          >
+            <option
+              selected="true"
+              disabled="disabled"
+            >
+              SELECT CLIENT TYPE
+            </option>
+            {clienttypes.map((client_type) => (
+              <option
+                key={client_type.id}
+                value={client_type.id}
+              >
+                {client_type.client_type_name}
+              </option>
+            ))}
+          </select>
         </div>
-    );
+
+        <div id="customerTextInputs"></div>
+        <label for="clientName">
+          {" "}
+          CLIENT FIRST AND LAST NAME
+        </label>
+        <input
+          type="text"
+          // placeholder="Client First and Last Name"
+          onChange={onInputChange(
+            "client_firstlast_name"
+          )}
+        ></input>
+        <br />
+        <label for="decisionMakerName">
+          {" "}
+          DECISION MAKER FIRST AND LAST NAME
+        </label>
+        <input
+          type="text"
+          // placeholder="Decision First and Last Name"
+          onChange={onInputChange(
+            "decision_firstlast_name"
+          )}
+        ></input>
+        <br />
+        <label for="decsionMakerEmail">
+          {" "}
+          DECISION MAKER EMAIL
+        </label>
+        <input
+          type="text"
+          // placeholder="Decision Maker Email"
+          onChange={onInputChange(
+            "decision_emailaddress"
+          )}
+        ></input>
+        <br />
+        <label for="decsionMakerPhone">
+          {" "}
+          DECISION MAKER PHONE
+        </label>
+        <input
+          type="text"
+          // placeholder="Decision Maker Phone"
+          onChange={onInputChange(
+            "decision_phonenumber"
+          )}
+        ></input>
+        <br />
+        <label for="projectAddress1">
+          PROJECT ADDRESS 1
+        </label>
+        <input
+          type="text"
+          // placeholder="Project Address 1"
+          onChange={onInputChange(
+            "project_address_1"
+          )}
+        ></input>
+        <br />
+        <label for="projectAddress2">
+          PROJECT ADDRESS 2
+        </label>
+        <input
+          type="text"
+          // placeholder="Project Address 2"
+          onChange={onInputChange(
+            "project_address_2"
+          )}
+        ></input>
+        <br />
+        <label for="projectCity">
+          PROJECT CITY
+        </label>
+        <input
+          type="text"
+          // placeholder="Project City"
+          onChange={onInputChange(
+            "project_address_city"
+          )}
+        ></input>
+        <br />
+        <label for="projectState">
+          {" "}
+          PROJECT STATE
+        </label>
+        <input
+          type="text"
+          // placeholder="Project State"
+          onChange={onInputChange(
+            "project_address_state"
+          )}
+        ></input>
+        <br />
+        <label for="projectZip">
+          PROJECT ZIP
+        </label>
+        <input
+          type="text"
+          // placeholder=" Project Zip"
+          onChange={onInputChange(
+            "project_address_zip"
+          )}
+        ></input>
+        <br />
+        <label for="projectHouseYear">
+          HOUSE YEAR
+        </label>
+        <br></br>
+        <input
+          type="text"
+          // placeholder="Project House Year"
+          onChange={onInputChange(
+            "project_house_year"
+          )}
+        ></input>
+        <br />
+        <label for="projectAddressNotes">
+          ADDRESS NOTES
+        </label>
+        <br></br>
+        <input
+          type="text"
+          // placeholder=" Project Address Notes"
+          onChange={onInputChange(
+            "project_address_notes"
+          )}
+        ></input>
+      </div>
+    </div>
+  );
 }
 
 export default AddClient;
