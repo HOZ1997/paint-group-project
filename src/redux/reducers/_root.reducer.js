@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import language from './language.reducer';
@@ -8,6 +8,10 @@ import client from './client.reducer';
 import clienttype from './clienttype.reducer';
 import getProject from './getProject.reducer';
 import projectDetails from './projectDetails.reducer';
+
+import specialFeatureReducer from './specialFeatureBox.reducer';
+import costReducer from './estimateCost.reducer';
+
 import specialFeature from './specialFeatureBox.reducer';
 import newProject from './newProject.reducer';
 import projectScope from './projectScope.reducer'
@@ -29,9 +33,14 @@ const rootReducer = combineReducers({
   clienttype,
   getProject,
   projectDetails,
+
+  specialFeatureReducer,
+  costReducer,
+
   specialFeature,
   newProject,
   projectScope,
+
 });
 
 export default rootReducer;

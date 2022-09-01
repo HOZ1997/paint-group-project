@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AddClient from '../AddClient/AddClient';
+import WorkOrder from '../ProjectDetails/ProjectDetails';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
@@ -7,8 +8,6 @@ import SpecialFeature from '../SpecialFeature/SpecialFeature';
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import "./ProjectInformationPage.css"
 import {useDispatch, useSelector} from 'react-redux';
-
-
 
 function ProjectInformationPage() {
   const dispatch = useDispatch();
@@ -42,7 +41,7 @@ function ProjectInformationPage() {
       <AddClient />
       <ProjectDetails />
       <SpecialFeature />
-      <ProjectScope />
+      <projectScope />
       <ImagePage />
       <EstimateCost />
       <button button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
