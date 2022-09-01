@@ -1,12 +1,10 @@
 import React from 'react';
 import AddClient from '../AddClient/AddClient';
 import WorkOrder from '../ProjectDetails/ProjectDetails';
-import ProjectScope from '../ProjectScope/ProjectScope';
+import projectScope from '../projectScope/projectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
 import SpecialFeature from '../SpecialFeature/SpecialFeature';
-
-
 
 function ProjectInformationPage() {
   return (
@@ -15,10 +13,9 @@ function ProjectInformationPage() {
       <AddClient />
       <WorkOrder />
       <SpecialFeature />
-      <ProjectScope />
+      <projectScope />
       <ImagePage />
       <EstimateCost />
-
     </div>
   );
 }

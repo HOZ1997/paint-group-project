@@ -1,42 +1,34 @@
-import React, { useEffect } from "react";
-import {
-  HashRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
+import {useDispatch, useSelector} from 'react-redux';
 
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from "../AboutPage/AboutPage";
-import UserPage from "../UserPage/UserPage";
-import LandingPage from "../LandingPage/LandingPage";
-import LoginPage from "../LoginPage/LoginPage";
-import RegisterPage from "../RegisterPage/RegisterPage";
-import ImagePage from "../ImagePage/ImagePage";
-import Projects from "../Projects/Projects";
+import AboutPage from '../AboutPage/AboutPage';
+import UserPage from '../UserPage/UserPage';
+import LandingPage from '../LandingPage/LandingPage';
+import LoginPage from '../LoginPage/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import ImagePage from '../ImagePage/ImagePage';
+import Projects from '../Projects/Projects';
 import ProjectDetails from '../ProjectDetails/ProjectDetails';
-import WorkOrder from "../WorkOrder/WorkOrder";
-import AddProject from "../AddProject/AddProject";
-import AddClient from "../AddClient/AddClient";
-import ProjectScope from "../ProjectScope/ProjectScope";
-import EstimateCost from "../EstimateCost/EstimateCost";
-import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
+import WorkOrder from '../WorkOrder/WorkOrder';
+import AddProject from '../AddProject/AddProject';
+import AddClient from '../AddClient/AddClient';
+import ProjectScope from '../projectScope/projectScope';
+import EstimateCost from '../EstimateCost/EstimateCost';
+import ProjectInformationPage from '../ProjectInformationPage/ProjectInformationPage';
 
-import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
-import Proposal from "../Proposal/Proposal";
+import SpecialFeatureBox from '../SpecialFeature/SpecialFeatureBox';
+import Proposal from '../Proposal/Proposal';
 
 // testing displays
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -44,7 +36,7 @@ function App() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({type: 'FETCH_USER'});
   }, [dispatch]);
 
   return (
@@ -59,8 +51,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
-          >
+            path="/about">
             <AboutPage />
           </Route>
 
@@ -79,17 +70,12 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
             <UserPage />
           </ProtectedRoute>
 
-
-          <ProtectedRoute
-            exact
-            path="/addclient"
-          >
-            <AddClient/>
+          <ProtectedRoute exact path="/addclient">
+            <AddClient />
           </ProtectedRoute>
 
           <Route exact path="/login">
@@ -148,7 +134,6 @@ function App() {
           <Route exact path="/ProjectInformationPage">
             <ProjectInformationPage />
           </Route>
-          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
