@@ -8,7 +8,13 @@ const costReducer = (state = newCostInput, action) => {
   console.log('in estimateCost Reducer', action.payload);
   switch (action.type) {
     case 'SET_COST':
-      return action.payload;
+      let costEstimate = {
+        ...action.payload,
+        exteriorestimate_totalcost:
+          action.payload.exteriorestimate_laborcost +
+          action.payload.exteriorestimate_materialcost,
+      };
+      return costEstimate;
     default:
       return state;
   }
