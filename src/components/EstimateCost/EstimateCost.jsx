@@ -44,6 +44,9 @@ function EstimateCost() {
     // setTotal('');
   };
 
+  const totalCosts =
+    Number(costEstimate.exteriorestimate_laborcost) +
+    Number(costEstimate.exteriorestimate_materialcost);
   // exteriorestimate_laborcost
   // exteriorestimate_materialcost
   // exteriorestimate_totalcost
@@ -75,9 +78,7 @@ function EstimateCost() {
       <br />
       <h4>
         Total Costs: $
-        {Number(costEstimate.exteriorestimate_laborcost) +
-          Number(costEstimate.exteriorestimate_materialcost)}
-        {/* {toLocaleString(undefined, {maximumFractionDigits: 2})} */}
+        {totalCosts.toLocaleString(undefined, {maximumFractionDigits: 2})}
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
