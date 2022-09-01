@@ -30,7 +30,7 @@ function ProjectInformationPage() {
       <ProjectScope />
       <ImagePage />
       <EstimateCost />
-
+      <button className="btn btn-primary btn-sm">Create</button>
     </div>
   );
 }
