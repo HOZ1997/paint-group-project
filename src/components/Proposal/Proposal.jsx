@@ -35,11 +35,16 @@ function Proposal(props) {
     (store) => store.getProject
   );
 
+  const acceptProposal = () => {
+    alert('Proposal Accepted!');
+    history.push(`/workorder/${id}`)
+  }
+
   // const store = useSelector((store => store));
 
-  const newProject = () => {
-    history.push(``);
-  };
+  // const newProject = () => {
+  //   history.push(``);
+  // };
 
   return (
     //  <div>{(JSON.stringify(proposal))}</div>
@@ -293,7 +298,7 @@ function Proposal(props) {
               <section id="proposalConclusion">
                 <div className="proposalConclusion">
                   <h3>Accept and Continue?</h3>
-                  <button className="myButton">
+                  <button className="myButton" onClick={acceptProposal}>
                     ACCEPT PROPOSAL
                   </button>
                 </div>
