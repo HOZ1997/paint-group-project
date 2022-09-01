@@ -7,7 +7,7 @@ import databaseImageSaga from './databaseImage.saga';
 import projectsSaga from './projects.saga';
 import clientSaga from './client.saga';
 import clienttypeSaga from './clienttype.saga';
-// import specialFeatureSaga from './specialFeature.saga';
+import specialFeatureSaga from './specialFeature.saga';
 import newProjectSaga from './newProject.saga';
 import getProjectSaga from './getProject.saga';
 import projectscopeSaga from './projectscope.saga';
@@ -30,7 +30,7 @@ export default function* rootSaga() {
     projectsSaga(),
     clientSaga(),
     clienttypeSaga(),
-    // specialFeatureSaga(),
+    specialFeatureSaga(),
     newProjectSaga(),
     getProjectSaga(),
     projectscopeSaga(),

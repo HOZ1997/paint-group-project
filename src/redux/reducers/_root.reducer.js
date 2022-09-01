@@ -8,7 +8,7 @@ import client from './client.reducer';
 import clienttype from './clienttype.reducer';
 import getProject from './getProject.reducer';
 import projectDetails from './projectDetails.reducer';
-import specialFeatureReducer from './specialFeatureBox.reducer';
+import specialFeature from './specialFeature.reducer';
 import projectScope from './projectScope.reducer'
 
 // rootReducer is the primary reducer for our entire project
@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
   clienttype,
   getProject,
   projectDetails,
-  specialFeatureReducer,
+  specialFeature,
   projectScope,
 });
 

@@ -1,7 +1,20 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-// worker Saga: will be fired on "FETCH_CLIENT" actions
+// worker Saga: will be fired on "FETCH_FULLFORM" actions
+
+function* updateFullform(action) {
+
+    try {
+      console.log ("data in update full from" ); //response.data
+     const response = yield axios.put('api/fullform/update', action.payload);
+     yield put({ type: 'FETCH_FULLFORM', payload: response.data });
+     //fetchInventory();
+     } catch (error) {
+      console.log('Update Full Form put request failed', error);
+      }
+   }
+
 
 
 function* addingFullform(action) {
@@ -9,9 +22,9 @@ function* addingFullform(action) {
   try {
     const response = yield axios.post('/api/fullform/', action.payload);
     yield put({ type: 'FETCH_FULLFORM', payload: response.data });
-    //fetchClient();
+    //fetchfullForm();
   } catch (error) {
-    console.log('Add Fullform post request failed', error);
+    console.log('Add Fullform put request failed', error);
   }
 }
 
@@ -28,6 +41,7 @@ function* fetchFullform() {
 function* fullformSaga() {
   yield takeLatest('ADD_FULLFORM', addingFullform);
   yield takeLatest('FETCH_FULLFORM', fetchFullform);
+  yield takeLatest('UPDATE_FULLFORM', updateFullform);
 }
 
 export default fullformSaga;

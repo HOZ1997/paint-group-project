@@ -67,7 +67,7 @@ function EstimateCost() {
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
-      <Button className="btn btn-primary btn-sm">Create</Button>
+      {/* <Button className="btn btn-primary btn-sm">Create</Button> */}
     </form>
   );
 }

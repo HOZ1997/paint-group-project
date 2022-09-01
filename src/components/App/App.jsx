@@ -27,7 +27,7 @@ import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
-import ProjectScope from "../ProjectScope/ProjectScope";
+//import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
 

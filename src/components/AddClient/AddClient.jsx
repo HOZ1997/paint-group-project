@@ -41,7 +41,7 @@ function AddClient() {
             )}
             
             <select onChange={onInputChange('client_type_id')}>
-                <option selected="true" disabled="disabled">Select Client Type</option>
+                {/* <option selected="true" disabled="disabled">Select Client Type</option> */}
                     {clienttypes.map(client_type => (
                         <option key={client_type.id} value={client_type.id}>{client_type.client_type_name}</option>
                     ))}

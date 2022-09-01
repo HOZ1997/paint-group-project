@@ -2,7 +2,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import React, { useState } from 'react';
 import AddClient from '../AddClient/AddClient';
-import WorkOrder from '../ProjectDetails/ProjectDetails';
+import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
@@ -13,33 +13,26 @@ import SpecialFeature from '../SpecialFeature/SpecialFeature';
 function ProjectInformationPage() {
 const dispatch=useDispatch();
 const client = useSelector((store) => store.client);
-//const projectScope = useSelector((store) => store.projectScope);
-// const projectDetails = useSelector((store) => store.projectDetails);
-// const specialFeatureReducer = useSelector((store) => store.specialFeatureReducer);
-// const specialFeatureReducer = useSelector((store) => store.specialFeatureReducer);
+const projectScope = useSelector((store) => store.projectScope);
+const projectDetails = useSelector((store) => store.projectDetails);
+const specialFeature = useSelector((store) => store.specialFeature);
+//const EstimatedCost = useSelector((store) => store.);
 
 
 const onUpdateInformation = () => {
-  const fullForm = {
+  let fullForm = {
     client: client,
-    //projectScope: projectScope
-    // projectDetails: projectDetails,
-    // specialFeatureReducer: specialFeatureReducer,
+    projectScope: projectScope,
+    projectDetails: projectDetails,
+    specialFeature: specialFeature,
     // image: imageReducer,
-    // estimatedcost:noreducersetupyet  
+    //estimatedcost:noreducersetupyet  
   }
   //dispatch with full form as payload
         
   console.log('in full Form', fullForm);
-  dispatch({ action: 'ADD_FULLFORM', type: fullForm });
+  dispatch({ action: 'UPDATE_FULLFORM', type: fullForm });
 }
-// database side-----
-//   req.body.fullForm.projectScope.whateverFormPart1 properties from reducers 
-// req.body.fullForm.firstReducer.whateverFormPart2
-// req.body.fullForm.secondReducer.whateverFormPart1
-// req.body.fullForm.secondReducer.whateverFormPart2
-// req.body.fullForm.thirdReducer.whateverFormPart1
-// req.body.fullForm.thirdReducer.whateverFormPart2
 
 
 
@@ -49,7 +42,7 @@ const onUpdateInformation = () => {
     <div className="container">
       <p>Job #:</p>
       <AddClient />
-      <WorkOrder />
+      <ProjectDetails />
       <SpecialFeature />
       <ProjectScope />
       <ImagePage />
