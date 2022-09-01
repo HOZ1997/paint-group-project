@@ -72,12 +72,12 @@ function Proposal(props) {
                   </ul>
                   <h3>START DATE: </h3>
                   <p>
-                    {proposal.project_startdate}
+                    {proposal.project_startdate.slice(0,10)}
                   </p>
                   <h3>COMPLETION DATE: </h3>
                   <p>
                     {
-                      proposal.project_complete_specificdate
+                      proposal.project_complete_specificdate.slice(0,10)
                     }
                   </p>
 

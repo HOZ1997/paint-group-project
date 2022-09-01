@@ -45,8 +45,8 @@ function WorkOrder(props) {
           <li>{proposal.project_propertytype_name}</li>
           <li>{proposal.project_buildingtype_name}</li>
         </ul>
-        <p>Start Date: {proposal.project_startdate}</p>
-        <p>Start Date: {proposal.project_complete_specificdate}</p>
+        <p>Start Date: {proposal.project_startdate.slice(0,10)}</p>
+        <p>Start Date: {proposal.project_complete_specificdate.slice(0,10)}</p>
         <hr></hr>
         <br></br>
         </section>
