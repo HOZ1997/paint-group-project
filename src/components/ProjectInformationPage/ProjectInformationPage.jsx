@@ -19,6 +19,21 @@ function ProjectInformationPage() {
   const idStore = useSelector(
     (store) => store.newProject
   );
+  const imageReducer = useSelector(
+    (store) => store.imageReducer
+  );
+  
+  const onUpdateInformation = () => {
+    
+    //dispatch to send image urls to database
+    console.log('This is the array of URLs to be sent', imageReducer);
+    const imageObject = {
+      photos: imageReducer,
+      projectId: idStore
+    }
+    dispatch({ type: 'SAVE_URLS', payload: imageObject })
+  }
+
   console.log("maybe the id:::::::::::", idStore);
 
   return (
