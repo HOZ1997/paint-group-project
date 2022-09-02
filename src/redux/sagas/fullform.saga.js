@@ -9,7 +9,7 @@ function* updateFullform(action) {
       console.log ("data in update full from" ); //response.data
      const response = yield axios.put('api/fullform/update', action.payload);
      yield put({ type: 'FETCH_FULLFORM', payload: response.data });
-     //fetchInventory();
+     //fetchfullForm();
      } catch (error) {
       console.log('Update Full Form put request failed', error);
       }

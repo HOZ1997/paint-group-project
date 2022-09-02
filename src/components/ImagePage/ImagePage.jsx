@@ -39,12 +39,12 @@ function ImagePage(props) {
   };
 
   // this function 
-  const saveUrls = () => {
-    // let urlArray = [ imageReducer[1], imageReducer[2], imageReducer[3], imageReducer[4], imageReducer[5] ]
-    console.log('This is the array of URLs to be sent', imageReducer);
-    dispatch({ type: 'SAVE_URLS', payload: imageReducer })
-    history.push( '/estimatecost' );
-  }
+  // const saveUrls = () => {
+  //   // let urlArray = [ imageReducer[1], imageReducer[2], imageReducer[3], imageReducer[4], imageReducer[5] ]
+  //   console.log('This is the array of URLs to be sent', imageReducer);
+  //   dispatch({ type: 'SAVE_URLS', payload: imageReducer })
+  //   // history.push( '/estimatecost' );
+  // }
   
   //this function sets up the image format needed to send the user's file path to cloudinary and dispatches it to the image saga
   const uploadImage = () => {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import "./ProjectDetails.css"
 
 function ProjectDetails() {
 
@@ -42,7 +43,7 @@ function ProjectDetails() {
   return (
     <div>
       <h2>Project Details</h2>
-        <div>
+        <div className = "projectDetails">
           <p>Property Type</p>
           <select className='property_type' onChange={onInputChange('project_propertytype_id')}>
             <option selected="true" disabled>Select Property Type</option>

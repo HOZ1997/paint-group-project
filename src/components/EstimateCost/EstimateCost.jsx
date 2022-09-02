@@ -1,52 +1,71 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+//import React, {useState,useEffect}from "react";
+import { useDispatch, useSelector} from "react-redux";
+//import { useHistory } from "react-router-dom";
+//import { Button } from "react-bootstrap";
 // import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
-  //   const labor = document.getElementById('laborInput').value;
-  //   const material = document.getElementById('materialsInput').value;
-  //   const total = labor + material;
-  //   const el = document.getElementById('dne');
-  //   el.innerHTML = total;
-
   // ----- using this.state until connecting to database ----- //
-  const [laborAmount, setLaborAmount] = useState(0);
-  const [materialAmount, setMaterialAmount] = useState(0);
-  const [total, setTotal] = useState(0);
+  // const [laborAmount, setLaborAmount] = useState(0);
+  // const [materialAmount, setMaterialAmount] = useState(0);
+  // const [stateNum, setStateNum] = useState({
+  //   laborCost: 0,
+  //   materialCost: 0,
+  // });
 
-  const changeLaborAmount = (e) => {
-    setLaborAmount(+e.target.value);
+  // const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
+  const estimateCost = useSelector((store) => store.estimateCost);
+
+
+  const onChangeLaborAmount = (key) => (event) => {
+    const updateLaborAmount = {
+      ...estimateCost,
+      [key]: event.target.value,
+    };
+    estimateCostReducer(updateLaborAmount);
   };
 
-  const changeMaterialAmount = (e) => {
-    setMaterialAmount(+e.target.value);
+  const onChangeMaterialAmount = (key) => (event) => {
+    const updateMaterialAmount = {
+      ...estimateCost,
+      [key]: event.target.value,
+    };
+    estimateCostReducer(updateMaterialAmount);
   };
 
-  useEffect(() => {
-    setTotal(laborAmount + materialAmount);
-  }, [laborAmount, materialAmount, total]);
+  // useEffect(() => {
+  //   setTotal(laborAmount + materialAmount);
+  // }, [laborAmount, materialAmount, total]);
 
   // --- placeholders until connecting to database --- //
 
-  //   const dispatch = useDispatch;
-  //   const history = useHistory;
+  const estimateCostReducer = (updateLaborAmount) => {
+    dispatch({type: 'SET_COST', payload: updateLaborAmount});
+    // setLaborAmount('');
+    // setMaterialAmount('');
+    // setTotal('');
+  };
 
-  //   const [totalBalance, setTotalBalance] = useState(calculateTotal());
+  const totalCosts =
+    Number(estimateCost.exteriorestimate_laborcost) +
+    Number(estimateCost.exteriorestimate_materialcost);
+  // exteriorestimate_laborcost
+  // exteriorestimate_materialcost
+  // exteriorestimate_totalcost
 
-  //   function calculateTotal() {}
+  // bring total cost to the ID above //
+  // need reducer to store //
 
   return (
     <form>
-      <h1>Exterior Estimate Cost</h1>
+      <h1>Project Estimate</h1>
       <div className="mb-3">
         <label>Labor Cost: $</label>
         <input
           type="number"
           id="laborInput"
-          value={laborAmount}
-          onChange={(e) => changeLaborAmount(e)}
+          onChange={onChangeLaborAmount('exteriorestimate_laborcost')}
           step="any"
         />
       </div>
@@ -55,15 +74,14 @@ function EstimateCost() {
         <input
           type="number"
           id="materialsInput"
-          value={materialAmount}
-          onChange={(e) => changeMaterialAmount(e)}
+          onChange={onChangeMaterialAmount('exteriorestimate_materialcost')}
           step="any"
         />
       </div>
       <br />
       <h4>
         Total Costs: $
-        {total.toLocaleString(undefined, {maximumFractionDigits: 2})}
+        {totalCosts.toLocaleString(undefined, {maximumFractionDigits: 2})}
       </h4>
       <br />
       {/* <button onClick={() => history.push('/home')}>Create</button> */}

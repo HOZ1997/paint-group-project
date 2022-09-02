@@ -1,17 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
+
 html,
 body,
 #react-root {
   height: 100%;
+
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* import background image from my public/images folder */
+  background-image: url("./cssImages/background_tile.jpg");
+
+  /* tile it across the page */
+  background-repeat: repeat;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
   margin: 0px;
+  overflow-x:hidden;
 }
 
 img {
   display: inline-block;
   max-width: 100%;
+  margin-top: 30px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -26,7 +37,43 @@ Container
 Button
 -------------------------------------------------------------------------------- */
 
-.btn {
+.myButton {
+  /* a dark gray button with rounded edges and white text in the font i've been using */
+  background-color: rgb(89, 99, 107);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: "Lexend Deca", sans-serif;
+}
+.myButtonBlue {
+  /* a dark gray button with rounded edges and white text in the font i've been using */
+  background-color: rgb(94, 191, 221);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: "Lexend Deca", sans-serif;
+}
+/* .btn {
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
@@ -57,10 +104,10 @@ Button
 .btn:hover {
   background-color: #008183;
   text-decoration: none;
-}
+} */
 
 /* This line makes the "Register" and "Login" buttons look like links */
-.btn_asLink {
+/* .btn_asLink {
   padding: 0;
   border-width: 0;
   border-bottom: 1px solid #444;
@@ -74,7 +121,7 @@ Button
   background-color: transparent;
   border-color: #008183;
   color: #008183;
-}
+} */
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -96,17 +143,28 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
+  /* size 20px */
+  font-size: 7px;
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: rgb(89, 99, 107);
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  color:white;
+  /* box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4); */
 }
 
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.loginPageContainer {
+  background-image: url("./cssImages/solid-color-image.jpeg");
+
+  /* make fill the whole screen */
+  background-size: cover;
+
 }

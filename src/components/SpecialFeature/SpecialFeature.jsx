@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './SpecialFeature.css';
 //import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
-
+function SpecialFeature() {
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+//import RegisterForm from '../RegisterForm/RegisterForm';
 
 // let SpecialFeature = ({state, parentHandleChange, index}) => {
-let SpecialFeature = () => {
-    let dispatch = useDispatch();
-    //const store = useSelector((store) => store);
-    const specialFeature = useSelector((store) => store.specialFeature);
+//let SpecialFeature = () => {
+
+ 
+  const dispatch = useDispatch();
+  const specialFeature = useSelector((store) => store.specialFeature);
     
+
     const onInputChange = (key) => (event) => {
       const updatedInput = {
         ...specialFeature,
@@ -20,7 +22,6 @@ let SpecialFeature = () => {
       }
       specialFeatureReducer(updatedInput);
     }
-
 
     const onCheckboxChange = (key) => (event) => {
       const updatedCheckbox = {
@@ -36,8 +37,6 @@ let SpecialFeature = () => {
      console.log('in Special feature function', specialFeature);
       dispatch({type: 'SET_SPECIAL_FEATURE', payload: updatedInput});
     }
-
-
   // const handleChange = (event) => {
   //   const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
   //   parentHandleChange(index, event);
@@ -109,17 +108,30 @@ let SpecialFeature = () => {
             />
             Extensive Scraping
           </label>
+          
+          <br></br>
+          <br></br>
+          <label for="specialFeatureNotes">
+          Notes
+        </label>
+        <br></br>
+        <input
+          type="text"
+          // placeholder=" Special Feature Notes"
+          onChange={onInputChange(
+            "specialfeature_notes"
+          )}
+        ></input>
 
 
-          <label>
+          {/* <label>
             Notes
-            <textarea
-              name="specialFeatureNotes"
+            <texinputtarea
               // value={state.specialFeatureNotes}
-              onChange={onInputChange('specialFeatureNotes')}
+              onChange={onInputChange('specialfeature_notes')}
               placeholder="Notes"
             />
-          </label>
+          </label> */}
         </form>
         <br />
       </div>

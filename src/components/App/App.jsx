@@ -13,9 +13,7 @@ import {
 
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import LandingPage from "../LandingPage/LandingPage";
@@ -23,20 +21,21 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ImagePage from "../ImagePage/ImagePage";
 import Projects from "../Projects/Projects";
-import ProjectDetails from '../ProjectDetails/ProjectDetails';
+import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import WorkOrder from "../WorkOrder/WorkOrder";
 import AddProject from "../AddProject/AddProject";
 import AddClient from "../AddClient/AddClient";
-//import ProjectScope from "../ProjectScope/ProjectScope";
+import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-
-import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
+import SpecialFeature from "../SpecialFeature/SpecialFeature";
 import Proposal from "../Proposal/Proposal";
+import ProposalNav from "../ProposalNav/ProposalNav";
+import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 // testing displays
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -44,13 +43,13 @@ function App() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({type: 'FETCH_USER'});
   }, [dispatch]);
 
   return (
     <Router>
       <div>
-        <Nav />
+        <ProposalHeader />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
@@ -59,12 +58,11 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
-          >
+            path="/about">
             <AboutPage />
           </Route>
 
-          <Route exact path="/WorkOrder">
+          <Route exact path="/workorder/:id">
             <WorkOrder />
           </Route>
 
@@ -79,17 +77,12 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
             <UserPage />
           </ProtectedRoute>
 
-
-          <ProtectedRoute
-            exact
-            path="/addclient"
-          >
-            <AddClient/>
+          <ProtectedRoute exact path="/addclient">
+            <AddClient />
           </ProtectedRoute>
 
           <Route exact path="/login">
@@ -124,8 +117,8 @@ function App() {
               <LandingPage />
             )}
           </Route>
-          <Route exact path="/projectscope">
-            <projectscope />
+          <Route exact path="/projectScope">
+            <ProjectScope />
           </Route>
           <Route exact path="/projects">
             <Projects />
@@ -140,22 +133,24 @@ function App() {
             <ImagePage />
           </Route>
           <Route exact path="/specialfeature">
-            <SpecialFeatureBox />
+            <SpecialFeature />
           </Route>
-          <Route exact path="/proposal">
+          <Route exact path="/proposal/:id">
             <Proposal />
           </Route>
-          <Route exact path="/ProjectInformationPage">
+          <Route
+            exact
+            path="/ProjectInformationPage"
+          >
             <ProjectInformationPage />
           </Route>
-          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        <ProposalNav />
       </div>
     </Router>
   );
