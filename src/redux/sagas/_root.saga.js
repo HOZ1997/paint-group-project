@@ -38,7 +38,6 @@ export default function* rootSaga() {
     newProjectSaga(),
     getProjectSaga(),
     estimateCost(),
-
     projectscopeSaga(),
 
   ]);
