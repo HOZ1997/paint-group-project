@@ -13,9 +13,7 @@ import {
 
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import LandingPage from "../LandingPage/LandingPage";
@@ -30,8 +28,7 @@ import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-
-import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
+import SpecialFeature from "../SpecialFeature/SpecialFeature";
 import Proposal from "../Proposal/Proposal";
 import ProposalNav from "../ProposalNav/ProposalNav";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
@@ -136,7 +133,7 @@ function App() {
             <ImagePage />
           </Route>
           <Route exact path="/specialfeature">
-            <SpecialFeatureBox />
+            <SpecialFeature />
           </Route>
           <Route exact path="/proposal/:id">
             <Proposal />

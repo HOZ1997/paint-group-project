@@ -4,7 +4,7 @@ const newCostInput = {
   exteriorestimate_totalcost: 0,
 };
 
-const costReducer = (state = newCostInput, action) => {
+const estimateCostReducer = (state = newCostInput, action) => {
   console.log('in estimateCost Reducer', action.payload);
   switch (action.type) {
     case 'SET_COST':
@@ -20,4 +20,4 @@ const costReducer = (state = newCostInput, action) => {
   }
 };
 
-export default costReducer;
+export default estimateCostReducer;

@@ -7,15 +7,11 @@ import databaseImageSaga from './databaseImage.saga';
 import projectsSaga from './projects.saga';
 import clientSaga from './client.saga';
 import clienttypeSaga from './clienttype.saga';
-// import specialFeatureSaga from './specialFeature.saga';
+import specialFeatureSaga from './specialFeature.saga';
 import newProjectSaga from './newProject.saga';
 import getProjectSaga from './getProject.saga';
-
 import estimateCost from './estimateCost.saga';
-
 import projectscopeSaga from './projectscope.saga';
-
-
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -34,11 +30,10 @@ export default function* rootSaga() {
     projectsSaga(),
     clientSaga(),
     clienttypeSaga(),
-    // specialFeatureSaga(),
+    specialFeatureSaga(),
     newProjectSaga(),
     getProjectSaga(),
     estimateCost(),
-
     projectscopeSaga(),
 
   ]);
