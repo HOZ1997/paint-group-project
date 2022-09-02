@@ -1,13 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-} from "react";
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
-import { useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
+//import React, {useState,useEffect}from "react";
+import { useDispatch, useSelector} from "react-redux";
+//import { useHistory } from "react-router-dom";
+//import { Button } from "react-bootstrap";
 // import {DebounceInput} from 'react-debounce-input';
 
 function EstimateCost() {
@@ -21,12 +15,12 @@ function EstimateCost() {
 
   // const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
-  const costEstimate = useSelector((store) => store.costReducer);
+  const estimateCost = useSelector((store) => store.estimateCost);
 
 
   const onChangeLaborAmount = (key) => (event) => {
     const updateLaborAmount = {
-      ...costEstimate,
+      ...estimateCost,
       [key]: event.target.value,
     };
     estimateCostReducer(updateLaborAmount);
@@ -34,7 +28,7 @@ function EstimateCost() {
 
   const onChangeMaterialAmount = (key) => (event) => {
     const updateMaterialAmount = {
-      ...costEstimate,
+      ...estimateCost,
       [key]: event.target.value,
     };
     estimateCostReducer(updateMaterialAmount);
@@ -54,8 +48,8 @@ function EstimateCost() {
   };
 
   const totalCosts =
-    Number(costEstimate.exteriorestimate_laborcost) +
-    Number(costEstimate.exteriorestimate_materialcost);
+    Number(estimateCost.exteriorestimate_laborcost) +
+    Number(estimateCost.exteriorestimate_materialcost);
   // exteriorestimate_laborcost
   // exteriorestimate_materialcost
   // exteriorestimate_totalcost

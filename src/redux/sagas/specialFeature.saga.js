@@ -12,7 +12,7 @@ function* saveSpecialFeature(action) {
 }
 
 function* saveSpecialFeatureSaga() {
-  yield takeLatest('SAVE_SF', saveSpecialFeature);
+  yield takeLatest('SAVE_SPECIALFEATURE', saveSpecialFeature);
 }
 
 export default saveSpecialFeatureSaga;

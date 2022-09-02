@@ -49,6 +49,7 @@ function AddClient() {
             <div>CLIENT TYPE</div>
           )}
 
+
           <select
             onChange={onInputChange(
               "client_type_id"
@@ -199,6 +200,7 @@ function AddClient() {
             "project_address_notes"
           )}
         ></input>
+         
       </div>
     </div>
   );

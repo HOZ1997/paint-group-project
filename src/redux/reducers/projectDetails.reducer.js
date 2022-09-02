@@ -1,12 +1,12 @@
 const projectDetailsInput = {
-    property_type: '',
-    building_type: '',
-    project_interior: false,
-    project_exterior: false,
-    project_cabinetry: false,
-    project_specialFeature: false,
-    project_start_date: '',
-    project_end_date: '',
+    project_propertytype_id: '',
+    project_buildingtype_id: '',
+    isproject_typeinterior: false,
+    isproject_typeexterior: false,
+    isproject_typecabinetry: false,
+    isproject_typespecialfeature: false,
+    project_startdate: '',
+    project_complete_specificdate: '',
   }
 
 const projectDetailsReducer = (state = projectDetailsInput, action) => {

@@ -89,6 +89,7 @@ function ProjectScope() {
             <input type='radio'
             checked={projectScope.isexteriorwarranty_oneyear}
             onChange={onCheckboxChange('isexteriorwarranty_oneyear')}
+            name='warranty'
             />
                 1-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces
@@ -110,6 +111,7 @@ function ProjectScope() {
             <input type='radio'
             checked={projectScope.isexteriorwarranty_threeyear}
             onChange={onRadioboxChange('isexteriorwarranty_threeyear')}
+            name='warranty'
             />
                3-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces
@@ -131,6 +133,7 @@ function ProjectScope() {
             <input type='radio'
             checked={projectScope.isexteriorwarranty_fiveyear}
             onChange={onRadioboxChange('isexteriorwarranty_fiveyear')}
+            name='warranty'
             />
               5-YEAR WARRANTY - Company warrants the
           painting of exterior painted surfaces

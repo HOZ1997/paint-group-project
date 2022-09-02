@@ -1,15 +1,29 @@
+
+//import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import AddClient from '../AddClient/AddClient';
-import WorkOrder from '../ProjectDetails/ProjectDetails';
+import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import ProjectScope from '../ProjectScope/ProjectScope';
 import ImagePage from '../ImagePage/ImagePage';
 import EstimateCost from '../EstimateCost/EstimateCost';
 import SpecialFeature from '../SpecialFeature/SpecialFeature';
-import ProjectDetails from "../ProjectDetails/ProjectDetails";
 import "./ProjectInformationPage.css"
-import {useDispatch, useSelector} from 'react-redux';
 
 function ProjectInformationPage() {
+  const history = useHistory();
+  const store = useSelector((store) => store);
+  const client = useSelector((store) => store.client);
+  const projectScope = useSelector((store) => store.projectScope);
+  const projectDetails = useSelector((store) => store.projectDetails);
+  const specialFeature = useSelector((store) => store.specialFeature);
+  const estimateCost = useSelector((store) => store.estimateCost);
+
+
+
+
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "PUSH_NEW_PROJECT" });
@@ -23,17 +37,34 @@ function ProjectInformationPage() {
   );
   
   const onUpdateInformation = () => {
-    
-    //dispatch to send image urls to database
+    let fullForm = {
+      client: client,
+      projectScope: projectScope,
+      projectDetails: projectDetails,
+      specialFeature: specialFeature,
+      // image: imageReducer,
+      estimateCost:estimateCost  
+    }
+    //dispatch with full form as payload
     console.log('This is the array of URLs to be sent', imageReducer);
     const imageObject = {
       photos: imageReducer,
       projectId: idStore
-    }
+    }     
+       
+      //dispatch to send image urls to database
     dispatch({ type: 'SAVE_URLS', payload: imageObject })
+
+     history.push(`/Proposal`);
+    console.log('in full Form', fullForm);
+    dispatch({ action: 'UPDATE_FULLFORM', type: fullForm });
   }
+  
 
   console.log("maybe the id:::::::::::", idStore);
+  
+
+
 
   return (
     <div className="container">
@@ -41,12 +72,16 @@ function ProjectInformationPage() {
       <AddClient />
       <ProjectDetails />
       <SpecialFeature />
-      <projectScope />
+      <ProjectScope />
       <ImagePage />
       <EstimateCost />
+
+
       <button button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
     </div>
   );
 }
+
+
 
 export default ProjectInformationPage;

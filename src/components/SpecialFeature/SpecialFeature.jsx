@@ -2,44 +2,45 @@ import React, { useState, useEffect } from 'react';
 //import { useHistory } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import './SpecialFeature.css';
-import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
-
+//import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
+function SpecialFeature() {
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+//import RegisterForm from '../RegisterForm/RegisterForm';
 
 // let SpecialFeature = ({state, parentHandleChange, index}) => {
-let SpecialFeature = () => {
-    let dispatch = useDispatch();
-    const store = useSelector((store) => store);
-    const specialFeatureInputs = useSelector((store) => store.specialFeature);
+//let SpecialFeature = () => {
+
+ 
+  const dispatch = useDispatch();
+  const specialFeature = useSelector((store) => store.specialFeature);
+    
 
     const onInputChange = (key) => (event) => {
       const updatedInput = {
-        ...specialFeatureInputs,
+        ...specialFeature,
         [key]: event.target.value
       }
-      saveSpecialFeature(updatedInput);
+      specialFeatureReducer(updatedInput);
     }
 
-    const saveSpecialFeature = (updatedInput) => {
+    const onCheckboxChange = (key) => (event) => {
+      const updatedCheckbox = {
+        ...specialFeature,
+        [key]: event.target.checked
+      }
+      specialFeatureReducer(updatedCheckbox);
+    }
+
+    
+    const specialFeatureReducer = (updatedInput) => {
       // let SFpayload = specialFeatures;
-
-      // console.log('sending SF data to DB (in SF component now)', SFpayload);
-      dispatch({type: 'SAVE_SF', payload: updatedInput});
+     console.log('in Special feature function', specialFeature);
+      dispatch({type: 'SET_SPECIAL_FEATURE', payload: updatedInput});
     }
-
-  const onCheckboxChange = (key) => (event) => {
-    const updatedCheckbox = {
-      ...specialFeatureInputs,
-      [key]: event.target.checked
-    }
-    saveSpecialFeature(updatedCheckbox);
-  }
-
-  const handleChange = (event) => {
-    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
-    parentHandleChange(index, event);
-  }
+  // const handleChange = (event) => {
+  //   const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
+  //   parentHandleChange(index, event);
+  // }
 
   return (
     <div>
@@ -51,7 +52,7 @@ let SpecialFeature = () => {
             Type
             <select
             name="specialFeatureType"
-            onChange={onInputChange('specialFeatureType')}
+            onChange={onInputChange('specialfeatureexterior_type_id')}
             >
               <option value="0"></option>
               <option value="1">Soffits</option>
@@ -73,50 +74,64 @@ let SpecialFeature = () => {
               type="text"
               name="specialFeatureProduct"
               // value={state.specialFeatureProduct}
-              onChange={onInputChange('specialFeatureProduct')}
+              onChange={onInputChange('specialfeature_paintproduct')}
               placeholder="Special Feature Product"
             />
           </label>
           <br />
           <label>
-            Needs Primer
             <input
               type="checkbox"
-              name="primerIsChecked"
-              checked={specialFeatureInputs.primerIsChecked}
-              onChange={onCheckboxChange('primerIsChecked')}
+              checked={specialFeature.isspecialfeaturestatus_needprimer}
+              onChange={onCheckboxChange('isspecialfeaturestatus_needprimer')}
             />
+            Needs Primer
           </label>
           <br />
           <label>
-            Needs Patching / Repair
             <input
               type="checkbox"
               name="patchingIsChecked"
-              checked={specialFeatureInputs.patchingIsChecked}
-              onChange={onCheckboxChange('patchingIsChecked')}
+              checked={specialFeature.isspecialfeaturestatus_patchedrepair}
+              onChange={onCheckboxChange('isspecialfeaturestatus_patchedrepair')}
             />
+             Needs Patching / Repair
           </label>
           <br />
+
+
           <label>
-            Extensive Scraping
             <input
               type="checkbox"
-              name="scrapingIsChecked"
-              checked={specialFeatureInputs.scrapingIsChecked}
-              onChange={onCheckboxChange('scrapingIsChecked')}
+              checked={specialFeature.isspecialfeaturestatus_extensivescraping}
+              onChange={onCheckboxChange('isspecialfeaturestatus_extensivescraping')}
             />
+            Extensive Scraping
           </label>
-          <br />
-          <label>
+          
+          <br></br>
+          <br></br>
+          <label for="specialFeatureNotes">
+          Notes
+        </label>
+        <br></br>
+        <input
+          type="text"
+          // placeholder=" Special Feature Notes"
+          onChange={onInputChange(
+            "specialfeature_notes"
+          )}
+        ></input>
+
+
+          {/* <label>
             Notes
-            <textarea
-              name="specialFeatureNotes"
+            <texinputtarea
               // value={state.specialFeatureNotes}
-              onChange={onInputChange('specialFeatureNotes')}
+              onChange={onInputChange('specialfeature_notes')}
               placeholder="Notes"
             />
-          </label>
+          </label> */}
         </form>
         <br />
       </div>

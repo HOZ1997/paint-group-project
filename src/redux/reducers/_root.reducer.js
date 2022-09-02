@@ -8,11 +8,8 @@ import client from './client.reducer';
 import clienttype from './clienttype.reducer';
 import getProject from './getProject.reducer';
 import projectDetails from './projectDetails.reducer';
-
-import specialFeatureReducer from './specialFeatureBox.reducer';
-import costReducer from './estimateCost.reducer';
-
-import specialFeature from './specialFeatureBox.reducer';
+import specialFeature from './specialFeature.reducer';
+import estimateCost from './estimateCost.reducer';
 import newProject from './newProject.reducer';
 import projectScope from './projectScope.reducer'
 
@@ -33,11 +30,8 @@ const rootReducer = combineReducers({
   clienttype,
   getProject,
   projectDetails,
-
-  specialFeatureReducer,
-  costReducer,
-
   specialFeature,
+  estimateCost,
   newProject,
   projectScope,
 
