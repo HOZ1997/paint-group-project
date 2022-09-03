@@ -56,8 +56,8 @@ function AddClient() {
             )}
           >
             <option
-              selected="true"
-              disabled="disabled"
+              defaultValue
+              disabled
             >
               SELECT CLIENT TYPE
             </option>
@@ -200,7 +200,7 @@ function AddClient() {
             "project_address_notes"
           )}
         ></input>
-         
+
       </div>
     </div>
   );

@@ -57,12 +57,6 @@ function ProjectInformationPage() {
     dispatch({ type: 'UPDATE_FULLFORM', payload:fullForm });
   }
 
-
-  console.log("maybe the id:::::::::::", idStore);
-
-
-
-
   return (
     <div className="container">
       <p>Job # {idStore}:</p>
@@ -73,8 +67,7 @@ function ProjectInformationPage() {
       <ImagePage />
       <EstimateCost />
 
-
-      <button button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
+      <button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
     </div>
   );
 }

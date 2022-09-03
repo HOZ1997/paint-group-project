@@ -46,16 +46,16 @@ function ProjectDetails() {
         <div className = "projectDetails">
           <p>Property Type</p>
           <select className='property_type' onChange={onInputChange('project_propertytype_id')}>
-            <option selected="true" disabled></option>
+            <option selected disabled></option>
             <option value='1'>Residential</option>
             <option value='2'>Commercial</option>
             <option value='3'>New Construction</option>
           </select>
 
-          <p>Bulding Type</p>
+          <p>Building Type</p>
 
           <select className='building_type' onChange={onInputChange('project_buildingtype_id')}>
-            <option selected="true" disabled></option>
+            <option selected disabled></option>
             <option value='1'>Single Family Home</option>
             <option value='2'>Commercial Building</option>
             <option value='3'>Apartment</option>
