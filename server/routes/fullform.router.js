@@ -152,7 +152,7 @@ router.put('/update', (req,res)=> {
           req.body.projectScope.isexteriorwarranty_oneyear, //33
           req.body.projectScope.isexteriorwarranty_threeyear,  //34
           req.body.projectScope.isexteriorwarranty_fiveyear, //35
-          req.user.id,//36
+          req.user_id,//36
           req.body.id]; //37
           pool.query(queryString, values).then((results)=>{
             res.sendStatus(200);
