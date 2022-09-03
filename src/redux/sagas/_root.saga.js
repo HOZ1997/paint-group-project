@@ -12,6 +12,7 @@ import newProjectSaga from './newProject.saga';
 import getProjectSaga from './getProject.saga';
 import estimateCost from './estimateCost.saga';
 import projectscopeSaga from './projectscope.saga';
+import fullformSaga from './fullform.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -35,6 +36,7 @@ export default function* rootSaga() {
     getProjectSaga(),
     estimateCost(),
     projectscopeSaga(),
+    fullformSaga()
 
   ]);
 }
