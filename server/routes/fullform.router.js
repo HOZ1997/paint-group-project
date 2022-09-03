@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
   isexteriorwarranty_fiveyear
   FROM paintproject_input JOIN  client_type ON  client_type_id  = client_type.id 
   JOIN project_propertytype ON	project_propertytype_id	=	project_propertytype.id
-  JOIN project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id;`;
+  JOIN project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id ORDER BY paintproject_input.id;`;
   pool.query(queryString).then((results)=>{
     res.send (results.rows);
   }).catch ((err)=>{

@@ -58,7 +58,7 @@ function ProjectInformationPage() {
     //   //dispatch to send image urls to database
     dispatch({ type: 'SAVE_URLS', payload: imageObject })
 
-     history.push(`/Proposal`);
+     history.push(`/Proposal/${idStore}`);
     console.log('in full Form button click', fullForm);
     dispatch({ type: 'UPDATE_FULLFORM', payload:fullForm });
   }
