@@ -108,7 +108,7 @@ pool.query (queryString, values).then ((results)=>{
 
 
 router.put('/update', (req,res)=> {
-    console.log ("in full form put router", req.body );
+    console.log ("in full form put router", req.body, req.body.id );
         const type = 'update'
         const queryString = `UPDATE paintproject_input SET "client_type_id" = $1, "client_firstlast_name" =$2, "decision_firstlast_name" =$3, "decision_emailaddress" = $4, "decision_phonenumber" = $5,
         "project_address_1" = $6, "project_address_2" = $7, "project_address_city" = $8, "project_address_state" = $9, "project_address_zip" = $10, "project_house_year" = $11,
@@ -116,7 +116,7 @@ router.put('/update', (req,res)=> {
         "isproject_typecabinetry" = $17, "isproject_typespecialfeature" = $18, "project_startdate" = $19, "project_complete_specificdate" = $20, "specialfeatureexterior_type_id" =$21,
         "specialfeature_paintproduct" = $22, "isspecialfeaturestatus_needprimer" = $23, "isspecialfeaturestatus_patchedrepair" = $24, "isspecialfeaturestatus_extensivescraping" = $25,
         "specialfeature_notes" = $26, "exteriorestimate_laborcost" = $27, "exteriorestimate_materialcost" = $28, "exteriorestimate_totalcost" = $29, "isexteriorprep_powerwash" = $30,
-        "isexteriorprep_scrape" = $31, "isexteriorprep_mildew" = $32, "isexteriorwarranty_oneyear" = $33, "isexteriorwarranty_threeyear" = $34, "isexteriorwarranty_fiveyear" = $35, "user_id" = $36 WHERE project_job_number = $37`;
+        "isexteriorprep_scrape" = $31, "isexteriorprep_mildew" = $32, "isexteriorwarranty_oneyear" = $33, "isexteriorwarranty_threeyear" = $34, "isexteriorwarranty_fiveyear" = $35, "user_id" = $36 WHERE id = $37`;
         const values = [req.body.client.client_type_id, //1
           req.body.client.client_firstlast_name, //2
           req.body.client.decision_firstlast_name, //3
@@ -129,29 +129,29 @@ router.put('/update', (req,res)=> {
           req.body.client.project_address_zip, //10
           req.body.client.project_house_year,//11
           req.body.client.project_address_notes, //12
-          req.body.project_propertytype_id, //13
-          req.body.project_buildingtype_id, //14
-          req.body.isproject_typeinterior,  //15
-          req.body.isproject_typeexterior, //16
-          req.body.isproject_typecabinetry, //17
-          req.body.isproject_typespecialfeature, //18
-          req.body.project_startdate,  //19
-          req.body.project_complete_specificdate,  //20
-          req.body.specialfeatureexterior_type_id, //21
-          req.body.sspecialfeature_paintproduct, //22
-          req.body.isspecialfeaturestatus_needprimer, //23
-          req.body.isspecialfeaturestatus_patchedrepair, //24
-          req.body.isspecialfeaturestatus_extensivescraping,  //25
-          req.body.specialfeature_notes, //26
-          req.body.exteriorestimate_laborcost, //27
-          req.body.exteriorestimate_materialcost, //28
-          req.body.exteriorestimate_totalcost, //29 
-          req.body.isexteriorprep_powerwash, //30
-          req.body.isexteriorprep_scrape, //31
-          req.body.isexteriorprep_mildew, //32
-          req.body.isexteriorwarranty_oneyear, //33
-          req.body.isexteriorwarranty_threeyear,  //34
-          req.body.isexteriorwarranty_fiveyear, //35
+          req.body.projectDetails.project_propertytype_id, //13
+          req.body.projectDetails.project_buildingtype_id, //14
+          req.body.projectDetails.isproject_typeinterior,  //15
+          req.body.projectDetails.isproject_typeexterior, //16
+          req.body.projectDetails.isproject_typecabinetry, //17
+          req.body.projectDetails.isproject_typespecialfeature, //18
+          req.body.projectDetails.project_startdate,  //19
+          req.body.projectDetails.project_complete_specificdate,  //20
+          req.body.specialFeature.specialfeatureexterior_type_id, //21
+          req.body.specialFeature.specialfeature_paintproduct, //22
+          req.body.specialFeature.isspecialfeaturestatus_needprimer, //23
+          req.body.specialFeature.isspecialfeaturestatus_patchedrepair, //24
+          req.body.specialFeature.isspecialfeaturestatus_extensivescraping,  //25
+          req.body.specialFeature.specialfeature_notes, //26
+          req.body.estimateCost.exteriorestimate_laborcost, //27
+          req.body.estimateCost.exteriorestimate_materialcost, //28
+          req.body.estimateCost.exteriorestimate_totalcost, //29 
+          req.body.projectScope.isexteriorprep_powerwash, //30
+          req.body.projectScope.isexteriorprep_scrape, //31
+          req.body.projectScope.isexteriorprep_mildew, //32
+          req.body.projectScope.isexteriorwarranty_oneyear, //33
+          req.body.projectScope.isexteriorwarranty_threeyear,  //34
+          req.body.projectScope.isexteriorwarranty_fiveyear, //35
           req.body.user_id,//36
           req.body.id]; //37
           pool.query(queryString, values).then((results)=>{

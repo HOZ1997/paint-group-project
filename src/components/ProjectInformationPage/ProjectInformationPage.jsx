@@ -45,7 +45,7 @@ function ProjectInformationPage() {
       projectDetails: projectDetails,
       specialFeature: specialFeature,
       estimateCost:estimateCost, 
-      project_job_number:idStore
+      id:idStore
       
     }
     // //dispatch with full form as payload
