@@ -11,7 +11,8 @@ import projectDetails from './projectDetails.reducer';
 import specialFeature from './specialFeature.reducer';
 import estimateCost from './estimateCost.reducer';
 import newProject from './newProject.reducer';
-import projectScope from './projectScope.reducer'
+import projectScope from './projectScope.reducer';
+import fullform from './fullform.reducer'
 
 
 // rootReducer is the primary reducer for our entire project
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
   estimateCost,
   newProject,
   projectScope,
+  fullform
 
 });
 
