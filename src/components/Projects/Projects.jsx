@@ -27,7 +27,6 @@ function Projects(props) {
       history.push(`/ProjectInformationPage`);
     }
 
-
   return (
     <div className="container">
       {/* <LanguageToggleButton /> */}
