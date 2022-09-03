@@ -7,9 +7,9 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   console.log ("in fullform get router");
-  const queryString =`SELECT paintproject_input.id,client_type_name,client_firstlast_name, decision_firstlast_name, decision_emailaddress, decision_phonenumber,project_address_1,project_address_2, project_address_city, project_address_state, project_address_zip, project_house_year, project_address_notes, project_propertytype_id,  project_buildingtype_id, isproject_typeinterior, isproject_typecabinetry, isproject_typespecialfeature, project_startdate,  project_complete_specificdate, specialfeatureexterior_type_id, 
-  specialfeature_paintproduct, 
-  isspecialfeaturestatus_needprimer, 
+  const queryString =`SELECT paintproject_input.id,client_type_name,client_firstlast_name, decision_firstlast_name, decision_emailaddress, decision_phonenumber,project_address_1,project_address_2, project_address_city, project_address_state, project_address_zip, project_house_year, project_address_notes, project_propertytype_id,  project_buildingtype_id, isproject_typeinterior, isproject_typecabinetry, isproject_typespecialfeature, project_startdate,  project_complete_specificdate, specialfeatureexterior_type_id,
+  specialfeature_paintproduct,
+  isspecialfeaturestatus_needprimer,
   isspecialfeaturestatus_patchedrepair,
   isspecialfeaturestatus_extensivescraping,
   specialfeature_notes,
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
   isexteriorwarranty_oneyear,
   isexteriorwarranty_threeyear,
   isexteriorwarranty_fiveyear
-  FROM paintproject_input JOIN  client_type ON  client_type_id  = client_type.id 
+  FROM paintproject_input JOIN  client_type ON  client_type_id  = client_type.id
   JOIN project_propertytype ON	project_propertytype_id	=	project_propertytype.id
   JOIN project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id ORDER BY paintproject_input.id;`;
   pool.query(queryString).then((results)=>{
@@ -40,9 +40,9 @@ router.get('/', (req, res) => {
  */ // POST route code here
 router.post('/', (req, res) => {
   console.log("in fullform post router");
- const queryString =`INSERT INTO "paintproject_input"( client_type_name,client_firstlast_name, decision_firstlast_name, decision_emailaddress, decision_phonenumber,project_address_1,project_address_2, project_address_city, project_address_state, project_address_zip, project_house_year, project_address_notes, project_propertytype_id, project_buildingtype_id, isproject_typeinterior, isproject_typecabinetry, isproject_typespecialfeature, project_startdate,  project_complete_specificdate, specialfeatureexterior_type_id, 
-  specialfeature_paintproduct, 
-  isspecialfeaturestatus_needprimer, 
+ const queryString =`INSERT INTO "paintproject_input"( client_type_name,client_firstlast_name, decision_firstlast_name, decision_emailaddress, decision_phonenumber,project_address_1,project_address_2, project_address_city, project_address_state, project_address_zip, project_house_year, project_address_notes, project_propertytype_id, project_buildingtype_id, isproject_typeinterior, isproject_typecabinetry, isproject_typespecialfeature, project_startdate,  project_complete_specificdate, specialfeatureexterior_type_id,
+  specialfeature_paintproduct,
+  isspecialfeaturestatus_needprimer,
   isspecialfeaturestatus_patchedrepair,
   isspecialfeaturestatus_extensivescraping,
   specialfeature_notes,
@@ -85,7 +85,7 @@ router.post('/', (req, res) => {
   req.body.fullForm.specialFeature.specialfeature_notes, //26
   req.body.fullForm.estimateCost.exteriorestimate_laborcost, //27
   req.body.fullForm.estimateCost.exteriorestimate_materialcost, //28
-  req.body.fullForm.estimateCost.exteriorestimate_totalcost, //29 
+  req.body.fullForm.estimateCost.exteriorestimate_totalcost, //29
   req.body.projectScope.isexteriorprep_powerwash, //30
   req.body.projectScope.isexteriorprep_scrape, //31
   req.body.projectScope.isexteriorprep_mildew, //32
@@ -108,7 +108,7 @@ pool.query (queryString, values).then ((results)=>{
 
 
 router.put('/update', (req,res)=> {
-    console.log ("in full form put router", req.body, req.body.id );
+    console.log ("in full form put router", req.body, req.body.id, req.user.id );
         const type = 'update'
         const queryString = `UPDATE paintproject_input SET "client_type_id" = $1, "client_firstlast_name" =$2, "decision_firstlast_name" =$3, "decision_emailaddress" = $4, "decision_phonenumber" = $5,
         "project_address_1" = $6, "project_address_2" = $7, "project_address_city" = $8, "project_address_state" = $9, "project_address_zip" = $10, "project_house_year" = $11,
@@ -145,14 +145,14 @@ router.put('/update', (req,res)=> {
           req.body.specialFeature.specialfeature_notes, //26
           req.body.estimateCost.exteriorestimate_laborcost, //27
           req.body.estimateCost.exteriorestimate_materialcost, //28
-          req.body.estimateCost.exteriorestimate_totalcost, //29 
+          req.body.estimateCost.exteriorestimate_totalcost, //29
           req.body.projectScope.isexteriorprep_powerwash, //30
           req.body.projectScope.isexteriorprep_scrape, //31
           req.body.projectScope.isexteriorprep_mildew, //32
           req.body.projectScope.isexteriorwarranty_oneyear, //33
           req.body.projectScope.isexteriorwarranty_threeyear,  //34
           req.body.projectScope.isexteriorwarranty_fiveyear, //35
-          req.body.user_id,//36
+          req.user.id,//36
           req.body.id]; //37
           pool.query(queryString, values).then((results)=>{
             res.sendStatus(200);

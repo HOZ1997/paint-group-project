@@ -10,9 +10,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-
 const imageRouter = require('./routes/uploadImage.router');
-
 const projectsRouter = require('./routes/projects.router');
 const clientRouter = require('./routes/client.router');
 const clienttypeRouter = require('./routes/clienttype.router');
@@ -47,9 +45,7 @@ app.use('/api/clienttype', clienttypeRouter);
 app.use('/api/add_special_feature', specialFeatureRouter);
 app.use('/api/new_project', newProjectRouter);
 app.use('/api/get_project', getProjectRouter);
-
 app.use('/api/estimatecost', estimateCostRouter);
-
 app.use('/api/projectscope', projectscopeRouter);
 app.use('/api/fullform', fullformRouter);
 

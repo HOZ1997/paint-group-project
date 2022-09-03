@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
   values = [
     req.body.exteriorestimate_laborcost,
     req.body.exteriorestimate_materialcost,
-    req.body.exteriorestimate_totalcost,
+    (req.body.exteriorestimate_totalcost),
   ];
   pool
     .query(queryString, values)

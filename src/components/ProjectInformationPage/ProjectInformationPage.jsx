@@ -19,10 +19,6 @@ function ProjectInformationPage() {
   const projectDetails = useSelector((store) => store.projectDetails);
   const specialFeature = useSelector((store) => store.specialFeature);
   const estimateCost = useSelector((store) => store.estimateCost);
-  
-
-  
-
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -36,25 +32,23 @@ function ProjectInformationPage() {
     (store) => store.imageReducer
   );
 
-  
-  
   const onUpdateInformation = () => {
     let fullForm = {
       client: client,
       projectScope: projectScope,
       projectDetails: projectDetails,
       specialFeature: specialFeature,
-      estimateCost:estimateCost, 
+      estimateCost:estimateCost,
       id:idStore
-      
+
     }
     // //dispatch with full form as payload
     console.log('This is the array of URLs to be sent', imageReducer);
     const imageObject = {
       photos: imageReducer,
       projectId: idStore
-    }     
-       
+    }
+
     //   //dispatch to send image urls to database
     dispatch({ type: 'SAVE_URLS', payload: imageObject })
 
@@ -62,10 +56,10 @@ function ProjectInformationPage() {
     console.log('in full Form button click', fullForm);
     dispatch({ type: 'UPDATE_FULLFORM', payload:fullForm });
   }
-  
+
 
   console.log("maybe the id:::::::::::", idStore);
-  
+
 
 
 

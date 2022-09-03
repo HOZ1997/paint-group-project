@@ -4,16 +4,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import './SpecialFeature.css';
 //import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 function SpecialFeature() {
-// CUSTOM COMPONENTS
-//import RegisterForm from '../RegisterForm/RegisterForm';
 
-// let SpecialFeature = ({state, parentHandleChange, index}) => {
-//let SpecialFeature = () => {
-
- 
   const dispatch = useDispatch();
   const specialFeature = useSelector((store) => store.specialFeature);
-    
+
 
     const onInputChange = (key) => (event) => {
       const updatedInput = {
@@ -31,16 +25,11 @@ function SpecialFeature() {
       specialFeatureReducer(updatedCheckbox);
     }
 
-    
     const specialFeatureReducer = (updatedInput) => {
       // let SFpayload = specialFeatures;
      console.log('in Special feature function', specialFeature);
       dispatch({type: 'SET_SPECIAL_FEATURE', payload: updatedInput});
     }
-  // const handleChange = (event) => {
-  //   const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
-  //   parentHandleChange(index, event);
-  // }
 
   return (
     <div>
@@ -108,7 +97,7 @@ function SpecialFeature() {
             />
             Extensive Scraping
           </label>
-          
+
           <br></br>
           <br></br>
           <label for="specialFeatureNotes">
@@ -117,21 +106,11 @@ function SpecialFeature() {
         <br></br>
         <input
           type="text"
-          // placeholder=" Special Feature Notes"
           onChange={onInputChange(
             "specialfeature_notes"
           )}
         ></input>
 
-
-          {/* <label>
-            Notes
-            <texinputtarea
-              // value={state.specialFeatureNotes}
-              onChange={onInputChange('specialfeature_notes')}
-              placeholder="Notes"
-            />
-          </label> */}
         </form>
         <br />
       </div>
