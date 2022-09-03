@@ -84,8 +84,6 @@ function EstimateCost() {
         {totalCosts.toLocaleString(undefined, {maximumFractionDigits: 2})}
       </h4>
       <br />
-      {/* <button onClick={() => history.push('/home')}>Create</button> */}
-      {/* <Button className="btn btn-primary btn-sm">Create</Button> */}
     </form>
   );
 }

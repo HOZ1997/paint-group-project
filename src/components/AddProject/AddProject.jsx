@@ -7,27 +7,14 @@ import './AddProject.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function AddProject() {
- // const [lorem, ipsum] = useState('');
+
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  // }, []);
-
   const history = useHistory();
-
-
-
-
-  // const loremPush = () => {
-  //   history.push(`/`);
-  // };
 
   return (
     <div className="container">
       <h2>Intake Form</h2>
-
       <div className="grid">
-
       </div>
     </div>
   );

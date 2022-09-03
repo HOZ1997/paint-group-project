@@ -1,3 +1,8 @@
+// Note: This page is meant to hold multiple SpecialFeature components.
+//Everything has been changed quite a bit, but it may be useful for enabling multiple special components
+
+
+
 // import React, { useState, useEffect, Children } from 'react';
 // import { useHistory } from 'react-router-dom';
 // import {useDispatch, useSelector} from 'react-redux';

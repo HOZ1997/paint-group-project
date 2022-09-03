@@ -2,6 +2,8 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//Router for Proposal and Work Order
+
 router.get('/:id', (req, res) => {
   console.log('in projects router here is req.params.id?', typeof(req.params.id), req.params.id);
   const query = `SELECT * FROM paintproject_input
