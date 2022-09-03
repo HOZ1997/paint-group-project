@@ -3,18 +3,13 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './ImagePage.css';
 
-// Basic functional component structure for React with default state
-// value setup. When making a new component be sure to replace the
-// component name ImagePage with the name for the new component.
-
 function ImagePage(props) {
-  // Using hooks we're creating local state for a "heading" variable with
-  // a default value of 'Functional Component'
+
   const history = useHistory();
   const dispatch = useDispatch();
   const imageReducer = useSelector((store) => store.imageReducer);
   const [image, setImage] = useState('');
-  
+
   //this runs uploadImage every time the hook 'image' is changed
   useEffect(() =>{
     if (image != ''){
@@ -23,7 +18,7 @@ function ImagePage(props) {
     }
   }, [image]);
 
-  //this 
+  //this
   useEffect(() =>{
       console.log( 'in url push');
       // setUrl(imageReducer);
@@ -31,21 +26,21 @@ function ImagePage(props) {
       // urlArray.push(url);
       console.log( 'image reducer', imageReducer);
   }, [imageReducer]);
-  
+
   //this function sets the file path uploaded by the user to the variable file then sets that to the image hook
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     setImage(file);
   };
 
-  // this function 
+  // this function
   // const saveUrls = () => {
   //   // let urlArray = [ imageReducer[1], imageReducer[2], imageReducer[3], imageReducer[4], imageReducer[5] ]
   //   console.log('This is the array of URLs to be sent', imageReducer);
   //   dispatch({ type: 'SAVE_URLS', payload: imageReducer })
   //   // history.push( '/estimatecost' );
   // }
-  
+
   //this function sets up the image format needed to send the user's file path to cloudinary and dispatches it to the image saga
   const uploadImage = () => {
     console.log( 'TESTING UPLOAD IMAGE', image);
@@ -64,12 +59,12 @@ function ImagePage(props) {
           return(
               <div className="cell">
               <img src={img} key={img.id} alt={'Image'}/>
-              </div>  
+              </div>
               );
             })}
       </div>
     </div>
-    
+
   );
 }
 

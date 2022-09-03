@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-// Basic functional component structure for React with default state
-// value setup. When making a new component be sure to replace the
-// component name TemplateFunction with the name for the new component.
 function ProjectScope() {
-  // Using hooks we're creating local state for a "heading" variable with
-  // a default value of 'Functional Component'
+
   const store = useSelector((store) => store);
   const projectScope = useSelector((store) => store.projectScope);
   const dispatch = useDispatch();
@@ -15,7 +11,7 @@ function ProjectScope() {
   const [heading, setHeading] = useState(
     "Project Scope"
   );
-  
+
 
   const onCheckboxChange = (key) => (event) => {
     const updatedCheckbox = {
@@ -44,7 +40,7 @@ function ProjectScope() {
       <h2>Preparation</h2>
 
       <div className="checkboxClass">
-    
+
 
             <label>
             <input type='checkbox'
@@ -55,7 +51,7 @@ function ProjectScope() {
           </label>
           <br></br>
         <br></br>
-  
+
 
             <label>
             <input type='checkbox'
@@ -80,11 +76,11 @@ function ProjectScope() {
         <br></br>
         <br></br>
       </div>
-      
-      
+
+
       <div className="radioboxClass">
         <h2>Warranty</h2>
-      
+
         <label>
             <input type='radio'
             checked={projectScope.isexteriorwarranty_oneyear}
@@ -106,7 +102,7 @@ function ProjectScope() {
           </label>
           <br></br>
           <br></br>
-       
+
             <label>
             <input type='radio'
             checked={projectScope.isexteriorwarranty_threeyear}
@@ -151,7 +147,7 @@ function ProjectScope() {
 
 
       </div>
-     
+
     </div>
   );
 }

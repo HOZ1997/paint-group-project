@@ -4,11 +4,9 @@ import {
   useSelector,
 } from "react-redux";
 
-// Basic functional component structure for React with default state
-// value setup.
+
 function LanguageToggleButton(props) {
-  // Using hooks we're creating local state for a "heading" variable with
-  // a default value of 'Functional Component'
+
   const store = useSelector((store) => store);
   const dispatch = useDispatch();
   const [heading, setHeading] = useState(

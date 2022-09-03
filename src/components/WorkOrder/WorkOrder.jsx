@@ -40,7 +40,7 @@ function WorkOrder(props) {
         </section>
         <section id="jobIntro">
 
-        <h3>Job # 00{proposal.project_job_number}</h3>
+        <h3>Job # 00{id}</h3>
         <ul>
           <li>{proposal.project_propertytype_name}</li>
           <li>{proposal.project_buildingtype_name}</li>
@@ -58,14 +58,7 @@ function WorkOrder(props) {
           <p>{proposal.project_address_city}, {proposal.project_address_state} {proposal.project_address_zip}</p>
           <br></br>
         </section>
-        {/* <section id="proposalPhotos">
-          <h3>Pictures</h3> */}
-          {/* {proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet */}
-          {/* <img src="/images/BicycleThief.png"></img>
-          <img src="/images/KafkaBook.png"></img><br></br>
-          <img src="/images/Father.png"></img>
-          <img src="/images/WomanPainting.png"></img><br></br>
-        </section> */}
+
         <section id="scopeOfWork">
           <h3>Scope of Work</h3>
           <h4>Prep</h4>
@@ -99,15 +92,12 @@ function WorkOrder(props) {
                     : <li>Extensive scraping? No</li>}
           </ul>
         </section>
-        {/* <section id="conclusion">
-          <h3>Work Hard!</h3>
-        </section> */}
-                </div>
       </div>
-      )}
-    </>
-      )}
     </div>
+    )}
+    </>
+    )}
+  </div>
   );
 }
 

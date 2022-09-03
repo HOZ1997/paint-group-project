@@ -17,7 +17,7 @@ import RegisterForm from "../RegisterForm/RegisterForm";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 function Proposal(props) {
-  // const [lorem, ipsum] = useState('');
+
   const dispatch = useDispatch();
   const {id} = useParams();
 
@@ -40,14 +40,7 @@ function Proposal(props) {
     history.push(`/workorder/${id}`)
   }
 
-  // const store = useSelector((store => store));
-
-  // const newProject = () => {
-  //   history.push(``);
-  // };
-
   return (
-    //  <div>{(JSON.stringify(proposal))}</div>
     <div>
       {proposal && ( // only continue if proposal is defined
         <>
@@ -61,7 +54,7 @@ function Proposal(props) {
                     <img src="/images/Superstruct_logo_dark.png" className="logo" />
                   <h3>
                     Job # 00
-                    {proposal.project_job_number}
+                    {id}
                   </h3>
                   <ul>
                     <li>
@@ -127,7 +120,7 @@ function Proposal(props) {
               </section>
               <section id="proposalPhotos">
                 <div className="proposalPhotos">
-                  {imageMappable.map( item =>(<img src={item.photo_upload_path} />))}
+                  {imageMappable.map( (item, index) =>(<img src={item.photo_upload_path} key={index} />))}
                   <img src="/images/FellaPainting.png"></img>
                   <img src="/images/CartoonPainting.png"></img>
                   <br></br>
@@ -265,9 +258,8 @@ function Proposal(props) {
                   <h3>
                     Project Total: $
                     {
-                      proposal.exteriorestimate_totalcost
+                      proposal.exteriorestimate_laborcost + proposal.exteriorestimate_materialcost
                     }
-                    00
                   </h3>
                   <ul>
                     <li>
@@ -277,7 +269,6 @@ function Proposal(props) {
                         {
                           proposal.exteriorestimate_laborcost
                         }
-                        00
                       </p>
                     </li>
                     <li>
@@ -287,7 +278,6 @@ function Proposal(props) {
                         {
                           proposal.exteriorestimate_materialcost
                         }
-                        00
                       </p>
                     </li>
                   </ul>
@@ -312,5 +302,3 @@ function Proposal(props) {
 }
 
 export default Proposal;
-
-//Photo Map --->{imageMappable.map( item =>(<img src={item.photo_upload_path} />))} I don't think this is set up yet
