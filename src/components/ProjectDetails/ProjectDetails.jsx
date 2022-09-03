@@ -52,7 +52,7 @@ function ProjectDetails() {
             <option value='3'>New Construction</option>
           </select>
 
-          <p>Bulding Type</p>
+          <p>Building Type</p>
 
           <select className='building_type' onChange={onInputChange('project_buildingtype_id')}>
             <option selected="true" disabled></option>
