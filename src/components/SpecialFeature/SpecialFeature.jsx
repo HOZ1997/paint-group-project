@@ -50,7 +50,8 @@ let SpecialFeature = () => {
           <label>
             Type
             <select
-            name="specialFeatureType"
+              name="specialFeatureType"
+              className='addClientFirst'
             onChange={onInputChange('specialFeatureType')}
             >
               <option value="0"></option>

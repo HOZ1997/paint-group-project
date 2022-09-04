@@ -58,7 +58,7 @@ function ProjectDetails() {
       <div className="projectDetails">
         <p>PROPERTY TYPE</p>
         <select
-          className="property_type"
+          className="addClientFirst"
           onChange={onInputChange(
             "property_type"
           )}
@@ -76,7 +76,7 @@ function ProjectDetails() {
         <p>BUILDING TYPE</p>
 
         <select
-          className="building_type"
+          className="addClientFirst"
           onChange={onInputChange(
             "building_type"
           )}

@@ -42,8 +42,13 @@ label{
     margin-left:  15px;
 }
 
-select.addClientFirst{
-   font-family: "Lexend Deca", sans-serif;
+
+
+select.addClientFirst {
+    font-family: "Lexend Deca", sans-serif;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
+    width: 86%;
+    margin-left: 24px;
 }
+
