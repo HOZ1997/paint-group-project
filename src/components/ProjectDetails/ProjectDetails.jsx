@@ -86,16 +86,16 @@ function ProjectDetails() {
             SELECT BUILDING TYPE
           </option>
           <option value="1">
-            Single Family Home
+            SINGLE FAMILY HOME
           </option>
           <option value="2">
-            Commercial Building
+            COMMERCIAL BUILDING
           </option>
-          <option value="3">Apartment</option>
-          <option value="4">Condo</option>
-          <option value="5">Duplex</option>
-          <option value="6">Loft</option>
-          <option value="7">Multi-tenant</option>
+          <option value="3">APARTMENT</option>
+          <option value="4">CONDO</option>
+          <option value="5">DUPLEX</option>
+          <option value="6">LOFT</option>
+          <option value="7">MULTI-TENANT</option>
         </select>
 
         <p>PROJECT TYPE</p>
@@ -111,7 +111,7 @@ function ProjectDetails() {
                 "isproject_typeinterior"
               )}
             />
-            Interior
+            INTERIOR
           </label>
 
           <label className="checkboxLabel">
@@ -125,7 +125,7 @@ function ProjectDetails() {
                 "isproject_typeexterior"
               )}
             />
-            Exterior
+            EXTERIOR
           </label>
 
           <label className="checkboxLabel">
@@ -139,7 +139,7 @@ function ProjectDetails() {
                 "isproject_typecabinetry"
               )}
             />
-            Cabinetry
+            CABINETRY
           </label>
 
           <label className="checkboxLabel">
@@ -153,7 +153,7 @@ function ProjectDetails() {
                 "isproject_typespecialfeature"
               )}
             />
-            Special Feature
+            SPECIAL FEATURE
           </label>
         </div>
 

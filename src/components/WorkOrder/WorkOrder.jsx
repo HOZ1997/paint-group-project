@@ -76,7 +76,7 @@ function WorkOrder(props) {
                     )}
                   </p>
                   <p>
-                    START DATE:{" "}
+                    END DATE:{" "}
                     {proposal.project_complete_specificdate.slice(
                       0,
                       10

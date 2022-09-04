@@ -17,7 +17,6 @@ import RegisterForm from "../RegisterForm/RegisterForm";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 function Proposal(props) {
-
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -39,9 +38,9 @@ function Proposal(props) {
   );
 
   const acceptProposal = () => {
-    alert('Proposal Accepted!');
-    history.push(`/workorder/${id}`)
-  }
+    alert("Proposal Accepted!");
+    history.push(`/workorder/${id}`);
+  };
 
   return (
     <div>
@@ -61,9 +60,7 @@ function Proposal(props) {
                     <div className="uppercase">
                       <h3>
                         JOB # 00
-                        {
-                          proposal.project_job_number
-                        }
+                        {id}
                       </h3>
                       <p>
                         {
@@ -79,13 +76,17 @@ function Proposal(props) {
 
                     <h3>START DATE: </h3>
                     <p>
-                      {proposal.project_startdate}
+                      {proposal.project_startdate.slice(
+                        0,
+                        10
+                      )}
                     </p>
                     <h3>COMPLETION DATE: </h3>
                     <p>
-                      {
-                        proposal.project_complete_specificdate
-                      }
+                      {proposal.project_complete_specificdate.slice(
+                        0,
+                        10
+                      )}
                     </p>
                   </div>
 
@@ -278,7 +279,6 @@ function Proposal(props) {
                     PROJECT TOTAL: $
                     {proposal.exteriorestimate_laborcost +
                       proposal.exteriorestimate_materialcost}
-                    00
                   </h2>
 
                   <p>LABOR:</p>
@@ -287,7 +287,6 @@ function Proposal(props) {
                     {
                       proposal.exteriorestimate_laborcost
                     }
-                    00
                   </p>
                   <br />
                   <p>MATERIAL:</p>
@@ -296,7 +295,6 @@ function Proposal(props) {
                     {
                       proposal.exteriorestimate_materialcost
                     }
-                    00
                   </p>
 
                   <br></br>
