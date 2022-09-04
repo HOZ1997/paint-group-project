@@ -13,9 +13,7 @@ import {
 
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import LandingPage from "../LandingPage/LandingPage";
@@ -30,14 +28,14 @@ import AddClient from "../AddClient/AddClient";
 import ProjectScope from "../ProjectScope/ProjectScope";
 import EstimateCost from "../EstimateCost/EstimateCost";
 import ProjectInformationPage from "../ProjectInformationPage/ProjectInformationPage";
-import SpecialFeatureBox from "../SpecialFeature/SpecialFeatureBox";
+import SpecialFeature from "../SpecialFeature/SpecialFeature";
 import Proposal from "../Proposal/Proposal";
 import ProposalNav from "../ProposalNav/ProposalNav";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 // testing displays
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -45,7 +43,7 @@ function App() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({type: 'FETCH_USER'});
   }, [dispatch]);
 
   return (
@@ -60,8 +58,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
-          >
+            path="/about">
             <AboutPage />
           </Route>
 
@@ -80,8 +77,7 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
             <UserPage />
           </ProtectedRoute>
 
@@ -137,7 +133,7 @@ function App() {
             <ImagePage />
           </Route>
           <Route exact path="/specialfeature">
-            <SpecialFeatureBox />
+            <SpecialFeature />
           </Route>
           <Route exact path="/proposal/:id">
             <Proposal />

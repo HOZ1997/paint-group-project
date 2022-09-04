@@ -17,7 +17,7 @@ import RegisterForm from "../RegisterForm/RegisterForm";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
 
 function Proposal(props) {
-  // const [lorem, ipsum] = useState('');
+
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -34,14 +34,16 @@ function Proposal(props) {
     (store) => store.getProject[0]
   );
 
-  // const store = useSelector((store => store));
+  const imageMappable = useSelector(
+    (store) => store.getProject
+  );
 
-  const newProject = () => {
-    history.push(``);
-  };
+  const acceptProposal = () => {
+    alert('Proposal Accepted!');
+    history.push(`/workorder/${id}`)
+  }
 
   return (
-    //  <div>{(JSON.stringify(proposal))}</div>
     <div>
       {proposal && ( // only continue if proposal is defined
         <>
@@ -132,6 +134,16 @@ function Proposal(props) {
               </section>
               <section id="proposalPhotos">
                 <div className="proposalPhotos">
+                  {imageMappable.map(
+                    (item, index) => (
+                      <img
+                        src={
+                          item.photo_upload_path
+                        }
+                        key={index}
+                      />
+                    )
+                  )}
                   <img src="/images/FellaPainting.png"></img>
                   <img src="/images/CartoonPainting.png"></img>
                   <br></br>
@@ -264,9 +276,8 @@ function Proposal(props) {
                 <div className="estimate">
                   <h2>
                     PROJECT TOTAL: $
-                    {
-                      proposal.exteriorestimate_totalcost
-                    }
+                    {proposal.exteriorestimate_laborcost +
+                      proposal.exteriorestimate_materialcost}
                     00
                   </h2>
 
@@ -278,7 +289,7 @@ function Proposal(props) {
                     }
                     00
                   </p>
-<br />
+                  <br />
                   <p>MATERIAL:</p>
                   <p>
                     $
@@ -294,7 +305,10 @@ function Proposal(props) {
               <section id="proposalConclusion">
                 <div className="proposalConclusion">
                   <h2>ACCEPT AND CONTINUE?</h2>
-                  <button className="myButton">
+                  <button
+                    className="myButton"
+                    onClick={acceptProposal}
+                  >
                     ACCEPT PROPOSAL
                   </button>
                 </div>
@@ -308,5 +322,3 @@ function Proposal(props) {
 }
 
 export default Proposal;
-
-//Photo Map --->{proposal.photo_urls.map( item =>(<img src={item.id.toString} />))} I don't think this is set up yet

@@ -60,16 +60,15 @@ function ProjectDetails() {
         <select
           className="addClientFirst"
           onChange={onInputChange(
-            "property_type"
+            "project_propertytype_id"
           )}
         >
           <option selected="true" disabled>
-            SELECT PROPERTY TYPE
           </option>
-          <option value="1">Residential</option>
-          <option value="2">Commercial</option>
+          <option value="1">RESIDENTIAL</option>
+          <option value="2">COMMERCIAL</option>
           <option value="3">
-            New Construction
+            NEW CONSTRUCTION
           </option>
         </select>
 
@@ -107,7 +106,7 @@ function ProjectDetails() {
                 projectDetails.project_interior
               }
               onChange={onCheckboxChange(
-                "project_interior"
+                "isproject_typeinterior"
               )}
             />
             Interior
@@ -121,7 +120,7 @@ function ProjectDetails() {
                 projectDetails.project_exterior
               }
               onChange={onCheckboxChange(
-                "project_exterior"
+                "isproject_typeexterior"
               )}
             />
             Exterior
@@ -135,7 +134,7 @@ function ProjectDetails() {
                 projectDetails.project_cabinetry
               }
               onChange={onCheckboxChange(
-                "project_cabinetry"
+                "isproject_ty[ecabinetry"
               )}
             />
             Cabinetry
@@ -149,7 +148,7 @@ function ProjectDetails() {
                 projectDetails.project_specialFeature
               }
               onChange={onCheckboxChange(
-                "project_specialFeature"
+                "isproject_typespecialFeature"
               )}
             />
             Special Feature
@@ -163,7 +162,7 @@ function ProjectDetails() {
             projectDetails.project_start_date
           }
           onChange={onInputChange(
-            "project_start_date"
+            "project_startdate"
           )}
         ></input>
 
@@ -173,11 +172,9 @@ function ProjectDetails() {
         <input
           type="date"
           value={projectDetails.project_end_date}
-          onChange={onInputChange(
-            "project_end_date"
-          )}
-        ></input>
-      </div>
+          onChange={onInputChange('project_complete_specificdate')}
+          ></input>
+        </div>
     </div>
   );
 }

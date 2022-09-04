@@ -8,7 +8,7 @@ const multer = require('multer')
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "image-upload",
+    folder: "paint_check",
   },
 });
 const upload = multer({ storage: storage });
@@ -45,19 +45,20 @@ router.post('/', upload.single('file'), (req, res) => {
   console.log(req.file);
   res.send(req.file.path);
   console.log(req.file.path);
-});
+});//end cloudinary POST
 
 router.post('/database', async (req, res) => {
-  console.log('url to database POST:', req.body);
-  let photos = req.body;
+  console.log('url to database POST:', req.body, req.user);
+  let photos = req.body.photos;
   try {
     const client = await pool.connect();
     await client.query('BEGIN');
     await Promise.all( // Allows for concurrent requests
       photos.map(async (photo) => {
         const queryString = `INSERT INTO photo_upload ( "photo_upload_path", "user_id", "project_id" ) VALUES ( $1, $2, $3 );`;
-        const values = [photo, req.user.id ];
+        const values = [photo, req.user.id, req.body.projectId];
         await client.query(queryString, values);
+
       })
     );
     await client.query('COMMIT');
@@ -85,17 +86,5 @@ router.get('/', (req, res) => {
     })
 });
 
-router.post('/database2', (req, res) => {
-  console.log('url to database POST:', req.body);
-  const queryString = `INSERT INTO photo_test ( "photo_upload_path", "user_id" ) VALUES ( $1, $2 );`;
-  const values = [req.body, req.user.id]
-
-  pool.query(queryString, values)
-    .then(() => res.sendStatus(201))
-    .catch((err) => {
-      console.log('Error in database POST route', err);
-      res.sendStatus(500);
-    });
-})//end database POST
 
 module.exports = router;

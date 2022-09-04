@@ -3,57 +3,36 @@ import React, {
   useEffect,
 } from "react";
 //import { useHistory } from 'react-router-dom';
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
-import "./SpecialFeature.css";
-import LanguageToggleButton from "../LanguageToggleButton/LanguageToggleButton";
+import {useDispatch, useSelector} from 'react-redux';
+import './SpecialFeature.css';
+//import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
+function SpecialFeature() {
 
-// CUSTOM COMPONENTS
-import RegisterForm from "../RegisterForm/RegisterForm";
+  const dispatch = useDispatch();
+  const specialFeature = useSelector((store) => store.specialFeature);
 
-// let SpecialFeature = ({state, parentHandleChange, index}) => {
-let SpecialFeature = () => {
-  let dispatch = useDispatch();
-  const store = useSelector((store) => store);
-  const specialFeatureInputs = useSelector(
-    (store) => store.specialFeature
-  );
 
-  const onInputChange = (key) => (event) => {
-    const updatedInput = {
-      ...specialFeatureInputs,
-      [key]: event.target.value,
-    };
-    saveSpecialFeature(updatedInput);
-  };
+    const onInputChange = (key) => (event) => {
+      const updatedInput = {
+        ...specialFeature,
+        [key]: event.target.value
+      }
+      specialFeatureReducer(updatedInput);
+    }
 
-  const saveSpecialFeature = (updatedInput) => {
-    // let SFpayload = specialFeatures;
+    const onCheckboxChange = (key) => (event) => {
+      const updatedCheckbox = {
+        ...specialFeature,
+        [key]: event.target.checked
+      }
+      specialFeatureReducer(updatedCheckbox);
+    }
 
-    // console.log('sending SF data to DB (in SF component now)', SFpayload);
-    dispatch({
-      type: "SAVE_SF",
-      payload: updatedInput,
-    });
-  };
-
-  const onCheckboxChange = (key) => (event) => {
-    const updatedCheckbox = {
-      ...specialFeatureInputs,
-      [key]: event.target.checked,
-    };
-    saveSpecialFeature(updatedCheckbox);
-  };
-
-  const handleChange = (event) => {
-    const value =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    parentHandleChange(index, event);
-  };
+    const specialFeatureReducer = (updatedInput) => {
+      // let SFpayload = specialFeatures;
+     console.log('in Special feature function', specialFeature);
+      dispatch({type: 'SET_SPECIAL_FEATURE', payload: updatedInput});
+    }
 
   return (
     <div>
@@ -65,11 +44,8 @@ let SpecialFeature = () => {
           <label>
             TYPE
             <select
-              name="specialFeatureType"
-
-              onChange={onInputChange(
-                "specialFeatureType"
-              )}
+            name="specialFeatureType"
+            onChange={onInputChange('specialfeatureexterior_type_id')}
             >
               <option value="0"></option>
               <option value="1">Soffits</option>
@@ -91,12 +67,11 @@ let SpecialFeature = () => {
               type="text"
               name="specialFeatureProduct"
               // value={state.specialFeatureProduct}
-              onChange={onInputChange(
-                "specialFeatureProduct"
-              )}
+              onChange={onInputChange('specialfeature_paintproduct')}
+              placeholder="Special Feature Product"
             />
-          </label>
-          </div>
+            </label>
+            </div>
           <br />
           <div className="checkboxLabelDiv">
             <label className="checkboxLabel">
@@ -104,11 +79,9 @@ let SpecialFeature = () => {
                 type="checkbox"
                 name="primerIsChecked"
                 className="checkboxClass"
-                checked={
-                  specialFeatureInputs.primerIsChecked
-                }
+                checked={specialFeature.isspecialfeaturestatus_needprimer}
                 onChange={onCheckboxChange(
-                  "primerIsChecked"
+                  "'isspecialfeaturestatus_needprimer'"
                 )}
               />
               NEEDS PRIMER
@@ -120,10 +93,10 @@ let SpecialFeature = () => {
                 name="patchingIsChecked"
                 className="checkboxClass"
                 checked={
-                  specialFeatureInputs.patchingIsChecked
+                  specialFeature.isspecialfeaturestatus_patchedrepair
                 }
                 onChange={onCheckboxChange(
-                  "patchingIsChecked"
+                  "isspecialfeaturestatus_patchedrepair"
                 )}
               />
               NEEDS PATCHING / REPAIR
@@ -135,10 +108,10 @@ let SpecialFeature = () => {
                 className="checkboxClass"
                 name="scrapingIsChecked"
                 checked={
-                  specialFeatureInputs.scrapingIsChecked
+                  specialFeature.isspecialfeaturestatus_extensivescraping
                 }
                 onChange={onCheckboxChange(
-                  "scrapingIsChecked"
+                  "isspecialfeaturestatus_extensivescraping"
                 )}
               />
               EXTENSIVE SCRAPING
@@ -161,7 +134,7 @@ let SpecialFeature = () => {
         <br />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default SpecialFeature;

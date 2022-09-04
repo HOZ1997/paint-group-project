@@ -11,7 +11,7 @@ const newClientInput ={
   project_address_zip: '',
   project_house_year: '',
   project_address_notes: '',
-//  user_id: store.user.id
+  //user_id: store.user.id
 }
 
 const clientReducer = (state = newClientInput, action) => {
