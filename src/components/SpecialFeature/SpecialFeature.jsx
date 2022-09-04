@@ -48,16 +48,16 @@ function SpecialFeature() {
             onChange={onInputChange('specialfeatureexterior_type_id')}
             >
               <option value="0"></option>
-              <option value="1">Soffits</option>
-              <option value="2">Fascia</option>
-              <option value="3">Gate</option>
-              <option value="4">Gutters</option>
-              <option value="5">Columns</option>
-              <option value="6">Dormers</option>
-              <option value="7">Handrails</option>
-              <option value="8">Deck</option>
-              <option value="9">Porch</option>
-              <option value="10">Fence</option>
+              <option value="1">SOFFITS</option>
+              <option value="2">FASCIA</option>
+              <option value="3">GATE</option>
+              <option value="4">GUTTERS</option>
+              <option value="5">COLUMNS</option>
+              <option value="6">DORMERS</option>
+              <option value="7">HANDRAILS</option>
+              <option value="8">DECK</option>
+              <option value="9">PORCH</option>
+              <option value="10">FENCE</option>
             </select>
           </label>
           <br />

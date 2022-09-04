@@ -6,7 +6,6 @@ import {
 import { useHistory } from "react-router-dom";
 
 function ProjectScope() {
-
   const store = useSelector((store) => store);
   const projectScope = useSelector(
     (store) => store.projectScope
@@ -16,7 +15,6 @@ function ProjectScope() {
   const [heading, setHeading] = useState(
     "Project Scope"
   );
-
 
   const onCheckboxChange = (key) => (event) => {
     const updatedCheckbox = {
@@ -108,6 +106,7 @@ function ProjectScope() {
               onChange={onCheckboxChange(
                 "isexteriorwarranty_oneyear"
               )}
+              name="warranty"
             />
             1-YEAR WARRANTY - COMPANY WARRANTS THE
             PAINTING OF EXTERIOR PAINTED SURFACES
@@ -136,6 +135,7 @@ function ProjectScope() {
               onChange={onRadioboxChange(
                 "isexteriorwarranty_threeyear"
               )}
+              name="warranty"
             />
             3-YEAR WARRANTY - COMPANY WARRANTS THE
             PAINTING OF EXTERIOR PAINTED SURFACES
@@ -164,6 +164,7 @@ function ProjectScope() {
               onChange={onRadioboxChange(
                 "isexteriorwarranty_fiveyear"
               )}
+              name="warranty"
             />
             5-YEAR WARRANTY - COMPANY WARRANTS THE
             PAINTING OF EXTERIOR PAINTED SURFACES
