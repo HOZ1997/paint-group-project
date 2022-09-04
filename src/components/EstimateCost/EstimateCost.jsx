@@ -77,7 +77,6 @@ function EstimateCost() {
         <input
           type="number"
           id="materialsInput"
-          value={materialAmount}
           onChange={onChangeMaterialAmount('exteriorestimate_materialcost')}
           
           step="any"
@@ -88,13 +87,13 @@ function EstimateCost() {
       <div className="totalCostClass">
         <h2>
           TOTAL COST: $
-          {total.toLocaleString(undefined, {
+          {totalCosts.toLocaleString(undefined, {
             maximumFractionDigits: 2,
           })}
         </h2>
-        <Button className="myButton">
+        {/* <Button className="myButton">
           Create
-        </Button>
+        </Button> */}
       </div>
       {/* <button onClick={() => history.push('/home')}>Create</button> */}
     </form>

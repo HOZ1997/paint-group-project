@@ -150,7 +150,7 @@ function ProjectScope() {
             AND/OR DAMAGE DUE TO NORMAL WEAR AND
             TEAR, ABUSE, WEATHER, OR ACCIDENTAL
             DAMAGING OCCURRENCES
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
           <br></br>
           <br></br>
