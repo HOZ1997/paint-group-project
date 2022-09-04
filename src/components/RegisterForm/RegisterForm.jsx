@@ -31,7 +31,7 @@ function RegisterForm() {
       className="formPanel"
       onSubmit={registerUser}
     >
-      <label>Register User</label>
+      <label>REGISTER USER</label>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -47,7 +47,7 @@ function RegisterForm() {
             onChange={(event) =>
               setUsername(event.target.value)
             }
-            placeholder="Username"
+            placeholder="USERNAME"
           />
         </label>
       </div>
@@ -61,7 +61,7 @@ function RegisterForm() {
             onChange={(event) =>
               setPassword(event.target.value)
             }
-            placeholder="Password"
+            placeholder="PASSWORD"
           />
         </label>
       </div>
@@ -82,7 +82,7 @@ function RegisterForm() {
             history.push("/login");
           }}
         >
-          Login
+          LOGIN
         </button>
       </center>
     </form>
