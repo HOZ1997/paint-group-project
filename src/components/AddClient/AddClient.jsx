@@ -43,10 +43,8 @@ function AddClient() {
       <h2>ADD CLIENT</h2>
       <div className="addClientFirst">
         <div className="dropdownSelector">
-          {clienttypes.length === 0 ? (
+          {clienttypes.length === 0 && (
             <div>Loading...</div>
-          ) : (
-            <div>CLIENT TYPE</div>
           )}
 
 

@@ -59,31 +59,43 @@ function EstimateCost() {
 
   return (
     <form>
-      <h1>Project Estimate</h1>
+      <h1>PROJECT ESTIMATE</h1>
+      <div className="container">
       <div className="mb-3">
-        <label>Labor Cost: $</label>
+        <label>LABOR COST: $</label>
         <input
           type="number"
           id="laborInput"
-          onChange={onChangeLaborAmount('exteriorestimate_laborcost')}
+          onChange={onChangeLaborAmount(
+            "exteriorestimate_laborcost"
+          )}
           step="any"
         />
       </div>
       <div className="mb-3">
-        <label>Material Cost: $</label>
+        <label>MATERIAL COST: $</label>
         <input
           type="number"
           id="materialsInput"
           onChange={onChangeMaterialAmount('exteriorestimate_materialcost')}
+          
           step="any"
         />
+        </div>
+        </div>
+      <br />
+      <div className="totalCostClass">
+        <h2>
+          TOTAL COST: $
+          {totalCosts.toLocaleString(undefined, {
+            maximumFractionDigits: 2,
+          })}
+        </h2>
+        {/* <Button className="myButton">
+          Create
+        </Button> */}
       </div>
-      <br />
-      <h4>
-        Total Costs: $
-        {totalCosts.toLocaleString(undefined, {maximumFractionDigits: 2})}
-      </h4>
-      <br />
+      {/* <button onClick={() => history.push('/home')}>Create</button> */}
     </form>
   );
 }

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import {useHistory} from 'react-router-dom';
 
 function LoginForm() {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const errors = useSelector(
@@ -28,13 +30,13 @@ function LoginForm() {
 
   return (
     <form className="formPanel" onSubmit={login}>
-      <h2>LOGIN</h2>
+      <label>LOGIN</label>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
         </h3>
       )}
-      <div>
+      <div className="loginClass">
         <label htmlFor="username">
           <input
             type="text"
@@ -48,7 +50,7 @@ function LoginForm() {
           />
         </label>
       </div>
-      <div>
+      <div className="loginClass">
         <label htmlFor="password">
           <input
             type="password"
@@ -62,8 +64,9 @@ function LoginForm() {
           />
         </label>
       </div>
-      <div>
+      <div className="loginClass">
         <input
+          id = "loginButton"
           className="myButtonBlue"
           type="submit"
           name="submit"
@@ -78,6 +81,8 @@ function LoginForm() {
         >
           CREATE ACCOUNT
         </button>
+      </div>
+      <div>
       </div>
     </form>
   );

@@ -1,24 +1,39 @@
-
 //import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import AddClient from '../AddClient/AddClient';
-import ProjectDetails from '../ProjectDetails/ProjectDetails';
-import ProjectScope from '../ProjectScope/ProjectScope';
-import ImagePage from '../ImagePage/ImagePage';
-import EstimateCost from '../EstimateCost/EstimateCost';
-import SpecialFeature from '../SpecialFeature/SpecialFeature';
-import "./ProjectInformationPage.css"
+import {
+  useSelector,
+  useDispatch,
+} from "react-redux";
+import React, {
+  useState,
+  useEffect,
+} from "react";
+import { useHistory } from "react-router-dom";
+import AddClient from "../AddClient/AddClient";
+import ProjectDetails from "../ProjectDetails/ProjectDetails";
+import ProjectScope from "../ProjectScope/ProjectScope";
+import ImagePage from "../ImagePage/ImagePage";
+import EstimateCost from "../EstimateCost/EstimateCost";
+import SpecialFeature from "../SpecialFeature/SpecialFeature";
+import "./ProjectInformationPage.css";
 
 function ProjectInformationPage() {
   const history = useHistory();
   const store = useSelector((store) => store);
-  const client = useSelector((store) => store.client);
-  const projectScope = useSelector((store) => store.projectScope);
-  const projectDetails = useSelector((store) => store.projectDetails);
-  const specialFeature = useSelector((store) => store.specialFeature);
-  const estimateCost = useSelector((store) => store.estimateCost);
+  const client = useSelector(
+    (store) => store.client
+  );
+  const projectScope = useSelector(
+    (store) => store.projectScope
+  );
+  const projectDetails = useSelector(
+    (store) => store.projectDetails
+  );
+  const specialFeature = useSelector(
+    (store) => store.specialFeature
+  );
+  const estimateCost = useSelector(
+    (store) => store.estimateCost
+  );
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -38,34 +53,43 @@ function ProjectInformationPage() {
       projectScope: projectScope,
       projectDetails: projectDetails,
       specialFeature: specialFeature,
-      estimateCost:estimateCost,
-      id:idStore
-
-    }
+      estimateCost: estimateCost,
+      id: idStore,
+    };
     // //dispatch with full form as payload
-    console.log('This is the array of URLs to be sent', imageReducer);
+    console.log(
+      "This is the array of URLs to be sent",
+      imageReducer
+    );
     const imageObject = {
       photos: imageReducer,
-      projectId: idStore
-    }
+      projectId: idStore,
+    };
 
     //   //dispatch to send image urls to database
-    dispatch({ type: 'SAVE_URLS', payload: imageObject })
+    dispatch({
+      type: "SAVE_URLS",
+      payload: imageObject,
+    });
 
-     history.push(`/Proposal/${idStore}`);
-    console.log('in full Form button click', fullForm);
-    dispatch({ type: 'UPDATE_FULLFORM', payload:fullForm });
-  }
-
+    history.push(`/Proposal/${idStore}`);
+    console.log(
+      "in full Form button click",
+      fullForm
+    );
+    dispatch({
+      type: "UPDATE_FULLFORM",
+      payload: fullForm,
+    });
+  };
 
   console.log("maybe the id:::::::::::", idStore);
 
-
-
-
   return (
     <div className="container">
-      <p>Job # {idStore}:</p>
+      <div className="jobNumberClass">
+        <h2>JOB # {idStore}</h2>
+      </div>
       <AddClient />
       <ProjectDetails />
       <SpecialFeature />
@@ -73,12 +97,16 @@ function ProjectInformationPage() {
       <ImagePage />
       <EstimateCost />
 
-
-      <button button type="button" className="btn" onClick={onUpdateInformation}>Create Proposal</button>
+      <button
+        button
+        type="button"
+        className="myButton"
+        onClick={onUpdateInformation}
+      >
+        Create Proposal
+      </button>
     </div>
   );
 }
-
-
 
 export default ProjectInformationPage;

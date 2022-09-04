@@ -18,6 +18,8 @@ select{
     padding: 9px;
     width: 96%;
     margin-left: 5px;
+    font-weight: bold;
+    font-size:12px;
 }
 
 input {
@@ -29,7 +31,18 @@ input {
 }
 
 label{
-    /* bold */
+
     font-weight: bold;
     font-size: 12px;
+}
+
+p{
+    font-weight: bold;
+    margin-left: 18px;
+}
+
+/*date input types should have 90% width*/
+input[type=date] {
+    width: 80%;
+    margin-left:23px;
 }

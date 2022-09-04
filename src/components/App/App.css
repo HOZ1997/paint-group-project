@@ -168,3 +168,127 @@ input {
   background-size: cover;
 
 }
+
+h1.totalCostClass{
+    font-size:24px;
+}
+
+input.checkboxClass{
+    width: 30px;
+    height: 30px; 
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* when checked, turn orange */
+}
+
+label.checkboxLabel{
+    font-size: 15px;
+/* raise the text */
+    display: flex;
+  align-items: center;
+  /* justify the text */
+  
+}
+
+.checkboxLabelDiv{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap; 
+}
+
+.notesDiv{
+  margin-left: 42px;
+}
+
+textarea{
+margin-left: 5px;
+/* make input text match the font */
+font-family: "Lexend Deca", sans-serif;
+padding:12px;
+}
+
+.radioButtonClass{
+   border: 0px;
+    width: 100%;
+    height: 50px; 
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+
+/* .checkboxClass input:checked {
+  background-color: #a7a7a7;
+} */
+
+.nav-title{
+  margin:auto;
+}
+
+.jobNumberClass{
+  margin-left: 19px;
+  margin-bottom:-40px;
+  margin-top:-20px;
+}
+
+
+
+li{
+  /* use this font */
+  font-family: "Lexend Deca", sans-serif;
+  margin:auto;
+}
+
+.jobIntro h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+.clientDetails h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+
+.scopeofwork h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.loginClass input{
+width:95%;
+margin-left: 0px;
+}
+
+.loginClass label{
+  margin: auto;
+}
+
+.loginClass button{
+  margin-left: 70px;
+}
+
+#loginButton {
+  margin-left: 0px;
+  width: 100%;
+}
+
+.registerFormClass input{
+width:91%;
+margin-left: -10px;
+}
+
+#registerButton {
+  width: 96%;
+  margin-left: 5px;
+}
+
+form.formPanel{
+  /* fill the screen */
+  width: 100%;
+}

@@ -113,10 +113,8 @@ hr {
 }
 
 .scopeOfWork p {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;
-  font-weight: regular;
   display: inline;
+  line-height: 1.5;
 }
 
 .scopeOfWork {
@@ -146,10 +144,15 @@ hr {
 }
 
 .specialFeatures p {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;
-  font-weight: regular;
+  display: inline;
+ /* vertical spacing between p more */
+  line-height: 1.5;
 }
+
+
+
+/* descendents of .specialFeatures p */
+
 
 .specialFeatures {
   /*make a card with a white background  */
@@ -178,9 +181,8 @@ hr {
 }
 
 .estimate p {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;
-  font-weight: regular;
+  display: inline;
+   line-height: 1.5;
 }
 
 .estimate {

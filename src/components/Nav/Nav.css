@@ -44,5 +44,6 @@ ul {
 
 .navLink:hover {
   background-color: #00bebb;
+  cursor: pointer;
 }
 
