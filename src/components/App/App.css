@@ -287,3 +287,8 @@ margin-left: -10px;
   width: 96%;
   margin-left: 5px;
 }
+
+form.formPanel{
+  /* fill the screen */
+  width: 100%;
+}
