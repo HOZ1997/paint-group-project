@@ -50,12 +50,13 @@ function ProjectScope() {
 
   return (
     <div className="projectScope">
-      <h2>Preparation</h2>
+      <h2>PREPARATION</h2>
 
-      <div className="checkboxClass">
-        <label>
+      <div className="checkboxLabelDiv">
+        <label className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectScope.isexteriorprep_powerwash
             }
@@ -63,14 +64,15 @@ function ProjectScope() {
               "isexteriorprep_powerwash"
             )}
           />
-          POWER WASH ALL PAINTABLE SURFACES
+          POWER WASH PAINTABLE SURFACES
         </label>
         <br></br>
         <br></br>
 
-        <label>
+        <label className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectScope.isexteriorprep_scrape
             }
@@ -78,14 +80,14 @@ function ProjectScope() {
               "isexteriorprep_scrape"
             )}
           />
-          SCRAPE ALL LOOSE AND CHIPPING SURFACES
+          SCRAPE LOOSE/CHIPPING SURFACES
         </label>
-        <br></br>
-        <br></br>
 
-        <label>
+
+        <label className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectScope.isexteriorprep_mildew
             }
@@ -93,15 +95,13 @@ function ProjectScope() {
               "isexteriorprep_mildew"
             )}
           />
-          TREAT MILDEWED AREAS (IF PRESENT) WITH
-          MILDICIDE.
+          TREAT MILDEWED AREAS WITH
+          MILDICIDE
         </label>
-        <br></br>
-        <br></br>
       </div>
 
       <div className="radioboxClass">
-        <h2>Warranty</h2>
+        <h2>WARRANTY</h2>
 
         <label>
           <input
