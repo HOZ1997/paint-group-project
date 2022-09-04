@@ -190,11 +190,19 @@ label.checkboxLabel{
 .checkboxLabelDiv{
     display: flex;
    flex-direction: row;
-   flex-wrap: wrap;
-   /* make */
-   
+   flex-wrap: wrap; 
 }
 
+.notesDiv{
+  margin-left: 42px;
+}
+
+textarea{
+margin-left: 5px;
+/* make input text match the font */
+font-family: "Lexend Deca", sans-serif;
+padding:12px;
+}
 
 
 /* .checkboxClass input:checked {

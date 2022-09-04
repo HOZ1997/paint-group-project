@@ -143,7 +143,8 @@ let SpecialFeature = () => {
             </label>
           </div>
           <br />
-          <label>
+          <div className="notesDiv">
+          <label className="checkboxLabel">
             NOTES
             <textarea
               name="specialFeatureNotes"
@@ -152,7 +153,8 @@ let SpecialFeature = () => {
                 "specialFeatureNotes"
               )}
             />
-          </label>
+            </label>
+          </div>
         </form>
         <br />
       </div>
