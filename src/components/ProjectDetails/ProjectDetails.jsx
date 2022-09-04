@@ -98,10 +98,12 @@ function ProjectDetails() {
         </select>
 
         <p>PROJECT TYPE</p>
-
-        <label>
+        <div className="checkboxLabelDiv">
+        <label
+        className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectDetails.project_interior
             }
@@ -112,9 +114,11 @@ function ProjectDetails() {
           Interior
         </label>
 
-        <label>
+        <label
+        className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectDetails.project_exterior
             }
@@ -125,9 +129,11 @@ function ProjectDetails() {
           Exterior
         </label>
 
-        <label>
+        <label
+        className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectDetails.project_cabinetry
             }
@@ -138,9 +144,10 @@ function ProjectDetails() {
           Cabinetry
         </label>
 
-        <label>
+        <label className="checkboxLabel">
           <input
             type="checkbox"
+            className="checkboxClass"
             checked={
               projectDetails.project_specialFeature
             }
@@ -149,10 +156,11 @@ function ProjectDetails() {
             )}
           />
           Special Feature
-        </label>
+          </label>
+          </div>
 
-        <br />
-        <br />
+
+
 
         <p>DESIRED PROJECT START DATE</p>
         <input

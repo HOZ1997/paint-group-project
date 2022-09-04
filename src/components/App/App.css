@@ -170,3 +170,25 @@ input {
 h1.totalCostClass{
     font-size:24px;
 }
+
+input.checkboxClass{
+    width: 30px;
+    height: 30px; 
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label.checkboxLabel{
+    font-size: 15px;
+/* raise the text */
+    display: flex;
+
+  align-items: center;
+}
+
+.checkboxLabelDiv{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
