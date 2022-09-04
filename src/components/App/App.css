@@ -234,3 +234,26 @@ padding:12px;
 
 
 
+li{
+  /* use this font */
+  font-family: "Lexend Deca", sans-serif;
+  margin:auto;
+}
+
+.jobIntro h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+.clientDetails h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+
+.scopeofwork h3{
+  font-family: "Lexend Deca", sans-serif;
+  margin-left:15px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

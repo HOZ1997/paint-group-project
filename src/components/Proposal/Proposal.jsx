@@ -19,10 +19,13 @@ import ProposalHeader from "../ProposalHeader/ProposalHeader";
 function Proposal(props) {
   // const [lorem, ipsum] = useState('');
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_PROJECT', payload: id});
+    dispatch({
+      type: "FETCH_PROJECT",
+      payload: id,
+    });
   }, []);
 
   const history = useHistory();
@@ -46,36 +49,43 @@ function Proposal(props) {
             <p>...loading...</p>
           ) : (
             <div className="container">
-
               <section id="jobIntro">
-                  <div className="jobIntro">
-                    <img src="/images/Superstruct_logo_dark.png" className="logo" />
-                  <h3>
-                    Job # 00
-                    {proposal.project_job_number}
-                  </h3>
-                  <ul>
-                    <li>
+                <div className="jobIntro">
+                  <img
+                    src="/images/Superstruct_logo_dark.png"
+                    className="logo"
+                  />
+                  <div cardContent>
+                    <div className="uppercase">
+                      <h3>
+                        JOB # 00
+                        {
+                          proposal.project_job_number
+                        }
+                      </h3>
+                      <p>
+                        {
+                          proposal.project_propertytype_name
+                        }
+                      </p>
+                      <p>
+                        {
+                          proposal.project_buildingtype_name
+                        }
+                      </p>
+                    </div>
+
+                    <h3>START DATE: </h3>
+                    <p>
+                      {proposal.project_startdate}
+                    </p>
+                    <h3>COMPLETION DATE: </h3>
+                    <p>
                       {
-                        proposal.project_propertytype_name
+                        proposal.project_complete_specificdate
                       }
-                    </li>
-                    <li>
-                      {
-                        proposal.project_buildingtype_name
-                      }
-                    </li>
-                  </ul>
-                  <h3>START DATE: </h3>
-                  <p>
-                    {proposal.project_startdate}
-                  </p>
-                  <h3>COMPLETION DATE: </h3>
-                  <p>
-                    {
-                      proposal.project_complete_specificdate
-                    }
-                  </p>
+                    </p>
+                  </div>
 
                   <br></br>
                 </div>
@@ -83,36 +93,40 @@ function Proposal(props) {
               <section id="clientDetails">
                 <div className="clientDetails">
                   <h3>PREPARED FOR: </h3>
-                  <p>
-                    {
-                      proposal.client_firstlast_name
-                    }
-                  </p>
+                  <div className="uppercase">
+                    <p>
+                      {
+                        proposal.client_firstlast_name
+                      }
+                    </p>
 
-                  <p>
-                    {
-                      proposal.decision_emailaddress
-                    }
-                  </p>
-                  <p>
-                    {
-                      proposal.decision_phonenumber
-                    }
-                  </p>
-                  <p>
-                    {proposal.project_address_1}{" "}
-                    {proposal.project_address_2}
-                  </p>
-                  <p>
-                    {
-                      proposal.project_address_city
-                    }
-                    ,{" "}
-                    {
-                      proposal.project_address_state
-                    }{" "}
-                    {proposal.project_address_zip}
-                  </p>
+                    <p>
+                      {
+                        proposal.decision_emailaddress
+                      }
+                    </p>
+                    <p>
+                      {
+                        proposal.decision_phonenumber
+                      }
+                    </p>
+                    <p>
+                      {proposal.project_address_1}{" "}
+                      {proposal.project_address_2}
+                    </p>
+                    <p>
+                      {
+                        proposal.project_address_city
+                      }
+                      ,{" "}
+                      {
+                        proposal.project_address_state
+                      }{" "}
+                      {
+                        proposal.project_address_zip
+                      }
+                    </p>
+                  </div>
                   <br></br>
                 </div>
               </section>
@@ -128,166 +142,158 @@ function Proposal(props) {
               </section>
               <section id="scopeOfWork">
                 <div className="scopeOfWork">
-                  <h2>Scope of Work</h2>
-                  <ul>
-                    <li>
-                      <h3>Power Wash? </h3>
-                      {/* if this is true, render "Yes", else render "No" */}
-                      <p>
-                        {proposal.isexteriorprep_powerwash ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                    <li>
-                      <h3>Scrape? </h3>
-                      <p>
-                        {proposal.isexteriorprep_scrape ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                    <li>
-                      <h3>Remove mildew? </h3>
-                      <p>
-                        {proposal.isexteriorprep_mildew ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                    <li>
-                      <h3>Power Wash? </h3>
-                      <p>
-                        {proposal.isexteriorprep_powerwash ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <h3>Warranty: </h3>
-                      <p>
-                        {proposal.isexteriorwarranty_oneyear ===
-                        true
-                          ? "One Year"
-                          : ""}
-                      </p>
-                      <p>
-                        {proposal.isexteriorwarranty_threeyear ===
-                        true
-                          ? "Three Year"
-                          : ""}
-                      </p>
-                      <p>
-                        {proposal.isexteriorwarranty_fivwyear ===
-                        true
-                          ? "Five Year"
-                          : ""}
-                      </p>
-                    </li>
-                  </ul>
+                  <h2>SCOPE OF WORK</h2>
+
+                  <p>POWER WASH: </p>
+                  {/* if this is true, render "Yes", else render "No" */}
+                  <p>
+                    {proposal.isexteriorprep_powerwash ===
+                    true
+                      ? "YES"
+                      : "NO"}
+                  </p>
+                  <br />
+
+                  <p>SCRAPE: </p>
+                  <p>
+                    {proposal.isexteriorprep_scrape ===
+                    true
+                      ? "YES"
+                      : "No"}
+                  </p>
+                  <br />
+
+                  <p>REMOVE MILDEW: </p>
+                  <p>
+                    {proposal.isexteriorprep_mildew ===
+                    true
+                      ? "YES"
+                      : "NO"}
+                  </p>
+                  <br />
+
+                  <p>POWER WASH: </p>
+                  <p>
+                    {proposal.isexteriorprep_powerwash ===
+                    true
+                      ? "YES"
+                      : "NO"}
+                  </p>
+                  <br />
+
+                  <p>WARRANTY: </p>
+                  <p>
+                    {proposal.isexteriorwarranty_oneyear ===
+                    true
+                      ? "ONE YEAR"
+                      : ""}
+                  </p>
+                  <p>
+                    {proposal.isexteriorwarranty_threeyear ===
+                    true
+                      ? "THREE YEAR"
+                      : ""}
+                  </p>
+                  <p>
+                    {proposal.isexteriorwarranty_fivwyear ===
+                    true
+                      ? "FIVE YEAR"
+                      : ""}
+                  </p>
 
                   <br></br>
                 </div>
               </section>
               <section id="specialFeatures">
                 <div className="specialFeatures">
-                  <h2>Special Feature(s)</h2>
-                  <h3>Feature Type: </h3>
-                  <p>
-                    {
-                      proposal.specialfeatureexterior_type_name
-                    }
-                  </p>
+                  <h2>SPECIAL FEATURE(S)</h2>
+                  <div className="uppercase">
+                    <p>FEATURE TYPE: </p>
 
-                  <h3>Notes? </h3>
+                    <p>
+                      {
+                        proposal.specialfeatureexterior_type_name
+                      }
+                    </p>
+                    <br />
+
+                    <p>NOTES: </p>
+                    <p>
+                      {
+                        proposal.specialfeature_notes
+                      }
+                    </p>
+                    <br />
+                    <p>PAINT PRODUCT: </p>
+                    <p>
+                      {
+                        proposal.specialfeature_paintproduct
+                      }
+                    </p>
+                    <br />
+                  </div>
+
+                  <p>PRIMER: </p>
                   <p>
-                    {
-                      proposal.specialfeature_notes
-                    }
+                    {proposal.isspecialfeaturestatus_needprimer ===
+                    true
+                      ? "YES"
+                      : "NO"}
                   </p>
-                  <h3>Paint Product: </h3>
+                  <br />
+
+                  <p>PATCH OR REPAIR: </p>
                   <p>
-                    {
-                      proposal.specialfeature_paintproduct
-                    }
+                    {proposal.isspecialfeaturestatus_patchedrepair ===
+                    true
+                      ? "YES"
+                      : "NO"}
                   </p>
-                  <ul>
-                    <li>
-                      <h3>Primer? </h3>
-                      <p>
-                        {proposal.isspecialfeaturestatus_needprimer ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                    <li>
-                      <h3>Patch or Repair? </h3>
-                      <p>
-                        {proposal.isspecialfeaturestatus_patchedrepair ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                    <li>
-                      <h3>
-                        Extensive Scraping?{" "}
-                      </h3>
-                      <p>
-                        {proposal.isspecialfeaturestatus_extensivescraping ===
-                        true
-                          ? "Yes"
-                          : "No"}
-                      </p>
-                    </li>
-                  </ul>
+                  <br />
+
+                  <p>EXTENSIVE SCRAPING? </p>
+                  <p>
+                    {proposal.isspecialfeaturestatus_extensivescraping ===
+                    true
+                      ? "YES"
+                      : "NO"}
+                  </p>
                 </div>
               </section>
               <section id="estimate">
                 <div className="estimate">
-                  <h3>
-                    Project Total: $
+                  <h2>
+                    PROJECT TOTAL: $
                     {
                       proposal.exteriorestimate_totalcost
                     }
                     00
-                  </h3>
-                  <ul>
-                    <li>
-                      <h4>Labor:</h4>
-                      <p>
-                        $
-                        {
-                          proposal.exteriorestimate_laborcost
-                        }
-                        00
-                      </p>
-                    </li>
-                    <li>
-                      <h4>Material:</h4>
-                      <p>
-                        $
-                        {
-                          proposal.exteriorestimate_materialcost
-                        }
-                        00
-                      </p>
-                    </li>
-                  </ul>
+                  </h2>
+
+                  <p>LABOR:</p>
+                  <p>
+                    $
+                    {
+                      proposal.exteriorestimate_laborcost
+                    }
+                    00
+                  </p>
+<br />
+                  <p>MATERIAL:</p>
+                  <p>
+                    $
+                    {
+                      proposal.exteriorestimate_materialcost
+                    }
+                    00
+                  </p>
 
                   <br></br>
                 </div>
               </section>
               <section id="proposalConclusion">
                 <div className="proposalConclusion">
-                  <h3>Accept and Continue?</h3>
+                  <h2>ACCEPT AND CONTINUE?</h2>
                   <button className="myButton">
                     ACCEPT PROPOSAL
                   </button>
