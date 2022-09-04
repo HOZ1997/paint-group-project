@@ -277,4 +277,13 @@ margin-left: -17px;
   margin-left: -17px;
   width: 100%;
 }
-/* myButtonBlue in loginClass */
+
+.registerFormClass input{
+width:91%;
+margin-left: -10px;
+}
+
+#registerButton {
+  width: 96%;
+  margin-left: 5px;
+}

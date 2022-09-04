@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import {useHistory} from 'react-router-dom';
 
 function RegisterForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const errors = useSelector((store) => store.errors);
+  const history = useHistory();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const errors = useSelector(
+    (store) => store.errors
+  );
   const dispatch = useDispatch();
 
   const registerUser = (event) => {
     event.preventDefault();
 
     dispatch({
-      type: 'REGISTER',
+      type: "REGISTER",
       payload: {
         username: username,
         password: password,
@@ -20,40 +27,64 @@ function RegisterForm() {
   }; // end registerUser
 
   return (
-    <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
+    <form
+      className="formPanel"
+      onSubmit={registerUser}
+    >
+      <label>Register User</label>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
-      <div>
+      <div className="registerFormClass">
         <label htmlFor="username">
-          Username:
           <input
             type="text"
             name="username"
             value={username}
             required
-            onChange={(event) => setUsername(event.target.value)}
+            onChange={(event) =>
+              setUsername(event.target.value)
+            }
+            placeholder="Username"
           />
         </label>
       </div>
-      <div>
+      <div className = "registerFormClass">
         <label htmlFor="password">
-          Password:
           <input
             type="password"
             name="password"
             value={password}
             required
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event) =>
+              setPassword(event.target.value)
+            }
+            placeholder="Password"
           />
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
+        <input
+          className="myButtonBlue"
+          type="submit"
+          name="submit"
+          value="REGISTER"
+          id = "registerButton"
+        />
       </div>
+      <center>
+        <button
+          type="button"
+          className="myButton"
+          onClick={() => {
+            history.push("/login");
+          }}
+        >
+          Login
+        </button>
+      </center>
     </form>
   );
 }
