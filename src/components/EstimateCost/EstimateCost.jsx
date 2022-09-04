@@ -48,27 +48,30 @@ function EstimateCost() {
   return (
     <form>
       <h2>EXTERIOR ESTIMATE COST</h2>
-      <div className="mb-3">
-        <label>LABOR COST: $</label>
-        <input
-          type="number"
-          id="laborInput"
-          value={laborAmount}
-          onChange={(e) => changeLaborAmount(e)}
-          step="any"
-        />
-      </div>
-      <div className="mb-3">
-        <label>MATERIAL COST: $</label>
-        <input
-          type="number"
-          id="materialsInput"
-          value={materialAmount}
-          onChange={(e) =>
-            changeMaterialAmount(e)
-          }
-          step="any"
-        />
+      <div className="container">
+        <div className="mb-3">
+          <label>LABOR COST: $</label>
+          <input
+            type="number"
+            id="laborInput"
+            value={laborAmount}
+            onChange={(e) => changeLaborAmount(e)}
+            step="any"
+          />
+        </div>
+
+        <div className="mb-3">
+          <label>MATERIAL COST: $</label>
+          <input
+            type="number"
+            id="materialsInput"
+            value={materialAmount}
+            onChange={(e) =>
+              changeMaterialAmount(e)
+            }
+            step="any"
+          />
+        </div>
       </div>
       <br />
       <div className="totalCostClass">
