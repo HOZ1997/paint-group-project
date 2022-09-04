@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
   "isspecialfeaturestatus_extensivescraping",
   "specialfeature_notes")
   VALUES ($1, $2, $3, $4, $5, $6, $7)`;
-  const values = [true, req.body.isproject_typespecialfeature, req.body.specialfeatureexterior_type_id, req.body.specialfeature_paintproduct, req.body.isspecialfeaturestatus_needprimer, req.body.scrapingIsChecked, req.body.specialFeatureNotes];
+  const values = [true, req.body.isproject_typespecialfeature, req.body.specialfeatureexterior_type_id, req.body.specialfeature_paintproduct, req.body.isspecialfeaturestatus_needprimer, req.body.scrapingIsChecked, req.body.specialfeature_notes];
   pool.query(addSF, values)
   .then(result => {
     console.log('added to paintproject_input');

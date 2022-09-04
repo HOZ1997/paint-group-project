@@ -63,8 +63,10 @@ function ProjectDetails() {
             "project_propertytype_id"
           )}
         >
-          <option selected="true" disabled>
-          </option>
+          <option
+            selected="true"
+            disabled
+          ></option>
           <option value="1">RESIDENTIAL</option>
           <option value="2">COMMERCIAL</option>
           <option value="3">
@@ -77,7 +79,7 @@ function ProjectDetails() {
         <select
           className="addClientFirst"
           onChange={onInputChange(
-            "building_type"
+            "project_buildingtype_id"
           )}
         >
           <option selected="true" disabled>
@@ -134,7 +136,7 @@ function ProjectDetails() {
                 projectDetails.project_cabinetry
               }
               onChange={onCheckboxChange(
-                "isproject_ty[ecabinetry"
+                "isproject_typecabinetry"
               )}
             />
             Cabinetry
@@ -148,7 +150,7 @@ function ProjectDetails() {
                 projectDetails.project_specialFeature
               }
               onChange={onCheckboxChange(
-                "isproject_typespecialFeature"
+                "isproject_typespecialfeature"
               )}
             />
             Special Feature
@@ -172,9 +174,11 @@ function ProjectDetails() {
         <input
           type="date"
           value={projectDetails.project_end_date}
-          onChange={onInputChange('project_complete_specificdate')}
-          ></input>
-        </div>
+          onChange={onInputChange(
+            "project_complete_specificdate"
+          )}
+        ></input>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ const multer = require('multer')
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "paint_check",
+    folder: "images",
   },
 });
 const upload = multer({ storage: storage });

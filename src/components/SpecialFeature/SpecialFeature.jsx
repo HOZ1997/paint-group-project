@@ -141,10 +141,10 @@ function SpecialFeature() {
             <label className="checkboxLabel">
               NOTES
               <textarea
-                name="specialFeatureNotes"
+                name="specialfeature_notes"
                 // value={state.specialFeatureNotes}
                 onChange={onInputChange(
-                  "specialFeatureNotes"
+                  "specialfeature_notes"
                 )}
               />
             </label>
