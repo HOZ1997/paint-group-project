@@ -259,3 +259,20 @@ li{
 .uppercase {
   text-transform: uppercase;
 }
+
+.loginClass input{
+width:90%;
+}
+
+.loginClass label{
+  margin: auto;
+}
+
+.loginClass button{
+  margin-left: 70px;
+}
+
+#loginButton {
+  margin-left: 14px;
+}
+/* myButtonBlue in loginClass */
