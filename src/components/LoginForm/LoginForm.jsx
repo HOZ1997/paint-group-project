@@ -80,6 +80,8 @@ function LoginForm() {
           CREATE ACCOUNT
         </button>
       </div>
+      <div>
+      </div>
     </form>
   );
 }
