@@ -23,7 +23,9 @@ function ProjectInformationPage() {
 
   return (
     <div className="container">
-      <p>Job # {idStore}:</p>
+      <div className='jobNumberClass'>
+        <h2>JOB # {idStore}</h2>
+      </div>
       <AddClient />
       <ProjectDetails />
       <SpecialFeature />

@@ -61,11 +61,12 @@ let SpecialFeature = () => {
       <div className="specialFeatureClass">
         <form>
           <h2>SPECIAL FEATURE</h2>
+          <div className="container">
           <label>
             TYPE
             <select
               name="specialFeatureType"
-              className="addClientFirst"
+
               onChange={onInputChange(
                 "specialFeatureType"
               )}
@@ -95,6 +96,7 @@ let SpecialFeature = () => {
               )}
             />
           </label>
+          </div>
           <br />
           <div className="checkboxLabelDiv">
             <label className="checkboxLabel">
