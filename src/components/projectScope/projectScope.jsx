@@ -83,7 +83,6 @@ function ProjectScope() {
           SCRAPE LOOSE/CHIPPING SURFACES
         </label>
 
-
         <label className="checkboxLabel">
           <input
             type="checkbox"
@@ -95,89 +94,95 @@ function ProjectScope() {
               "isexteriorprep_mildew"
             )}
           />
-          TREAT MILDEWED AREAS WITH
-          MILDICIDE
+          TREAT MILDEWED AREAS WITH MILDICIDE
         </label>
       </div>
 
       <div className="radioboxClass">
         <h2>WARRANTY</h2>
+        <div className="checkboxLabelDiv">
+          <label className="checkboxLabel">
+            <input
+              type="radio"
+              className="radioButtonClass"
+              checked={
+                projectScope.isexteriorwarranty_oneyear
+              }
+              onChange={onCheckboxChange(
+                "isexteriorwarranty_oneyear"
+              )}
+            />
+            1-YEAR WARRANTY - COMPANY WARRANTS THE
+            PAINTING OF EXTERIOR PAINTED SURFACES
+            FOR A PERIOD OF ONE (1) YEARS, PER THE
+            SPECIFIC CONTRACTED SCOPE OF WORK, AND
+            WILL REPAIR NEWLY PAINTED AREAS IF
+            PEELING, BLISTERING, FLAKING, OR
+            COATING SEPARATION OCCURS. THIS
+            WARRANTY IS LIMITED TO WORKMANSHIP.
+            OUR WARRANTIES COVER PAINTING DEFECTS,
+            BUT THEY DO NOT COVER AREAS OF FADING
+            AND/OR DAMAGE DUE TO NORMAL WEAR AND
+            TEAR, ABUSE, WEATHER, OR ACCIDENTAL
+            DAMAGING OCCURRENCES
+          </label>
+          <br></br>
+          <br></br>
 
-        <label>
-          <input
-            type="radio"
-            checked={
-              projectScope.isexteriorwarranty_oneyear
-            }
-            onChange={onCheckboxChange(
-              "isexteriorwarranty_oneyear"
-            )}
-          />
-          1-YEAR WARRANTY - Company warrants the
-          painting of exterior painted surfaces
-          for a period of one (1) years, per the
-          specific contracted scope of work, and
-          will repair newly painted areas if
-          peeling, blistering, flaking, or coating
-          separation occurs. This warranty is
-          limited to workmanship. Our warranties
-          cover painting defects, but they do not
-          cover areas of fading and/or damage due
-          to normal wear and tear, abuse, weather,
-          or accidental damaging occurrences.
-        </label>
-        <br></br>
-        <br></br>
-
-        <label>
-          <input
-            type="radio"
-            checked={
-              projectScope.isexteriorwarranty_threeyear
-            }
-            onChange={onRadioboxChange(
-              "isexteriorwarranty_threeyear"
-            )}
-          />
-          3-YEAR WARRANTY - Company warrants the
-          painting of exterior painted surfaces
-          for a period of one (3) years, per the
-          specific contracted scope of work, and
-          will repair newly painted areas if
-          peeling, blistering, flaking, or coating
-          separation occurs. This warranty is
-          limited to workmanship. Our warranties
-          cover painting defects, but they do not
-          cover areas of fading and/or damage due
-          to normal wear and tear, abuse, weather,
-          or accidental damaging occurrences.
-          <span class="checkmark"></span>
-        </label>
-        <br></br>
-        <br></br>
-        <label>
-          <input
-            type="radio"
-            checked={
-              projectScope.isexteriorwarranty_fiveyear
-            }
-            onChange={onRadioboxChange(
-              "isexteriorwarranty_fiveyear"
-            )}
-          />
-          5-YEAR WARRANTY - Company warrants the
-          painting of exterior painted surfaces
-          for a period of one (5) years, per the
-          specific contracted scope of work, and
-          will repair newly painted areas if
-          peeling, blistering, flaking, or coating
-          separation occurs. This warranty is
-          limited to workmanship. Our warranties
-          cover painting defects, but they do not
-          cover areas of fading and/or damage due
-          to normal wear and tear, abuse, weather,
-          or accidental damaging occurrences.
-        </label>
+          <label className="checkboxLabel">
+            <input
+              type="radio"
+              className="radioButtonClass"
+              checked={
+                projectScope.isexteriorwarranty_threeyear
+              }
+              onChange={onRadioboxChange(
+                "isexteriorwarranty_threeyear"
+              )}
+            />
+            3-YEAR WARRANTY - COMPANY WARRANTS THE
+            PAINTING OF EXTERIOR PAINTED SURFACES
+            FOR A PERIOD OF ONE (3) YEARS, PER THE
+            SPECIFIC CONTRACTED SCOPE OF WORK, AND
+            WILL REPAIR NEWLY PAINTED AREAS IF
+            PEELING, BLISTERING, FLAKING, OR
+            COATING SEPARATION OCCURS. THIS
+            WARRANTY IS LIMITED TO WORKMANSHIP.
+            OUR WARRANTIES COVER PAINTING DEFECTS,
+            BUT THEY DO NOT COVER AREAS OF FADING
+            AND/OR DAMAGE DUE TO NORMAL WEAR AND
+            TEAR, ABUSE, WEATHER, OR ACCIDENTAL
+            DAMAGING OCCURRENCES
+            <span class="checkmark"></span>
+          </label>
+          <br></br>
+          <br></br>
+          <label className="checkboxLabel">
+            <input
+              type="radio"
+              className="radioButtonClass"
+              checked={
+                projectScope.isexteriorwarranty_fiveyear
+              }
+              onChange={onRadioboxChange(
+                "isexteriorwarranty_fiveyear"
+              )}
+            />
+            5-YEAR WARRANTY - COMPANY WARRANTS THE
+            PAINTING OF EXTERIOR PAINTED SURFACES
+            FOR A PERIOD OF ONE (5) YEARS, PER THE
+            SPECIFIC CONTRACTED SCOPE OF WORK, AND
+            WILL REPAIR NEWLY PAINTED AREAS IF
+            PEELING, BLISTERING, FLAKING, OR
+            COATING SEPARATION OCCURS. THIS
+            WARRANTY IS LIMITED TO WORKMANSHIP.
+            OUR WARRANTIES COVER PAINTING DEFECTS,
+            BUT THEY DO NOT COVER AREAS OF FADING
+            AND/OR DAMAGE DUE TO NORMAL WEAR AND
+            TEAR, ABUSE, WEATHER, OR ACCIDENTAL
+            DAMAGING OCCURRENCES
+          </label>
+        </div>
       </div>
     </div>
   );

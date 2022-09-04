@@ -185,6 +185,8 @@ label.checkboxLabel{
 /* raise the text */
     display: flex;
   align-items: center;
+  /* justify the text */
+  
 }
 
 .checkboxLabelDiv{
@@ -202,6 +204,17 @@ margin-left: 5px;
 /* make input text match the font */
 font-family: "Lexend Deca", sans-serif;
 padding:12px;
+}
+
+.radioButtonClass{
+   border: 0px;
+    width: 100%;
+    height: 50px; 
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 20px;
 }
 
 
