@@ -208,7 +208,7 @@ function Proposal(props) {
                       : ""}
                   </p>
                   <p>
-                    {proposal.isexteriorwarranty_fivwyear ===
+                    {proposal.isexteriorwarranty_fiveyear ===
                     true
                       ? "FIVE YEAR"
                       : ""}
