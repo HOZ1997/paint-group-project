@@ -63,7 +63,7 @@ function ProjectScope() {
               "isexteriorprep_powerwash"
             )}
           />
-          Power wash all paintable surfaces.
+          POWER WASH ALL PAINTABLE SURFACES
         </label>
         <br></br>
         <br></br>
@@ -78,7 +78,7 @@ function ProjectScope() {
               "isexteriorprep_scrape"
             )}
           />
-          Scrape all loose and chipping surfaces.
+          SCRAPE ALL LOOSE AND CHIPPING SURFACES
         </label>
         <br></br>
         <br></br>
@@ -93,8 +93,8 @@ function ProjectScope() {
               "isexteriorprep_mildew"
             )}
           />
-          Treat mildewed areas (if present) with
-          mildicide.
+          TREAT MILDEWED AREAS (IF PRESENT) WITH
+          MILDICIDE.
         </label>
         <br></br>
         <br></br>

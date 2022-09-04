@@ -177,13 +177,13 @@ input.checkboxClass{
     display: flex;
   justify-content: space-between;
   align-items: center;
+  /* when checked, turn orange */
 }
 
 label.checkboxLabel{
     font-size: 15px;
 /* raise the text */
     display: flex;
-
   align-items: center;
 }
 
@@ -191,4 +191,12 @@ label.checkboxLabel{
     display: flex;
    flex-direction: row;
    flex-wrap: wrap;
+   /* make */
+   
 }
+
+
+
+/* .checkboxClass input:checked {
+  background-color: #a7a7a7;
+} */

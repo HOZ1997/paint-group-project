@@ -99,68 +99,62 @@ function ProjectDetails() {
 
         <p>PROJECT TYPE</p>
         <div className="checkboxLabelDiv">
-        <label
-        className="checkboxLabel">
-          <input
-            type="checkbox"
-            className="checkboxClass"
-            checked={
-              projectDetails.project_interior
-            }
-            onChange={onCheckboxChange(
-              "project_interior"
-            )}
-          />
-          Interior
-        </label>
-
-        <label
-        className="checkboxLabel">
-          <input
-            type="checkbox"
-            className="checkboxClass"
-            checked={
-              projectDetails.project_exterior
-            }
-            onChange={onCheckboxChange(
-              "project_exterior"
-            )}
-          />
-          Exterior
-        </label>
-
-        <label
-        className="checkboxLabel">
-          <input
-            type="checkbox"
-            className="checkboxClass"
-            checked={
-              projectDetails.project_cabinetry
-            }
-            onChange={onCheckboxChange(
-              "project_cabinetry"
-            )}
-          />
-          Cabinetry
-        </label>
-
-        <label className="checkboxLabel">
-          <input
-            type="checkbox"
-            className="checkboxClass"
-            checked={
-              projectDetails.project_specialFeature
-            }
-            onChange={onCheckboxChange(
-              "project_specialFeature"
-            )}
-          />
-          Special Feature
+          <label className="checkboxLabel">
+            <input
+              type="checkbox"
+              className="checkboxClass"
+              checked={
+                projectDetails.project_interior
+              }
+              onChange={onCheckboxChange(
+                "project_interior"
+              )}
+            />
+            Interior
           </label>
-          </div>
 
+          <label className="checkboxLabel">
+            <input
+              type="checkbox"
+              className="checkboxClass"
+              checked={
+                projectDetails.project_exterior
+              }
+              onChange={onCheckboxChange(
+                "project_exterior"
+              )}
+            />
+            Exterior
+          </label>
 
+          <label className="checkboxLabel">
+            <input
+              type="checkbox"
+              className="checkboxClass"
+              checked={
+                projectDetails.project_cabinetry
+              }
+              onChange={onCheckboxChange(
+                "project_cabinetry"
+              )}
+            />
+            Cabinetry
+          </label>
 
+          <label className="checkboxLabel">
+            <input
+              type="checkbox"
+              className="checkboxClass"
+              checked={
+                projectDetails.project_specialFeature
+              }
+              onChange={onCheckboxChange(
+                "project_specialFeature"
+              )}
+            />
+            Special Feature
+          </label>
+        </div>
 
         <p>DESIRED PROJECT START DATE</p>
         <input
