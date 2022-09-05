@@ -103,7 +103,7 @@ function ProjectInformationPage() {
         className="myButton"
         onClick={onUpdateInformation}
       >
-        Create Proposal
+        CREATE PROPOSAL
       </button>
     </div>
   );

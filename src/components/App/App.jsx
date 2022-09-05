@@ -153,7 +153,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <LogOutButton/>
+      <LogOutButton />
     </Router>
     
   );
