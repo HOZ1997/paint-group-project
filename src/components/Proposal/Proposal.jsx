@@ -145,12 +145,8 @@ function Proposal(props) {
                       />
                     )
                   )}
-                  <img src="/images/FellaPainting.png"></img>
-                  <img src="/images/CartoonPainting.png"></img>
-                  <br></br>
-                  <img src="/images/MoreFriends.png"></img>
-                  <img src="/images/paintRoller.png"></img>
-                  <br></br>
+                  {/* <br></br>
+                  <br></br> */}
                 </div>
               </section>
               <section id="scopeOfWork">
