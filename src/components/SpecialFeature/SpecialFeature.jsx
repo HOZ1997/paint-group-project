@@ -100,7 +100,7 @@ function SpecialFeature() {
                   specialFeature.isspecialfeaturestatus_needprimer
                 }
                 onChange={onCheckboxChange(
-                  "'isspecialfeaturestatus_needprimer'"
+                  "isspecialfeaturestatus_needprimer"
                 )}
               />
               NEEDS PRIMER
