@@ -317,6 +317,8 @@ form.formPanel{
 th{
   font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
+  text-align: left;
+  padding-bottom: 20px;
   
 }
 
@@ -327,6 +329,10 @@ td{
   /* center */
   /* some space to the right of word */
   padding-right: 8px;
+  padding-bottom:10px;
+  padding-top: 10px;
+  /* border-bottom: 2px solid #000; */
+  /* border-top: 3px solid #000; */
 
   
 }
@@ -345,5 +351,8 @@ table{
   margin-bottom: 20px;
   margin-left: 0px;
   margin-right: 0px;
-  /* make the card fill the screen */
+}
+
+tr{
+  border-bottom: 1px solid #000;
 }
