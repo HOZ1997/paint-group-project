@@ -56,19 +56,13 @@ function App() {
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
-          {/* Visiting localhost:3000/about will show the about page. */}
-          <Route
-            // shows AboutPage at all times (logged in or not)
-            exact
-            path="/about">
-            <AboutPage />
-          </Route>
+
 
           <Route exact path="/workorder/:id">
             <WorkOrder />
           </Route>
 
-          <Route exact path="/ProjectDetails">
+          <Route exact path="/projectdetails">
             <ProjectDetails />
           </Route>
 
@@ -119,7 +113,7 @@ function App() {
               <LandingPage />
             )}
           </Route>
-          <Route exact path="/projectScope">
+          <Route exact path="/projectscope">
             <ProjectScope />
           </Route>
           <Route exact path="/projects">
@@ -142,7 +136,7 @@ function App() {
           </Route>
           <Route
             exact
-            path="/ProjectInformationPage"
+            path="/projectinformationpage"
           >
             <ProjectInformationPage />
           </Route>
