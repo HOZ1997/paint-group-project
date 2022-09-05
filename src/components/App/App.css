@@ -270,7 +270,7 @@ margin-left: 0px;
 }
 
 .loginClass button{
-  margin-left: 70px;
+  margin-left: 85px;
 }
 
 #loginButton {
@@ -291,4 +291,13 @@ margin-left: -10px;
 form.formPanel{
   /* fill the screen */
   width: 100%;
+}
+
+.fakeFormPanel{
+  background-color: rgb(89, 99, 107);
+  height:237px;
+}
+
+.fakeFormPanel label{
+  color:rgb(89, 99, 107)
 }

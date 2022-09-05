@@ -32,6 +32,7 @@ import SpecialFeature from "../SpecialFeature/SpecialFeature";
 import Proposal from "../Proposal/Proposal";
 import ProposalNav from "../ProposalNav/ProposalNav";
 import ProposalHeader from "../ProposalHeader/ProposalHeader";
+import FakeLoginForm from "../FakeLoginForm/FakeLoginForm";
 
 // testing displays
 
@@ -150,7 +151,6 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <ProposalNav />
       </div>
     </Router>
   );

@@ -41,7 +41,7 @@ function LoginForm() {
           <input
             type="text"
             name="username"
-            placeholder="Username"
+            placeholder="USERNAME"
             required
             value={username}
             onChange={(event) =>
@@ -55,7 +55,7 @@ function LoginForm() {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="PASSWORD"
             required
             value={password}
             onChange={(event) =>
