@@ -12,25 +12,25 @@ function ProposalHeader() {
       <header>
         {/* if /projects, say Projects */}
         {location.pathname === "/projects" && (
-          <h1 className="nav-title">Projects</h1>
+          <h1 className="nav-title">PROJECTS</h1>
         )}
         {/* else if /ProjectInformationPage, say Project Information */}
         {location.pathname ===
           "/ProjectInformationPage" && (
           <h1 className="nav-title">
-            Project Information
+            PROJECT INFORMATION
           </h1>
           )}
         {/* HARDCODED!!!!!!! */}
-        {location.pathname === "/Proposal/1" && (
+        {location.pathname.match(/proposal/gi) && (
           <h1 className="nav-title">
-            Proposal
+            PROPOSAL
           </h1>
         )}
         {/* HARDCODED!!!!!!! */}
-        {location.pathname === "/WorkOrder/1" && (
+        {location.pathname.match(/workorder/gi) && (
           <h1 className="nav-title">
-            Work Order
+            WORK ORDER
           </h1>
         )}
         {/* in any other case */}
