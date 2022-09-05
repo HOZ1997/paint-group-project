@@ -38,11 +38,6 @@ function Projects(props) {
     <div className="container">
       {/* <LanguageToggleButton /> */}
 
-      {store.language === "english" ? (
-        <h2>Projects</h2>
-      ) : (
-        <h2>Proyectos</h2>
-      )}
 
       <div className="grid">
         {projects.length === 0 ? (
@@ -52,8 +47,8 @@ function Projects(props) {
             <thead>
               {store.language === "english" ? (
                 <tr>
-                  <th>Name</th>
-                  <th>Job Number</th>
+                  <th>NAME</th>
+                  <th>JOB NUMBER</th>
                 </tr>
               ) : (
                 <tr>
@@ -78,6 +73,7 @@ function Projects(props) {
                     </td>
                     <td>00{project.id}</td>
                   </tr>
+                  
                 );
               })}
             </tbody>
@@ -85,8 +81,8 @@ function Projects(props) {
         )}
       </div>
       {store.language === "english" ? (
-        <button onClick={newProject}>
-          Add Project
+        <button class="myButton" onClick={newProject}>
+          ADD PROJECT
         </button>
       ) : (
         <button onClick={newProject}>

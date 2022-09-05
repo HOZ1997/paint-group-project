@@ -132,7 +132,7 @@ function WorkOrder(props) {
                     true ? (
                       <p>SCRAPE: YES</p>
                     ) : (
-                      <li>SCRAPE: NO</li>
+                      <p>SCRAPE: NO</p>
                     )}
                     {proposal.isexteriorprep_mildew ===
                     true ? (

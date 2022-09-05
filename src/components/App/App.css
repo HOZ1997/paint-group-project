@@ -270,7 +270,7 @@ margin-left: 0px;
 }
 
 .loginClass button{
-  margin-left: 70px;
+  margin-left: 85px;
 }
 
 #loginButton {
@@ -292,3 +292,81 @@ form.formPanel{
   /* fill the screen */
   width: 100%;
 }
+
+.fakeFormPanel{
+  background-color: rgb(89, 99, 107);
+  height:237px;
+}
+
+.fakeFormPanel label{
+  color:rgb(89, 99, 107)
+}
+
+#logoutID{
+  margin-left: 165px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: rgb(89, 99, 107);
+  color:white;
+  font-family: "Lexend Deca", sans-serif;
+  border: 0px;
+
+
+}
+
+th{
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+td{
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 14.88px;
+  font-weight: bold;
+  line-height: 30px;
+  /* center */
+  /* some space to the right of word */
+  padding-right: 8px;
+  padding-bottom:5px;
+  padding-top: 10px;
+  /* border-bottom: 2px solid #000; */
+  /* border-top: 3px solid #000; */
+
+  
+}
+
+table{
+  /* put inside a white card with rounded edges */
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+tr{
+  border-bottom: 1px solid #000;
+}
+
+#imageInput{
+  border:none;
+  
+}
+
+.welcomeClass{
+ margin-left: 60px;
+ margin-top: -15px;
+ margin-bottom: -15px;
+
+}
+
+
