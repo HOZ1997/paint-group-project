@@ -301,3 +301,15 @@ form.formPanel{
 .fakeFormPanel label{
   color:rgb(89, 99, 107)
 }
+
+#logoutID{
+  margin-left: 165px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: rgb(89, 99, 107);
+  color:white;
+  font-family: "Lexend Deca", sans-serif;
+  border: 0px;
+
+
+}

@@ -37,6 +37,7 @@ import FakeLoginForm from "../FakeLoginForm/FakeLoginForm";
 // testing displays
 
 import './App.css';
+import LogOutButton from "../LogOutButton/LogOutButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -152,7 +153,9 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <LogOutButton/>
     </Router>
+    
   );
 }
 
