@@ -38,7 +38,6 @@ function Projects(props) {
     <div className="container">
       {/* <LanguageToggleButton /> */}
 
-
       <div className="grid">
         {projects.length === 0 ? (
           <p>...loading...</p>
@@ -73,7 +72,6 @@ function Projects(props) {
                     </td>
                     <td>00{project.id}</td>
                   </tr>
-                  
                 );
               })}
             </tbody>
@@ -81,7 +79,10 @@ function Projects(props) {
         )}
       </div>
       {store.language === "english" ? (
-        <button class="myButton" onClick={newProject}>
+        <button
+          class="myButton"
+          onClick={newProject}
+        >
           ADD PROJECT
         </button>
       ) : (

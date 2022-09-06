@@ -11,12 +11,12 @@ function ProposalHeader() {
     <div className="proposalHeader">
       <header>
         {/* if /projects, say Projects */}
-        {location.pathname === "/user" && (
+        {location.pathname === "/" && (
           <h1 className="nav-title">PROJECTS</h1>
         )}
         {/* else if /ProjectInformationPage, say Project Information */}
         {location.pathname ===
-          "/ProjectInformationpage" && (
+          "/ProjectInformationPage" && (
           <h1 className="nav-title">
             INFORMATION
           </h1>
