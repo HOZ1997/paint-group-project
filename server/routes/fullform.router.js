@@ -59,7 +59,7 @@ router.post("/", (req, res) => {
   isexteriorprep_mildew,
   isexteriorwarranty_oneyear,
   isexteriorwarranty_threeyear,
-  isexteriorwarranty_fiveyear ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32 $33, $34, $35, $36 )`;
+  isexteriorwarranty_fiveyear ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32 $33, $34, $35, $36, $37 )`;
   const values = [
     req.body.fullForm.client.client_type_id, //1
     req.body.fullForm.client
@@ -206,8 +206,8 @@ router.put("/update", (req, res) => {
     req.body.projectScope
       .isexteriorwarranty_fiveyear, //35
     req.user.id, //36
-    req.body.id,
-  ]; //37
+    req.body.id, //37
+  ];
   pool
     .query(queryString, values)
     .then((results) => {
@@ -219,26 +219,4 @@ router.put("/update", (req, res) => {
     });
 });
 
-//   pool.query(queryString, values)
-//   .then(results)=>{
-//     console.log('added to paintproject_input');
-//   }).catch(err => {
-//     console.log('problem updating project', err);
-//     res.sendStatus(500);
-//   });
-// });
 module.exports = router;
-
-// const queryString = router.put('/', (req, res) => {
-//     console.log('req.body:', req.body);
-// const fullForm = `UPDATE TABLE "paintproject_input" ("") VALUES ("")`;
-// const values = [];
-// pool.query(fullForm)
-
-//     pool.query(queryString, values).then((results)=>{
-//       res.sendStatus(200);
-//     }).catch((err)=>{
-//       console.log (err);
-//       res.sendStatus(500);
-//     });
-//   });

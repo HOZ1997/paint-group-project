@@ -5,7 +5,6 @@ const router = express.Router();
 /**
  * GET route template
  */
-/// not sure if this is needed ///
 router.get('/', (req, res) => {
   console.log('in cost get');
   const queryString = `SELECT paintproject_input.id, exteriorestimate_laborcost, exteriorestimate_materialcost, exteriorestimate_totalcost FROM paintproject_input;`;
