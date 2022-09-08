@@ -372,3 +372,40 @@ photo_upload_path,
 photo_upload_description
 FROM paintproject_input
 JOIN    photo_upload	ON	photo_upload_id	=	photo_upload.id
+
+
+
+
+
+
+alter table photo_upload add column project_id int;
+alter table photo_upload add column user_id int;
+alter table photo_upload add constraint photo_upload_fk1 foreign key (“user_id”) references “user”(“id”);
+alter table photo_upload add constraint photo_upload_fk0 foreign key (project_id) references paintproject_input(id);
+SELECT paintproject_input.id,client_type_name,client_firstlast_name, decision_firstlast_name, decision_emailaddress, decision_phonenumber,project_address_1,project_address_2, project_address_city, project_address_state, project_address_zip, project_house_year, project_address_notes, project_propertytype_id, project_buildingtype_id, isproject_typeinterior, isproject_typecabinetry, isproject_typespecialfeature, project_startdate, project_complete_specificdate, specialfeatureexterior_type_id,
+specialfeature_paintproduct,
+isspecialfeaturestatus_needprimer,
+isspecialfeaturestatus_patchedrepair,
+isspecialfeaturestatus_extensivescraping,
+specialfeature_notes,
+exteriorestimate_laborcost,
+exteriorestimate_materialcost,
+exteriorestimate_totalcost,
+isexteriorprep_powerwash,
+isexteriorprep_scrape,
+isexteriorprep_mildew,
+isexteriorprep_scrape,
+isexteriorprep_mildew,
+isexteriorwarranty_oneyear,
+isexteriorwarranty_threeyear,
+isexteriorwarranty_fiveyear
+FROM paintproject_input JOIN client_type ON client_type_id = client_type.id
+JOIN project_propertytype ON	project_propertytype_id	=	project_propertytype.id
+JOIN project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id
+ORDER BY paintproject_input.id DESC;		
+UPDATE paintproject_input SET “client_type_id” = 1, “client_firstlast_name” = ‘Ozzy Osborne’, “decision_firstlast_name” = ‘Ozzy Osborne2’, “decision_emailaddress” = ‘2967’, “decision_phonenumber” = 555555,
+    “project_address_1” = ‘email@comcast.net’, “project_address_2" = ‘2121 Prime Ave’, “project_address_city” = ‘Chaska’, “project_address_state” = ‘MN’, “project_address_zip” = ‘55318’, “project_house_year” =‘2006’, “project_address_notes” = ‘end unit’, “project_propertytype_id” = 1, “project_buildingtype_id” = 1, “isproject_typeinterior” = true, “isproject_typeexterior” = true,
+    “isproject_typecabinetry” = true, “isproject_typespecialfeature” = true, “project_startdate” = ‘2022-07-26’, “project_complete_specificdate” = ‘2022-07-26’, “specialfeatureexterior_type_id” =1,
+    “specialfeature_paintproduct” = ‘brown’, “isspecialfeaturestatus_needprimer” = true, “isspecialfeaturestatus_patchedrepair” = true, “isspecialfeaturestatus_extensivescraping” = true,
+    “specialfeature_notes” = ‘need help’, “exteriorestimate_laborcost” = 10, “exteriorestimate_materialcost” = 10, “exteriorestimate_totalcost” = 20, “isexteriorprep_powerwash” = true,
+    “isexteriorprep_scrape” = true, “isexteriorprep_mildew” = true, “isexteriorwarranty_oneyear” = true, “isexteriorwarranty_threeyear” = false, “isexteriorwarranty_fiveyear” = false, “user_id” = 1 WHERE paintproject_input.id = 128;
