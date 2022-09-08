@@ -11,7 +11,6 @@ function* estimateCost(action) {
     yield put({type: 'SET_COST', payload: response.data});
   } catch (err) {
     console.log('Error in estimate cost saga:', err);
-   // alert('Error in estimate cost saga');
   }
 }
 

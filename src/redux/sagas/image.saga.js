@@ -8,7 +8,7 @@ function* uploadImage(action) {
     const response = yield axios.post('/api/uploadImage', action.payload);
     console.log(' BACK FROM UPLOAD IMAGE POST:', response.data);
     yield put({type: 'SET_IMAGE', payload: response.data}); 
-    // yield axios.post('/api/uploadImage/database', action.payload );
+
   } catch (err) {
     console.log('Error in upload image saga:', err);
     alert('Error in upload image saga')

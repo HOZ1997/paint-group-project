@@ -1,4 +1,4 @@
-/* import Lexand */
+
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
 
 img {
@@ -10,7 +10,7 @@ hr {
   float: left;
 }
 
-/* in client-details class, style the h3 as size 25 */
+
 .clientDetails h3 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
@@ -24,17 +24,17 @@ hr {
 }
 
 .clientDetails {
-  /*make a card with a white background  */
+
   background-color: #fff;
-  /* make the card have a border */
+
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
+
   border-radius: 5px;
-  /* make the card have a padding */
+
   padding: 20px;
-  /* make the card have a margin */
+
   margin: -5px;
-  /* give the card rounded corners */
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
@@ -53,20 +53,19 @@ hr {
 }
 
 .jobIntro {
-  /*make a card with a white background  */
   background-color: #fff;
-  /* make the card have a border */
+
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
+
   border-radius: 5px;
-  /* make the card have a padding */
+
   padding: 20px;
-  /* make the card have a margin */
+
   margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
-  /* give the card rounded corners */
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
@@ -78,22 +77,22 @@ hr {
   justify-content: space-around;
   align-items: center;
 
-  /* create space between each image on all four sides */
 
-  /*make a card with a white background  */
+
+
   background-color: #fff;
-  /* make the card have a border */
+
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
+
   border-radius: 5px;
-  /* make the card have a padding */
+
   padding: 20px;
-  /* make the card have a margin */
+
   margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
-  /* give the card rounded corners */
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
@@ -101,7 +100,7 @@ hr {
 
 .proposalPhotos img {
   width: 44%;
-  /* add space between all the images */
+
   margin: 10px;
 }
 
@@ -118,20 +117,20 @@ hr {
 }
 
 .scopeOfWork {
-  /*make a card with a white background  */
+
   background-color: #fff;
-  /* make the card have a border */
+
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
+
   border-radius: 5px;
-  /* make the card have a padding */
+
   padding: 20px;
-  /* make the card have a margin */
+
   margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
-  /* give the card rounded corners */
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
@@ -145,30 +144,22 @@ hr {
 
 .specialFeatures p {
   display: inline;
- /* vertical spacing between p more */
   line-height: 1.5;
 }
 
 
 
-/* descendents of .specialFeatures p */
 
 
 .specialFeatures {
-  /*make a card with a white background  */
   background-color: #fff;
-  /* make the card have a border */
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
   border-radius: 5px;
-  /* make the card have a padding */
   padding: 20px;
-  /* make the card have a margin */
   margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
-  /* give the card rounded corners */
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;
@@ -186,20 +177,14 @@ hr {
 }
 
 .estimate {
-  /*make a card with a white background  */
   background-color: #fff;
-  /* make the card have a border */
   border: 1px solid #e5e5e5;
-  /* make the card have a border radius */
   border-radius: 5px;
-  /* make the card have a padding */
   padding: 20px;
-  /* make the card have a margin */
   margin-left: -5px;
   margin-right: -5px;
   margin-top: 30px;
   margin-bottom: 30px;
-  /* give the card rounded corners */
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 10px;

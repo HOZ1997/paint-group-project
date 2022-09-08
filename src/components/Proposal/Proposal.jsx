@@ -7,9 +7,7 @@ import {
   useDispatch,
   useSelector,
 } from "react-redux";
-// import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
 import "./Proposal.css";
-// import useparams
 import { useParams } from "react-router-dom";
 
 // CUSTOM COMPONENTS
@@ -145,8 +143,7 @@ function Proposal(props) {
                       />
                     )
                   )}
-                  {/* <br></br>
-                  <br></br> */}
+                  
                 </div>
               </section>
               <section id="scopeOfWork">

@@ -11,65 +11,7 @@
   height: 40px;
 }
 
-/* .proposalNav-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f2f2f2;
-  padding-left: 10px;
-  margin: 0;
-} */
 
-/* .proposalNavLink { */
-  /* display: inline-block;
-  color: #f2f2f2;
-  background-color: #00acb0;
-  text-align: center;
-  padding: 24px 10px;
-  text-decoration: none;
-  font-size: 15px; */
-
-  /* these last two make the logout button in
-  the nav bar look like another link */
-  /* border: none;
-  cursor: pointer;
-  outline: 0; */
-/* } */
-
-/* .proposal.NavLink:hover {
-  background-color: #008183;
-} */
-
-/* img.proposal.NavLogo {
-  height: 60px;
-  width: auto;
-} */
-/* 
-img.proposalNavLogo {
-  height: 60px;
-  width: auto;
-} */
-/* img.proposalNavSearch,
-img.proposalNavFav {
-  width: 30px;
-  padding: 0px;
-} */
-
-/* ul.proposalNavList {
-  list-style-type: none;
-  display: block;
-  position: relative;
-  width: 35%;
-} */
-
-/* ul.proposalNavList li {
-  float: right;
-  text-align: right;
-  padding-left: 20px;
-} */
-
-/* .proposalNavLogoContainer {
-  width: 66%;
-} */
 
 ul.proposalNavProjectList, ul.proposalNavInfo, ul.proposalNavProposal, ul.proposalNavWorkOrder, ul.proposalNavLogout {
     margin-left: -40px;

@@ -1,4 +1,4 @@
-/* import Lexand */
+
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
 
 .dropdownSelector {
@@ -41,7 +41,7 @@ p{
     margin-left: 18px;
 }
 
-/*date input types should have 90% width*/
+
 input[type=date] {
     width: 80%;
     margin-left:23px;

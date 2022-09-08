@@ -2,13 +2,13 @@ import React, {
   useState,
   useEffect,
 } from "react";
-//import { useHistory } from 'react-router-dom';
+
 import {
   useDispatch,
   useSelector,
 } from "react-redux";
 import "./SpecialFeature.css";
-//import LanguageToggleButton from '../LanguageToggleButton/LanguageToggleButton';
+
 function SpecialFeature() {
   const dispatch = useDispatch();
   const specialFeature = useSelector(
@@ -34,7 +34,7 @@ function SpecialFeature() {
   const specialFeatureReducer = (
     updatedInput
   ) => {
-    // let SFpayload = specialFeatures;
+
     console.log(
       "in Special feature function",
       specialFeature
@@ -47,7 +47,7 @@ function SpecialFeature() {
 
   return (
     <div>
-      {/* <LanguageToggleButton /> Removing this functionality for now */}
+
       <div className="specialFeatureClass">
         <form>
           <h2>SPECIAL FEATURE</h2>
@@ -81,7 +81,7 @@ function SpecialFeature() {
               <input
                 type="text"
                 name="specialFeatureProduct"
-                // value={state.specialFeatureProduct}
+
                 onChange={onInputChange(
                   "specialfeature_paintproduct"
                 )}
@@ -91,7 +91,7 @@ function SpecialFeature() {
           <br />
           <div className="checkboxLabelDiv">
             <label className="checkboxLabel">
-              {/* CANT CLICK THIS FOR SOME REASON */}
+
               <input
                 type="checkbox"
                 name="primerIsChecked"
@@ -142,7 +142,7 @@ function SpecialFeature() {
               NOTES
               <textarea
                 name="specialfeature_notes"
-                // value={state.specialFeatureNotes}
+
                 onChange={onInputChange(
                   "specialfeature_notes"
                 )}

@@ -1,10 +1,9 @@
 /* make a two inch header but in pixels which is gray with white text */
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
 .nav-title {
-  /* use lexand deca from google fonts */
-  /* test */
+  
   font-family: "Lexend Deca", sans-serif;
-  /* background color with values of red 89 green 99 blue 107 */
+
   background-color: rgb(89, 99, 107);
 
   border-bottom: 1px solid #e5e5e5;
@@ -12,7 +11,7 @@
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  /* font color */
+
   color: #fff;
   height: 2em;
   line-height: 2em;

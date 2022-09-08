@@ -11,7 +11,7 @@ import LanguageToggleButton from "../LanguageToggleButton/LanguageToggleButton";
 import "./Projects.css";
 
 // CUSTOM COMPONENTS
-import RegisterForm from "../RegisterForm/RegisterForm";
+
 
 function Projects(props) {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ function Projects(props) {
 
   return (
     <div className="container">
-      {/* <LanguageToggleButton /> */}
+
 
       <div className="grid">
         {projects.length === 0 ? (

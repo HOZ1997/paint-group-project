@@ -8,8 +8,7 @@ function* addingClient(action) {
 
   try {
     const response = yield axios.post('/api/client/', action.payload);
-    //yield put({ type: 'FETCH_CLIENT', payload: response.data });
-    //fetchClient();
+    
   } catch (error) {
     console.log('Add Client post request failed', error);
   }

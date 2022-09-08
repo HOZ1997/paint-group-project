@@ -8,8 +8,7 @@ function* addingProjectscope(action) {
 
   try {
     const response = yield axios.post('api/projectscope/', action.payload);
-    //yield put({ type: 'FETCH_PROJECT_SCOPE', payload: response.data });
-    //fetchProjectscopet();
+  
   } catch (error) {
     console.log('Add Project scope post request failed', error);
   }

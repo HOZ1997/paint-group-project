@@ -8,10 +8,9 @@ body,
 }
 
 body {
-  /* import background image from my public/images folder */
+
   background-image: url("./cssImages/background_tile.jpg");
 
-  /* tile it across the page */
   background-repeat: repeat;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
@@ -38,7 +37,7 @@ Button
 -------------------------------------------------------------------------------- */
 
 .myButton {
-  /* a dark gray button with rounded edges and white text in the font i've been using */
+
   background-color: rgb(89, 99, 107);
   border: none;
   color: #fff;
@@ -56,7 +55,7 @@ Button
   font-family: "Lexend Deca", sans-serif;
 }
 .myButtonBlue {
-  /* a dark gray button with rounded edges and white text in the font i've been using */
+
   background-color: rgb(94, 191, 221);
   border: none;
   color: #fff;
@@ -73,55 +72,6 @@ Button
   font-weight: bold;
   font-family: "Lexend Deca", sans-serif;
 }
-/* .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-color: #014041;
-  border-width: 1px 1px 3px;
-  border-radius: 4px;
-  background-color: #78dddb;
-  color: #000000;
-  font-size: 1.1rem;
-  outline: 0;
-  cursor: pointer;
-}
-
-.btn_sizeMin {
-  min-height: 50px;
-  min-width: 100px;
-}
-
-.btn_sizeSm {
-  padding: 10px 15px;
-  font-size: 0.8rem;
-}
-
-.btn_sizeFull {
-  display: block;
-  width: 100%;
-}
-
-.btn:hover {
-  background-color: #008183;
-  text-decoration: none;
-} */
-
-/* This line makes the "Register" and "Login" buttons look like links */
-/* .btn_asLink {
-  padding: 0;
-  border-width: 0;
-  border-bottom: 1px solid #444;
-  border-radius: 0;
-  background: none;
-  font: inherit;
-  color: #444;
-}
-
-.btn_asLink:hover {
-  background-color: transparent;
-  border-color: #008183;
-  color: #008183;
-} */
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -164,7 +114,7 @@ input {
 .loginPageContainer {
   background-image: url("./cssImages/solid-color-image.jpeg");
 
-  /* make fill the whole screen */
+
   background-size: cover;
 
 }
@@ -179,15 +129,15 @@ input.checkboxClass{
     display: flex;
   justify-content: space-between;
   align-items: center;
-  /* when checked, turn orange */
+
 }
 
 label.checkboxLabel{
     font-size: 15px;
-/* raise the text */
+
     display: flex;
   align-items: center;
-  /* justify the text */
+
   
 }
 
@@ -203,7 +153,7 @@ label.checkboxLabel{
 
 textarea{
 margin-left: 5px;
-/* make input text match the font */
+
 font-family: "Lexend Deca", sans-serif;
 padding:12px;
 }
@@ -220,9 +170,7 @@ padding:12px;
 }
 
 
-/* .checkboxClass input:checked {
-  background-color: #a7a7a7;
-} */
+
 
 .nav-title{
   margin:auto;
@@ -237,7 +185,7 @@ padding:12px;
 
 
 li{
-  /* use this font */
+
   font-family: "Lexend Deca", sans-serif;
   margin:auto;
 }
@@ -289,7 +237,7 @@ margin-left: -10px;
 }
 
 form.formPanel{
-  /* fill the screen */
+
   width: 100%;
 }
 
@@ -326,19 +274,17 @@ td{
   font-size: 14.88px;
   font-weight: bold;
   line-height: 30px;
-  /* center */
-  /* some space to the right of word */
+ 
   padding-right: 8px;
   padding-bottom:5px;
   padding-top: 10px;
-  /* border-bottom: 2px solid #000; */
-  /* border-top: 3px solid #000; */
+
 
   
 }
 
 table{
-  /* put inside a white card with rounded edges */
+
   background-color: white;
   border-radius: 10px;
   width: 100%;

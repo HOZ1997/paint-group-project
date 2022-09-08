@@ -21,9 +21,6 @@ function ImagePage(props) {
   //this
   useEffect(() =>{
       console.log( 'in url push');
-      // setUrl(imageReducer);
-      // console.log( 'URL', url);
-      // urlArray.push(url);
       console.log( 'image reducer', imageReducer);
   }, [imageReducer]);
 

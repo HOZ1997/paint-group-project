@@ -1,39 +1,10 @@
-/* import Lexand */
+
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap");
-/* #grid-col {
-    /* GRID LAYOUT */
-    /* display: grid; */
-   
-    /*COLUMNS */
-    /* grid-template-columns: auto auto auto; */
-   
-    /* we can also specify exact pixels, percentage, repeat
-    /* grid-template-columns: 50px 100px 150px; */
-    /* grid-template-columns: 25% 50% 25%; */
-    /* grid-template-columns: 100px 20% auto;
-    grid-template-columns: repeat(3, auto); */ 
-  /* } */ 
+
 
   /* optimizes grid width for a small screen  */
   @media screen and (max-width: 640px) {
     #grid-col { grid-template-columns: 100%; }
   }
 
-  /* for inputs of file type */
-  /* input[type=file] {
-    background-color: rgb(89, 99, 107);
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  border-radius: 10px;
-  font-weight: bold;
-  font-family: "Lexend Deca", sans-serif;
-  } */
+ 

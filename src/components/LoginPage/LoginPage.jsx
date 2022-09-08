@@ -16,10 +16,6 @@ function LoginPage() {
         <LoginForm />
         <FakeLoginForm />
         <FakeLoginForm />
-
-        {/* <center>
-        
-        </center> */}
       </div>
     </div>
   );

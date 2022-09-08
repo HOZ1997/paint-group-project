@@ -12,16 +12,7 @@ function ProjectDetails() {
 
   const dispatch = useDispatch();
 
-  //hooks for inputs
-  // const [property, setProperty] = useState('');
-  // const [building, setBuilding] = useState('');
-  // const [startDate, setStartDate] = useState('');
-  // const [endDate, setEndDate] = useState('');
 
-  // const [checkedInterior, setCheckedInterior] = useState(false);
-  // const [checkedExterior, setCheckedExterior] = useState(false);
-  // const [checkedCabinetry, setCheckedCabinetry] = useState(false);
-  // const [checkedSpecialFeature, setCheckedSpecialFeature] = useState(false);
 
   const onInputChange = (key) => (event) => {
     const updatedInput = {

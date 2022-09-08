@@ -22,7 +22,7 @@ function* addingFullform(action) {
   try {
     const response = yield axios.post('/api/fullform/', action.payload);
     yield put({ type: 'FETCH_FULLFORM', payload: response.data });
-    //fetchfullForm();
+
   } catch (error) {
     console.log('Add Fullform put request failed', error);
   }

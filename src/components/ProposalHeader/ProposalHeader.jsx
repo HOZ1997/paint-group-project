@@ -21,27 +21,19 @@ function ProposalHeader() {
             INFORMATION
           </h1>
           )}
-        {/* HARDCODED!!!!!!! */}
+
         {location.pathname.match(/proposal/gi) && (
           <h1 className="nav-title">
             PROPOSAL
           </h1>
         )}
-        {/* HARDCODED!!!!!!! */}
+
         {location.pathname.match(/workorder/gi) && (
           <h1 className="nav-title">
             WORK ORDER
           </h1>
         )}
-        {/* in any other case */}
-        {/* {location.pathname !== "/projects" &&
-          location.pathname !==
-            "/ProjectInformationPage" &&
-          location.pathname !== "/WorkOrder" && (
-            <h1 className="nav-title">
-              Proposal
-            </h1>
-          )} */}
+        
       </header>
     </div>
   );
