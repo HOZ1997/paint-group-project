@@ -278,7 +278,7 @@ JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeat
 JOIN    photo_upload	ON	photo_upload_id	=	photo_upload.id;
 
 
--- GET information for Client component Lisette
+-- GET information for Client component 
 SELECT
 paintproject_input.id,
 client_type_name,
@@ -299,7 +299,7 @@ JOIN	client_type	ON	client_type_id	=	client_type.id;
 
 
 
--- GET information for Project component - Harrison
+-- GET information for Project component 
 SELECT
 paintproject_input.id,
 project_job_number ,
@@ -317,7 +317,7 @@ JOIN	project_propertytype	ON	project_propertytype_id	=	project_propertytype.id
 JOIN	project_buildingtype	ON	project_buildingtype_id	=	project_buildingtype.id;
 
 
--- GET information for Special Feature component - Andy
+-- GET information for Special Feature component 
 
 SELECT
 paintproject_input.id,
@@ -332,7 +332,7 @@ paintproject_input
 JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
 
 
--- GET information for Estimate - exterior special feature - Jonathan
+-- GET information for Estimate - exterior special feature
 
 SELECT
 paintproject_input.id,
@@ -344,7 +344,7 @@ paintproject_input;
 
 
 
--- GET information for Exterior special feature scope of checkboxes - Carlos
+-- GET information for Exterior special feature scope of checkboxes 
 
 SELECT
 paintproject_input.id,
@@ -363,7 +363,7 @@ JOIN	language_preference	ON	language_preference_id	=	language_preference.id
 JOIN	specialfeatureexterior_type	ON	specialfeatureexterior_type_id =	specialfeatureexterior_type.id;
 
 
--- 	GET  information for photo_upload - Lisette
+-- 	GET  information for photo_upload 
 
 SELECT
 paintproject_input.id,
